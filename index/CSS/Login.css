@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal-page {
+  background-color: gray;
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.modal-header {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+}
+
+table th {
+  padding: 0.5rem;
+}
