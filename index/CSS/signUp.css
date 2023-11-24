@@ -1,0 +1,28 @@
+body {
+  background-color: #d9d9d9;
+}
+
+.signup-main {
+  width: 100%;
+  height: 200px;
+  background-color: red;
+}
+
+.signup-header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+}
+
+.signup-text {
+  color: red;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.signup {
+}
