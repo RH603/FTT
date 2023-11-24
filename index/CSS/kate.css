@@ -69,8 +69,35 @@
 /* 카테고리 시작 */
 .kate-container{
   background-color: aqua;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
+}
+.kate-box{
+  margin: 0 auto;
+  width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 이미지 */
+.movie-container{
+  margin: 0 auto;
+  width: 1240px;
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px
+}
+.movie{
+  /* margin-left: 10px; */
+  
+}
+.movie:first-child{
+  margin-left:0;
+}
+img{
+  width: 240px;
+  height: 360px
 }

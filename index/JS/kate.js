@@ -7,10 +7,10 @@ let modalClose = document.querySelector(".modal-close")
 
 modalOpen.addEventListener('click',function(){
     modalBack.style.display = "block"
+    console.log(modalBack)
 })
 
-
-modalClose.addEventListener("click",function(){
-    modalBack.style.dispaly = "none"
+modalClose.addEventListener('click',function(){
+    modalBack.style.display = "none"
     console.log(modalBack)
 })
