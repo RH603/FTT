@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/Login.css" />
+    <link rel="stylesheet" href="../CSS/login.css" />
   </head>
   <body>
     <p id="click">로그인</p>
-    <form>
+
+    <!-- <form action="..."> -->
+    <div class="modal-back">
       <div class="modal-page">
         <!-- legend 블럭요소 -->
         <div class="modal-close">
@@ -19,6 +21,7 @@
           ></iconify-icon>
         </div>
         <div class="modal-header">로그인</div>
+        <p id="come">FTT에 오신것을 환영합니다.</p>
         <table>
           <tr>
             <th>아이디</th>
@@ -35,8 +38,24 @@
             </td>
             <td></td>
           </tr>
+        </table>
+        <div class="modal-find">
+          <a href="#">아이디 찾기</a>
+          <a href="#">비밀번호 찾기</a>
+          <a href="signUp.html">회원가입</a>
+        </div>
+        <div class="modal-check">
+          <input type="button" value="확인" />
+          <input type="button" value="취소" />
+        </div>
+        <ul class="modal-footer">
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>고객센터</li>
+        </ul>
+      </div>
     </div>
-    </form>
   </body>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="../JS/login.js"></script>
 </html>

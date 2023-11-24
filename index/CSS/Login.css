@@ -4,32 +4,136 @@
   box-sizing: border-box;
 }
 
-.modal-page {
-  background-color: gray;
-  width: 80%;
-  height: 500px;
-  margin: 0 auto;
+/* 입력창 클릭 시 */
+input:focus {
+  outline: none;
 }
 
-.modal-close {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem;
+/* li 스타일 없애기 */
+li {
+  list-style: none;
 }
 
-.modal-header {
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-table {
+/* 전체화면 */
+.modal-back {
   display: flex;
   justify-content: center;
 }
 
-table th {
-  padding: 0.5rem;
+/* 로그인 버튼 클릭 시 */
+.modal-back.selected {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 로그인 버튼 클릭 전 모달창 */
+.modal-page {
+  background-color: red;
+  width: 40%;
+  height: 800px;
+  position: absolute;
+  top: 80px;
+  opacity: 0;
+}
+
+/* 로그인 버튼 클릭 후 모달창 */
+.modal-page.selected {
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+/* X버튼 클릭 */
+.modal-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+/* 로그인 문구 */
+.modal-header {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* 환영 문구 */
+#come {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 2rem;
+}
+
+/* 아이디 비밀번호창 */
+table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  height: 20%;
+}
+
+/* 선 추가 */
+table tr {
+  border: 2px solid #dadada;
+}
+
+/* 가운데 정렬, 거리조절? */
+table th,
+table td {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* 입력창(input) */
+table input {
+  border: 0;
+  background-color: gray;
+  height: 20px;
+}
+
+/* 아이디 찾기 부분 */
+.modal-find {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* a태그 */
+.modal-find a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 로그인 확인 취소 버튼 부모 */
+.modal-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+/* 로그인 확인 취소 버튼 */
+.modal-check input {
+  width: 80px;
+  height: 20px;
+  border: 0;
+  background-color: aqua;
+}
+
+/* 이용약관 맨 아래 */
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
 }

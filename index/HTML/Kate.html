@@ -1,74 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/nav.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../resources/css/nav.css">
+    <link rel="stylesheet" href="../CSS/kate.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-          <h1>
-            <a href="index.html"> F(our)T(he)T(op) </a>
-          </h1>
-          <div id="header-menu">
-            <nav id="gnb">
-              <ul>
-                <li class="g-main">
-                  <a href="#">언어</a>
-                  <ul class="g-sub">
-                    <li><a class="g-sub-item" href="#">한국어</a></li>
-                    <li><a class="g-sub-item" href="#">영어</a></li>
-                    <li><a class="g-sub-item" href="#">일본어</a></li>
-                  </ul>
-                </li>
-                <li class="g-main">
-                  <a href="#">로그인</a>
-                </li>
-                <li class="g-main">
-                  <a href="#">회원가입</a>
-                </li>
-              </ul>
-            </nav>
-            <nav id="lnb">
-              <ul>
-                <li class="l-main">
-                  <a href="#">홈</a>
-                </li>
-                <li class="l-main">
-                  <a href="#">카테고리</a>
-                </li>
-                <li class="l-main">
-                  <a href="#">MY</a>
-                </li>
-              </ul>
-            </nav>
+      <div class="container">
+        <h1>
+          <a href="index.html"> F(our)T(he)T(op) </a>
+        </h1>
+        <div id="header-menu">
+          <nav id="gnb">
+            <ul>
+              <li class="g-main">
+                <a href="#">언어</a>
+                <ul class="g-sub">
+                  <li><a class="g-sub-item" href="#">한국어</a></li>
+                  <li><a class="g-sub-item" href="#">영어</a></li>
+                  <li><a class="g-sub-item" href="#">일본어</a></li>
+                </ul>
+              </li>
+              <li class="g-main">
+                <a href="#">로그인</a>
+              </li>
+              <li class="g-main">
+                <a href="#">회원가입</a>
+              </li>
+            </ul>
+          </nav>
+          <nav id="lnb">
+            <ul>
+              <li class="l-main">
+                <a href="#">홈</a>
+              </li>
+              <li class="l-main">
+                <a href="#">카테고리</a>
+              </li>
+              <li class="l-main">
+                <a href="#">MY</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="kate-container">
+      <div class="kate-header">카테고리</div>
+      <button type="button" id="modal-open">장르선택</button>
+    </div>
+    <div class="modal-back">
+      <div class="modal-win">
+        <div class="modal-header-container">
+          <div class="modal-header">
+            <p>카테고리</p>
+          </div>
+          <div class="modal-header">
+            <button type="button" class="modal-close">X</button>
           </div>
         </div>
-      </header>
-  <div class="kate-container">
-    <div class="kate-header">카테고리</div>
-    <button type="button" id="modal-open">장르선택</button>
-    <div class="modal-back">
-        <div class="modal-win">
-            <div class="modal-header">
-                <p>카테고리</p>
-                <button type="button" class="modal-close">X</button>
-            </div>
-            <div class="modal-body">
-              <ul>
-                <li>공포</li>
-                <li>스포츠</li>
-                <li>액션</li>
-                <li>코메디</li>
-                <li>전쟁</li>
-                <li>공상과학</li>
-                <li>에니메이션</li>
-              </ul>
-            </div>
+        <div class="modal-body">
+          <ul>
+            <li class="modal-kate">
+              <label for="hor"> 공포 </label>
+              <input type="checkbox" id="hor" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="spo"> 스포츠 </label>
+              <input type="checkbox" id="spo" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="act"> 액션 </label>
+              <input type="checkbox" id="act" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="com"> 코메디 </label>
+              <input type="checkbox" id="com" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="war"> 전쟁 </label>
+              <input type="checkbox" id="war" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="sf"> 공상과학 </label>
+              <input type="checkbox" id="sf" checked />
+            </li>
+          </ul>
         </div>
+        <button type="button" class="save-btn">저장하기</button>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
+  <script src="../JS/kate.js"></script>
 </html>
