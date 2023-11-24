@@ -13,11 +13,13 @@
       <div class="signup-text">회원가입</div>
 
       <section class="signup">
-        <form>
+        <div class="signup-wrap">
           <div class="sign id">
             <h2>아이디</h2>
-            <input type="text" name="id" placeholder="8자 이상 입력" />
-            <button type="button" name="중복확인">중복확인</button>
+            <div class="wrap">
+              <input type="text" name="id" placeholder="8자 이상 입력" />
+              <button type="button" name="중복확인">중복확인</button>
+            </div>
           </div>
 
           <div class="sign pw">
@@ -41,17 +43,17 @@
 
           <div class="sign birth">
             <h2>생년월일</h2>
-            <input type="text" name="birth" placeholder="생년월일 8자리" />
+            <input type="date" name="birth" placeholder="생년월일 8자리" />
           </div>
 
-          <div class="sign">
+          <div class="sign gender">
             <div class="gender">
-              <button type="button" name="gender">남자</button>
-              <button type="button" name="gender">여자</button>
+              <input type="button" name="gender" value="남자" />
+              <input type="button" name="gender" value="여자" />
             </div>
-            <div class="lang">
-              <button type="button" name="gender">내국인</button>
-              <button type="button" name="gender">외국인</button>
+            <div class="gender">
+              <input type="button" name="gender" value="내국인" />
+              <input type="button" name="gender" value="외국인" />
             </div>
           </div>
 
@@ -69,8 +71,9 @@
               인증번호 받기
             </button>
           </div>
-        </form>
+        </div>
       </section>
     </div>
   </body>
+  <script src="../JS/signUp.js"></script>
 </html>
