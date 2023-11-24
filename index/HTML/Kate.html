@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/nav.css" />
+    <link rel="stylesheet" href="../../resources/css/nav.css">
+    <link rel="stylesheet" href="../CSS/kate.css" />
   </head>
   <body>
     <header>
@@ -50,54 +51,48 @@
     <div class="kate-container">
       <div class="kate-header">카테고리</div>
       <button type="button" id="modal-open">장르선택</button>
-      </div>
-      <div class="modal-back">
-        <div class="modal-win">
-          <div class="modal-header-container">
-            <div class="modal-header">
-              <p>카테고리</p>
-            </div>
-            <div class="modal-header">
-              <button type="button" class="modal-close">X</button>
-            </div>
+    </div>
+    <div class="modal-back">
+      <div class="modal-win">
+        <div class="modal-header-container">
+          <div class="modal-header">
+            <p>카테고리</p>
           </div>
-          <div class="modal-body">
-            <ul>
-              <li class="modal-kate">
-                <label for="hor"> 공포 </label>
-                <input type="checkbox" id="hor" checked />
-              </li>
-              <li class="modal-kate">
-                <label for="spo"> 스포츠 </label>
-                <input type="checkbox" id="spo" checked />
-              </li>
-              <li class="modal-kate">
-                <label for="act"> 액션 </label>
-                <input type="checkbox" id="act" checked />
-              </li>
-              <li class="modal-kate">
-                <label for="com">
-                  코메디
-                </label> 
-                <input type="checkbox" id="com" checked>
-              </li>
-              <li class="modal-kate">
-                <label for="war">
-                  전쟁
-                </label> 
-                <input type="checkbox" id="war" checked>
-              </li>
-              <li class="modal-kate">
-                <label for="sf">
-                  공상과학
-                </label> 
-                <input type="checkbox" id="sf" checked>
-              </li>
-            </ul>
+          <div class="modal-header">
+            <button type="button" class="modal-close">X</button>
           </div>
-          <button type="button" class="save-btn">저장하기</button>
         </div>
+        <div class="modal-body">
+          <ul>
+            <li class="modal-kate">
+              <label for="hor"> 공포 </label>
+              <input type="checkbox" id="hor" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="spo"> 스포츠 </label>
+              <input type="checkbox" id="spo" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="act"> 액션 </label>
+              <input type="checkbox" id="act" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="com"> 코메디 </label>
+              <input type="checkbox" id="com" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="war"> 전쟁 </label>
+              <input type="checkbox" id="war" checked />
+            </li>
+            <li class="modal-kate">
+              <label for="sf"> 공상과학 </label>
+              <input type="checkbox" id="sf" checked />
+            </li>
+          </ul>
+        </div>
+        <button type="button" class="save-btn">저장하기</button>
       </div>
-
+    </div>
   </body>
+  <script src="../JS/kate.js"></script>
 </html>
