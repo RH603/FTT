@@ -6,7 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../resources/css/nav.css" />
     <link rel="stylesheet" href="../CSS/kate.css" />
+    <link rel="stylesheet" href="../CSS/ketejQuery.css">
   </head>
+  <script
+  src="https://code.jquery.com/jquery-3.6.4.js"
+  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous">
+</script>
   <body>
     <header>
       <div class="container">
@@ -62,19 +68,19 @@
           <ul>
             <li class="modal-kate">
               <label for="hor"> 공포 </label>
-              <input type="checkbox" id="hor" checked=""/>
+              <input type="checkbox"  id="hor" checked />
             </li>
             <li class="modal-kate">
               <label for="spo"> 스포츠 </label>
               <input type="checkbox" id="spo" checked />
             </li>
             <li class="modal-kate">
-              <label for="act"> 액션 </label>
-              <input type="checkbox" id="act" checked />
+              <label for="cri-and-act"> 액션·범죄 </label>
+              <input type="checkbox" id="cri-and-act" checked />
             </li>
             <li class="modal-kate">
-              <label for="com"> 코메디 </label>
-              <input type="checkbox" id="com" checked />
+              <label for="medy"> 코메디 </label>
+              <input type="checkbox" id="medy" checked />
             </li>
             <li class="modal-kate">
               <label for="war"> 전쟁 </label>
@@ -92,13 +98,13 @@
     <div class="kate-container">
       <div class="kate-box">
         <div class="kate-header">카테고리</div>
-        <button type="button" id="modal-open">장르선택</button>
+        <button type="button"  id="modal-open">장르선택</button>
       </div>
     </div>
     <div class="movie-container">
-   
-    
     </div>
+    
   </body>
-  <script src="../JS/kate.js"></script>
+  <script src="../JS/katejQuery.js"></script>
+
 </html>
