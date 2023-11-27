@@ -37,7 +37,7 @@
     </fieldset>
   </body>
   <script type="module">
-    import * as firebase from "/firebase.js";
+    import * as firebase from "../JS/firebase.js";
     const {
       db,
       getDocs,
@@ -60,7 +60,7 @@
       const snapshot = await getData("FTT", "sFDeZbIgBTGl9xQz8FUz");
       const { memberPassword } = snapshot.data();
       if (password.value == memberPassword) {
-        location.href = "http://127.0.0.1:5500/changeInfo.html";
+        location.href = "http://127.0.0.1:5501/index/HTML/changeInfo.html";
       } else {
         alert("비밀번호를 다시 입력해주세요");
       }

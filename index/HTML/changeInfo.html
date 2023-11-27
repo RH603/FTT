@@ -86,14 +86,14 @@
             </div>
           </div>
           <button type="button" class="signBtn" name="btn" value="button">
-            회원가입
+            회원정보수정
           </button>
         </section>
       </div>
     </fieldset>
   </body>
   <script type="module">
-    import * as firebase from "/firebase.js";
+    import * as firebase from "../JS/firebase.js";
     const {
       db,
       getDocs,
@@ -131,7 +131,8 @@
       ) {
         updateDatas("FTT", "sFDeZbIgBTGl9xQz8FUz", updateObj).then(function () {
           alert("입력하신 정보가 수정되었습니다.");
-          location.href = "http://127.0.0.1:5500/main.html";
+          location.href =
+            "http://127.0.0.1:5501/index/HTML/signUpAfterMain.html";
         });
       } else {
         alert("비밀번호가 다릅니다.");

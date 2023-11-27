@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="total.css" />
-    <link rel="stylesheet" href="signUp.css" />
+    <link rel="stylesheet" href="../CSS/signUp.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
   </head>
   <body>
     <div class="signup-main">
-      <div class="signup-header">navBar</div>
-      <div class="signup-text">회원가입</div>
+      <!-- <div class="signup-header">navBar</div> -->
+      <div class="signup-header">
+        <div class="sign-text">FTT 회원가입</div>
+      </div>
 
       <section class="signup">
         <div class="signup-wrap">
@@ -65,7 +67,6 @@
               <option>일본 +81</option>
               <option>미국 +1</option>
             </select>
-            <br />
             <input type="text" name="phone" placeholder="전화번호 입력" />
             <button type="button" name="btn" value="인증번호 받기">
               인증번호 받기
@@ -78,9 +79,9 @@
       </section>
     </div>
   </body>
-  <script src="signUp.js"></script>
+  <script src="../JS/signUp.js"></script>
   <script type="module">
-    import * as firebase from "/firebase.js";
+    import * as firebase from "../JS/firebase.js";
     const {
       db,
       getDocs,
@@ -119,7 +120,7 @@
       ) {
         addDatas("FTT", memberInfo).then(function () {
           alert("회원가입이 성공했습니다!");
-          location.href = "http://127.0.0.1:5500/login.html";
+          location.href = "http://127.0.0.1:5501/index/HTML/login.html";
         });
       } else {
         alert("비밀번호가 다릅니다.");
