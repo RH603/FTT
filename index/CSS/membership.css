@@ -1,0 +1,64 @@
+body {
+  background-color: #3b3636;
+}
+
+.ms-container {
+  margin-top: 112px;
+}
+
+.ms-header {
+  background-color: rgb(22, 131, 226);
+  height: 100px;
+  padding: 1.3rem 3rem;
+}
+
+.ms-body {
+  background-color: aqua;
+  position: relative;
+}
+
+.ms-card {
+  background: linear-gradient(45deg, rgb(216, 22, 22), blue);
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  width: 15%;
+  height: 300px;
+}
+
+.ms-card h3 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.ms-card .line {
+  border: 1px solid white;
+}
+
+.ms-card-btn {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(60deg, rgb(60, 255, 0), purple);
+  width: 90%;
+  margin: 0.5rem auto;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ms-card-btn:hover {
+  background: linear-gradient(45deg, red, black);
+  cursor: pointer;
+}
+
+.ms-card-box {
+  width: 90%;
+  margin: 0 auto;
+  background: #1b1b1b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-top: 1rem;
+}
