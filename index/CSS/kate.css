@@ -9,6 +9,9 @@
   right: 0;
   background-color:rgba(0,0,0,0.4);
 } 
+.movie{
+  background-color: black;
+}
 .modal-win{
   position: absolute;
   top:50%;
