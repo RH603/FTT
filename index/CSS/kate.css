@@ -1,3 +1,6 @@
+body{
+  background-color: #333;
+}
 
 /* 모달창 시작 */
 .modal-back{
@@ -8,7 +11,20 @@
   left: 0;
   right: 0;
   background-color:rgba(0,0,0,0.4);
-} 
+}
+#modal-open{
+  width:100px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  border-color: #333;
+  background-color: #ddd;
+  color: #333;
+}
+#modal-open:hover{
+  background-color: #333;
+  color: #ddd;
+}
 .movie{
   background-color: black;
 }
@@ -71,12 +87,17 @@
 
 /* 카테고리 시작 */
 .kate-container{
+  position: fixed;
+  top:112px;
   background-color: aqua;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
+}
+.kate-header{
+  font-size: 48px;
 }
 .kate-box{
   margin: 0 auto;
@@ -85,9 +106,17 @@
   justify-content: space-between;
   align-items: center;
 }
+.kate-box ul{
+  display: flex;
+  gap: 10px
+}
+.kate-box ul li{
+  width: 100px;
+  height: 30px;
+}
 /* 이미지 */
 .movie-container{
-  margin: 0 auto;
+  margin: 222px auto 0;
   width: 1240px;
   display: flex;
   flex-wrap: wrap;

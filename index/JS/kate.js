@@ -9,20 +9,10 @@ const kate = document.querySelector("input")
 console.log(kate)
 movie.classList.add("movie")
 
-kate.addEventListener("click",function(){
-    kate.removeAttribute('checked')
-    console.log(kate.checked)
-})
-if(kate.checked){
-    console.log(kate.checked)
-        movie.classList.add("movie")
-        img.append("../../resources/image/공포/horror1.jpg")
-        for(let i=1; i<11; i++){
-            const img = document.createElement("img")
-            img.src = `../../resources/image/공포/horror${i}.jpg`
-            movie.appendChild(img)
-        }
-
+for(let i=1; i<11; i++){
+    const img = document.createElement("img")
+    img.src = `../../resources/image/공포/horror${i}.jpg`
+    movie.appendChild(img)
 }
 for(let i=1; i<11; i++){
     const img = document.createElement("img")
