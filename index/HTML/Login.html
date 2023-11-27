@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/login.css" />
-    <link rel="stylesheet" href="../CSS/total.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="total.css" />
   </head>
   <body>
     <p id="click">로그인</p>
@@ -26,7 +26,9 @@
         <table>
           <tr>
             <th>아이디</th>
-            <td><input type="text" placeholder="아이디 10글자 이내" /></td>
+            <td>
+              <input type="text" name="id" placeholder="아이디 10글자 이내" />
+            </td>
             <!-- <td><input type="button" value="중복 확인" /></td> -->
           </tr>
           <tr>
@@ -34,6 +36,7 @@
             <td>
               <input
                 type="password"
+                name="password"
                 placeholder="영문,숫자,특수문자 포함 8자 이상"
               />
             </td>
@@ -46,8 +49,8 @@
           <a href="signUp.html">회원가입</a>
         </div>
         <div class="modal-check">
-          <input type="button" value="확인" />
-          <input type="button" value="취소" />
+          <input type="button" name="check" value="확인" />
+          <input type="button" name="cancel" value="취소" />
         </div>
         <ul class="modal-footer">
           <li>이용약관</li>
@@ -58,5 +61,49 @@
     </div>
   </body>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  <script src="../JS/login.js"></script>
+  <script src="login.js"></script>
+  <script type="module">
+    import * as firebase from "/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+    } = firebase;
+
+    const checkBtn = document.querySelector("input[name = check]");
+    const id = document.querySelector("input[name = id]").value;
+    const password = document.querySelector("input[name = password]").value;
+
+    checkBtn.addEventListener("click", async function () {
+      const snapshot = await getDatas("FTT");
+      snapshot.forEach((doc) => {
+        const { memberId, memberPassword } = doc.data();
+
+        if (document.querySelector("input[name = id]").value == memberId) {
+          console.log("1");
+          if (
+            document.querySelector("input[name = password]").value ==
+            memberPassword
+          ) {
+            console.log("2");
+            location.href = "http://127.0.0.1:5500/main.html";
+          } else {
+            alert("비밀번호를 다시 입력해주세요");
+            console.log("3");
+          }
+        } else {
+          console.log("이상함");
+        }
+      });
+    });
+    // })
+  </script>
 </html>

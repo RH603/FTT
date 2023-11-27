@@ -36,10 +36,9 @@ input {
 .signup {
   width: 30%;
   margin: 0 auto;
+  position: relative;
 }
 
-/* .sign-wrap {} 
- */
 .sign {
   padding: 0.5rem;
 }
@@ -85,4 +84,11 @@ input {
 
 .signup .sign.gender .gender input.selected {
   background-color: #767676;
+}
+
+.signup .signBtn {
+  position: absolute;
+  bottom: -20%;
+  left: 45%;
+  padding: 0.5rem 1rem;
 }

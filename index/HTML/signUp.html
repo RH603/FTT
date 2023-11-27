@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/total.css" />
-    <link rel="stylesheet" href="../CSS/signUp.css" />
+    <link rel="stylesheet" href="total.css" />
+    <link rel="stylesheet" href="signUp.css" />
   </head>
   <body>
     <div class="signup-main">
@@ -33,7 +33,7 @@
 
           <div class="sign rec">
             <h2>비밀번호 재입력</h2>
-            <input type="password" name="password" />
+            <input type="password" name="passwordCheck" />
           </div>
 
           <div class="sign name">
@@ -43,7 +43,7 @@
 
           <div class="sign birth">
             <h2>생년월일</h2>
-            <input type="date" name="birth" placeholder="생년월일 8자리" />
+            <input type="text" name="birth" placeholder="  '-' 입력해주세요 " />
           </div>
 
           <div class="sign gender">
@@ -52,8 +52,8 @@
               <input type="button" name="gender" value="여자" />
             </div>
             <div class="gender">
-              <input type="button" name="gender" value="내국인" />
-              <input type="button" name="gender" value="외국인" />
+              <input type="button" name="language" value="내국인" />
+              <input type="button" name="language" value="외국인" />
             </div>
           </div>
 
@@ -72,8 +72,58 @@
             </button>
           </div>
         </div>
+        <button type="button" class="signBtn" name="btn" value="button">
+          회원가입
+        </button>
       </section>
     </div>
   </body>
-  <script src="../JS/signUp.js"></script>
+  <script src="signUp.js"></script>
+  <script type="module">
+    import * as firebase from "/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+    } = firebase;
+
+    // const gender = document.querySelector("input[name  = gender]");
+    // const passwordCheck = document.querySelector("input[name = passwordCheck]").value
+
+    // 데이터추가
+    const btn = document.querySelector(".signBtn");
+    btn.addEventListener("click", function () {
+      const memberInfo = {
+        memberId: document.querySelector("input[name = id]").value,
+        memberPassword: document.querySelector("input[name = password]").value,
+        // memberPasswordCheck: document.querySelector("input[name = passwordCheck]").value,
+        memberName: document.querySelector("input[name = name]").value,
+        memberBirth: document.querySelector("input[name = birth]").value,
+        memberPhoneNumber: document.querySelector("input[name = phone]").value,
+        // membergender: document.querySelector("input[name = gender]").value,
+        // memberLanguage: document.querySelector("input[name = language]").value,
+      };
+
+      console.log(memberInfo.memberPassword);
+      if (
+        memberInfo.memberPassword ==
+        document.querySelector("input[name = passwordCheck]").value
+      ) {
+        addDatas("FTT", memberInfo).then(function () {
+          alert("회원가입이 성공했습니다!");
+          location.href = "http://127.0.0.1:5500/login.html";
+        });
+      } else {
+        alert("비밀번호가 다릅니다.");
+      }
+    });
+  </script>
 </html>
