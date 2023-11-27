@@ -1,5 +1,8 @@
 body {
   background-color: #3b3636;
+  /* width: 100px; */
+  overflow: hidden;
+  height: 50vh;
 }
 
 /* .main-container {
