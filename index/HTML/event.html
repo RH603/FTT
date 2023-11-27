@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../resources/css/nav.css">
+</head>
+<style>
+    .ms-header {
+        background-color: rgb(22, 131, 226);
+        width: 100%;
+        height: 300px;
+        padding: 1.3rem 3rem;
+        margin-top: 112px;
+    }
+    .event-win{
+        position: relative;
+        display:flex;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    .imgSell{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 44px;
+    }
+    .event-box{
+        background-color: #ccc;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    .event-box > p{
+        font-size: 44px;
+    }
+    .event-img-box{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        padding: 20px;
+        /* height: 500px; */
+    }
+    .event-img-box div{
+        border: 1px solid black;
+        height: 400px;
+        background-color: beige;
+    }
+    hr {
+    border: 2px solid black; /* 선의 두께와 색상을 조절합니다. */
+  }
+  .footer-container{
+    width: 100%;
+    height: 300px;
+    background-color: #ace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer{
+    width: 100%;
+    max-width: 1440px;
+  }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="index.html"> F(our)T(he)T(op) </a>
+            </h1>
+            <div id="header-menu">
+                <nav id="gnb">
+                    <ul>
+                        <li class="g-main">
+                            <a href="#">언어</a>
+                            <ul class="g-sub">
+                                <li><a class="g-sub-item" href="#">한국어</a></li>
+                                <li><a class="g-sub-item" href="#">영어</a></li>
+                                <li><a class="g-sub-item" href="#">일본어</a></li>
+                            </ul>
+                        </li>
+                        <li class="g-main">
+                            <a href="#">로그인</a>
+                        </li>
+                        <li class="g-main">
+                            <a href="#">회원가입</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav id="lnb">
+                    <ul>
+                        <li class="l-main">
+                            <a href="#">홈</a>
+                        </li>
+                        <li class="l-main">
+                            <a href="#">카테고리</a>
+                        </li>
+                        <li class="l-main">
+                            <a href="#">MY</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- 네비게이션 바 종료    -->
+    <div class="ms-header">
+        <div class="event-win">
+            <h2>이벤트창</h2>
+            <span>쌉니다</span>
+            <div class="imgSell">이벤트 이미지 케러셀</div>
+        </div>
+    </div>
+    <!-- 이벤트창 -->
+    <div class="event-box">
+        <p>진행중 이벤트</p>
+        <hr>
+        <div class="event-img-box">
+            <div class="event-img">이미지 1<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 2<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 3<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 4<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 5<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 6<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 7<p>이벤트 설명글</p></div>
+            <div class="event-img">이미지 8<p>이벤트 설명글</p></div>
+        </div>
+    </div>
+    <!-- 메인 컨텐츠 -->
+    <div class="footer-container">
+        <div class="footer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, eligendi expedita? Possimus, voluptatum enim. Autem quia aspernatur alias iusto, numquam hic consequuntur laboriosam molestias incidunt quibusdam eveniet ullam vel expedita.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, eligendi expedita? Possimus, voluptatum enim. Autem quia aspernatur alias iusto, numquam hic consequuntur laboriosam molestias incidunt quibusdam eveniet ullam vel expedita.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, eligendi expedita? Possimus, voluptatum enim. Autem quia aspernatur alias iusto, numquam hic consequuntur laboriosam molestias incidunt quibusdam eveniet ullam vel expedita.
+        </div>
+    </div>
+</body>
+
+</html>
