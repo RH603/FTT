@@ -1,9 +1,9 @@
-$("#modal-open").click(function () {
-  $(".modal-back").fadeIn();
+$("#modal-kate-open").click(function () {
+  $(".modal-kate-back").fadeIn();
 });
 
-$(".modal-close").click(function () {
-  $(".modal-back").fadeOut();
+$(".modal-kate-close").click(function () {
+  $(".modal-kate-back").fadeOut();
 });
 // console.log($(".movie-container"));
 const movieUrls = [

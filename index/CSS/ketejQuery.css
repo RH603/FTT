@@ -70,7 +70,7 @@ body{
 }
 
 /* 모달창 시작 */
-.modal-back{
+.modal-kate-back{
   display: none;
   position: fixed;
   top:0;
@@ -79,7 +79,7 @@ body{
   right: 0;
   background-color:rgba(0,0,0,0.4);
 }
-#modal-open{
+#modal-kate-open{
   width:100px;
   height: 50px;
   border-radius: 10px;
@@ -162,6 +162,7 @@ body{
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  z-index: -100;
 }
 .kate-header{
   font-size: 48px;
