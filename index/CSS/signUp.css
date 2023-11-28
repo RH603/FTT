@@ -17,7 +17,12 @@ input {
   height: 200px;
   background-color: red;
 } */
-
+.wrap-container{
+  border: 1px solid #767676;
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px 16px;
+}
 .signup-header {
   display: flex;
   justify-content: center;
@@ -33,7 +38,8 @@ input {
 }
 
 .signup {
-  width: 30%;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   position: relative;
 }
@@ -42,8 +48,6 @@ input {
   padding: 0.5rem;
 }
 
-.signup .sign.id {
-}
 
 .signup .sign .wrap {
   display: flex;
@@ -87,11 +91,23 @@ input {
 
 .signup .signBtn {
   position: absolute;
-  bottom: -20%;
-  left: 43%;
+  width:100%;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0.5rem 1rem;
 }
 
+.auth-tel{
+  display: flex;
+  gap:4px;
+}
+.auth-profile{
+  border: 1px solid #767676;
+  border-radius: 5px;
+  margin-top: 8px;
+  padding: 8px 16px;
+}
 .sign.phone {
   display: flex;
   flex-direction: column;
