@@ -155,7 +155,7 @@ ul {
 }
 /* 배경이미지 부분 - bg  */
 .bg {
-  background: url("/FTT/index/IMG/메인.webp") center center;
+  background: url("../IMG/자유.webp") center center;
   background-size: cover;
   background-attachment: fixed;
   height: 350px;
