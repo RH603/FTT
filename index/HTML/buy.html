@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUY</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Poppins;
+    }
+    .buyPopup-header {
+      background-color: #ace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100px;
+      color: #333;
+      font-size: 44px;
+      font-weight: 700;
+    }
+    /* 결제내용 */
+    .buyPopup-body {
+      background-color: #333;
+    }
+    .buyPopup-container {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      color: white;
+      gap: 8px;
+    }
+    .container-text {
+      font-size: 24px;
+    }
+    .buyPopup-container .buyPopup-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+      font-size: 16px;
+    }
+    .buyPopup-content table th {
+      width: 150px;
+      text-align: left;
+    }
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    /* 결제수단 */
+    .fast-pri{
+        background-color: #777;
+        border-radius: 16px ;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px;
+        gap:24px;
+        font-size: 24px;
+    }
+  </style>
+  <body>
+    <div class="buyPopup-header">FTT 상품 구매</div>
+    <!-- 헤더 -->
+    <div class="buyPopup-body">
+      <div class="buyPopup-container">
+        <div class="container-text">결제내용</div>
+        <hr />
+        <div class="buyPopup-content">
+          <p>Basic</p>
+          <p>최신 영화+인기영화</p>
+          <p>Mobile,PC 시청</p>
+          <table>
+            <th>이용기간</th>
+            <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
+          </table>
+          <table>
+            <th>금액 (매월)</th>
+            <td class="price">6,000 원</td>
+          </table>
+        </div>
+      </div>
+      <div class="buyPopup-container">
+        <div class="container-text">결제수단 선택</div>
+        <div class="fast-pri"><input type="radio" selected>빠른결제</div>
+      </div>
+      <div class="buyPopup-container">
+        <div class="container-text">결제수단 선택</div>
+        <div class="fast-pri"><input type="radio">일반결제</div>
+      </div>
+    </div>
+    <!-- 결제 내용 -->
+  </body>
+  <script>
+    window.onload = function () {
+      var currentDate = new Date();
+      var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
+      var month = ("0" + (currentDate.getMonth() + 1)).slice(-2); // 월을 두 자리로 만들기
+      var day = ("0" + currentDate.getDate()).slice(-2); // 일을 두 자리로 만들기
+
+      var formattedDate = year + "." + month + "." + day;
+
+      document.getElementById("date").innerHTML = formattedDate;
+
+      var futureDateAdd = new Date(
+        currentDate.getTime() + 30 * 24 * 60 * 60 * 1000
+      ); // 현재 날짜에 30일을 더함
+
+      var yearAdd = futureDateAdd.getFullYear();
+      var monthAdd = ("0" + (futureDateAdd.getMonth() + 1)).slice(-2);
+      var dayAdd = ("0" + futureDateAdd.getDate()).slice(-2);
+
+      var formattedDateAdd = yearAdd + "." + monthAdd + "." + dayAdd;
+
+      document.getElementById("dateAdd").innerHTML = formattedDateAdd;
+    };
+  </script>
+</html>

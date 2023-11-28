@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EVENT</title>
     <link rel="stylesheet" href="../../resources/css/nav.css">
 </head>
 <style>
+    #buy{
+        cursor: pointer;
+    }
     .ms-header {
         background-color: rgb(22, 131, 226);
         width: 100%;
@@ -23,6 +26,7 @@
         height: 100%;
         max-width: 1440px;
         margin: 0 auto;
+        z-index: 0;
     }
     .imgSell{
         position: absolute;
@@ -90,7 +94,7 @@
                             <a href="#">로그인</a>
                         </li>
                         <li class="g-main">
-                            <a href="#">회원가입</a>
+                            <a id="buy" onclick="buyPopup()">구매</a>
                         </li>
                     </ul>
                 </nav>
@@ -103,7 +107,7 @@
                             <a href="#">카테고리</a>
                         </li>
                         <li class="l-main">
-                            <a href="#">MY</a>
+                            <a href="#">상영예정</a>
                         </li>
                     </ul>
                 </nav>
@@ -113,24 +117,23 @@
     <!-- 네비게이션 바 종료    -->
     <div class="ms-header">
         <div class="event-win">
-            <h2>이벤트창</h2>
-            <span>쌉니다</span>
-            <div class="imgSell">이벤트 이미지 케러셀</div>
+            <h2>상영예정</h2>
+            <div class="imgSell">상영예정 이미지 케러셀</div>
         </div>
     </div>
     <!-- 이벤트창 -->
     <div class="event-box">
-        <p>진행중 이벤트</p>
+        <p>상영예정</p>
         <hr>
         <div class="event-img-box">
-            <div class="event-img">이미지 1<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 2<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 3<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 4<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 5<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 6<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 7<p>이벤트 설명글</p></div>
-            <div class="event-img">이미지 8<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 1<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 2<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 3<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 4<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 5<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 6<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 7<p>이벤트 설명글</p></div>
+            <div class="event-img">상영예정 8<p>이벤트 설명글</p></div>
         </div>
     </div>
     <!-- 메인 컨텐츠 -->
@@ -142,5 +145,9 @@
         </div>
     </div>
 </body>
-
+<script>
+    function buyPopup() {
+      window.open("buy.html", "popup", "width=800,height=700");
+    }
+    </script>
 </html>
