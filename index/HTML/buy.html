@@ -37,6 +37,7 @@
     }
     .container-text {
       font-size: 24px;
+      cursor: pointer;
     }
     .buyPopup-container .buyPopup-content {
       display: flex;
@@ -54,17 +55,85 @@
       font-weight: bold;
     }
     /* 결제수단 */
-    .fast-pri{
-        background-color: #777;
-        border-radius: 16px ;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 24px;
-        gap:24px;
-        font-size: 24px;
+    .tab {
+      padding: 24px;
+    }
+    .buyPopup-pri {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .fast-pri {
+      background-color: #777;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px;
+      gap: 24px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .tab-item1 {
+      border: 2px solid #777;
+      width: 100%;
+      height: 200px;
+      background-color: white;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .plus {
+      font-size: 40px;
+    }
+    .tab-item1 .card {
+      border: 2px dashed #333;
+      width: 40%;
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .tab-item2 {
+      border: 2px solid #777;
+      width: 100%;
+      height: 200px;
+      background-color: white;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .card {
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .show2 {
+      display: none;
+    }
+    input[type="checkbox"] {
+    /* 원래 크기에서 2배로 키우기 */
+    transform: scale(2);
+    /* 또는 직접 너비와 높이 지정 */
+    /* width: 40px;
+    height: 40px; */
+  }
+    .pri-agree{
+        padding: 0 24px;
     }
   </style>
+  <script
+    src="https://kit.fontawesome.com/1edf72a888.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <body>
     <div class="buyPopup-header">FTT 상품 구매</div>
     <!-- 헤더 -->
@@ -82,20 +151,55 @@
           </table>
           <table>
             <th>금액 (매월)</th>
-            <td class="price">6,000 원</td>
+            <td class="price">400 원</td>
           </table>
         </div>
       </div>
-      <div class="buyPopup-container">
-        <div class="container-text">결제수단 선택</div>
-        <div class="fast-pri"><input type="radio" selected>빠른결제</div>
+      <!-- 결제 내용 -->
+      <div class="tab">
+        <div class="buyPopup-pri">
+          <label for="past">
+            <div class="container-text selected">결제수단 선택</div>
+            <div class="fast-pri">
+              <input type="radio" id="past" name="price" checked />빠른결제
+            </div>
+          </label>
+        </div>
+        <div class="show1">
+          <div class="tab-item1">
+            <i class="fa-solid fa-circle-plus plus"></i>
+            <div class="card">카드 등록</div>
+          </div>
+        </div>
+        <div class="buyPopup-pri">
+          <label for="notPast">
+            <div class="container-text">결제수단 선택</div>
+            <div class="fast-pri">
+              <input type="radio" id="notPast" name="price" />일반결제
+            </div>
+          </label>
+        </div>
+        <div class="show2">
+          <div class="tab-item2">
+            <div class="card">
+              <i class="fa-regular fa-credit-card"></i>신용카드
+            </div>
+            <div class="card"><i class="fa-solid fa-mobile"></i>휴대폰</div>
+            <div class="card">
+              <iconify-icon icon="simple-icons:naver"></iconify-icon>네이버페이
+            </div>
+            <div class="card">
+              <iconify-icon icon="mynaui:message"></iconify-icon>카카오페이
+            </div>
+            <div class="card">토스</div>
+          </div>
+        </div>
       </div>
-      <div class="buyPopup-container">
-        <div class="container-text">결제수단 선택</div>
-        <div class="fast-pri"><input type="radio">일반결제</div>
+      <!-- 결제 수단 -->
+      <div class="pri-agree">
+          <input type="checkbox"><span>약관에 모두 동의합니다</span>
       </div>
     </div>
-    <!-- 결제 내용 -->
   </body>
   <script>
     window.onload = function () {
@@ -120,5 +224,17 @@
 
       document.getElementById("dateAdd").innerHTML = formattedDateAdd;
     };
+    var pastRadio = document.getElementById("past");
+    var notPastRadio = document.getElementById("notPast");
+
+    pastRadio.addEventListener("change", function () {
+      document.querySelector(".show1").style.display = "block";
+      document.querySelector(".show2").style.display = "none";
+    });
+
+    notPastRadio.addEventListener("change", function () {
+      document.querySelector(".show1").style.display = "none";
+      document.querySelector(".show2").style.display = "block";
+    });
   </script>
 </html>
