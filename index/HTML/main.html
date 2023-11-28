@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/main-header.css" />
     <link rel="stylesheet" href="../CSS/main.css" />
     <link rel="stylesheet" href="../CSS/total.css" />
-    <link rel="stylesheet" href="../../resources/css/nav.css" />
   </head>
   <body>
     <header>
@@ -26,10 +26,12 @@
                 </ul>
               </li>
               <li class="g-main">
-                <a href="#">로그인</a>
+                <a href="http://127.0.0.1:5501/index/HTML/membership.html"
+                  >멤버십</a
+                >
               </li>
               <li class="g-main">
-                <a href="#">회원가입</a>
+                <a href="#" class="logOut">로그아웃</a>
               </li>
             </ul>
           </nav>
@@ -51,7 +53,16 @@
     </header>
     <!-- 영화 -->
     <div class="main-container">
-    <div class="main-movie-wrapper">
+      <div class="main-box"></div>
+      <!-- <div class="main-search">
+        <input
+          type="text"
+          name="search"
+          placeholder="영화제목을 입력해주세요"
+        />
+        <button type="button" name="btn" value="button">검색</button>
+      </div> -->
+      <div class="main-movie-wrapper">
         <h2>신작 영화</h2>
         <ul class="img-all-wrap">
           <li class="img-wrap">
@@ -135,6 +146,46 @@
         </ul>
       </div>
     </div>
-  </div>
   </body>
+  <script src="../JS/main.js"></script>
+  <script src="../JS/logout.js"></script>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+    } = firebase;
+
+    const search = document.querySelector(".main-search input");
+    const button = document.querySelector("button[name=btn]");
+
+    // button.addEventListener("click", async function () {
+    //   const snapshot = await getData("FTT", "NAME");
+
+    //   const {
+    //     movieName1,
+    //     movieName2,
+    //     movieName3,
+    //     movieName4,
+    //     movieName5,
+    //     movieName6,
+    //     movieName7,
+    //   } = snapshot.data();
+    //   if (search.value == movieName2) {
+    //     alert("정답입니다.");
+    //   } else {
+    //     alert("틀렸습니다.");
+    //   }
+    // });
+  </script>
 </html>

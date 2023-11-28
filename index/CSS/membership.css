@@ -3,24 +3,25 @@ body {
 }
 
 .ms-container {
-  margin-top: 112px;
+  width: 100%;
+  height: 100%;
+  margin: 105px 0;
 }
 
 .ms-header {
   background-color: rgb(22, 131, 226);
-  height: 100px;
   padding: 1.3rem 3rem;
-  margin-bottom: 10rem;
 }
 
 .ms-body {
   width: 100%;
   height: 100%;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 
 .ms-card-center {
   height: 400px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -28,7 +29,7 @@ body {
 .ms-card {
   background: linear-gradient(45deg, rgb(216, 22, 22), blue);
   width: 80%;
-  height: 450px;
+  height: 400px;
   margin: 0 auto;
 }
 
@@ -56,7 +57,7 @@ body {
   padding: 1rem;
   background: linear-gradient(60deg, rgb(60, 255, 0), purple);
   width: 90%;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   color: white;
   font-weight: bold;
   font-size: 20px;
