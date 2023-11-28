@@ -2,29 +2,11 @@ body {
   background-color: #3b3636;
 }
 
-/* .main-container {
-    width: 100%;
-  } */
-/* .main-header {
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    gap: 3rem;
-  } */
-
-.box {
-  width: 100%;
-  height: 200px;
-}
-
 .main-container {
   width: 100%;
 }
 
 .main-movie-wrapper {
-  /* display: flex;
-    flex-direction: column;
-    align-items: center; */
   margin: 0 auto 2rem;
   width: 55%;
   display: flex;

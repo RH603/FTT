@@ -10,46 +10,60 @@ body {
   background-color: rgb(22, 131, 226);
   height: 100px;
   padding: 1.3rem 3rem;
+  margin-bottom: 10rem;
 }
 
 .ms-body {
-  background-color: aqua;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+}
+
+.ms-card-center {
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .ms-card {
   background: linear-gradient(45deg, rgb(216, 22, 22), blue);
-  position: absolute;
-  top: 200px;
-  left: 300px;
-  width: 15%;
-  height: 300px;
+  width: 80%;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.ms-card.second {
+  background: linear-gradient(45deg, rgb(216, 22, 22), blue);
+}
+
+.ms-card.thrid {
+  background: linear-gradient(45deg, rgb(216, 22, 22), blue);
 }
 
 .ms-card h3 {
   text-align: center;
   padding: 1rem 0;
+  color: white;
 }
 
 .ms-card .line {
   border: 1px solid white;
 }
 
-.ms-card-btn {
+.ms-card-ac {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
   background: linear-gradient(60deg, rgb(60, 255, 0), purple);
   width: 90%;
-  margin: 0.5rem auto;
+  margin: 2rem auto;
   color: white;
   font-weight: bold;
   font-size: 20px;
 }
 
-.ms-card-btn:hover {
+.ms-card-ac:hover {
   background: linear-gradient(45deg, red, black);
-  cursor: pointer;
 }
 
 .ms-card-box {
@@ -57,8 +71,23 @@ body {
   margin: 0 auto;
   background: #1b1b1b;
   color: white;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
   font-size: 16px;
   margin-top: 1rem;
+}
+
+.ms-card-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 1rem;
+}
+
+.ms-footer {
+  color: white;
+  padding: 1rem 4rem;
+}
+
+.ms-footer li {
+  padding: 1px 1rem;
 }

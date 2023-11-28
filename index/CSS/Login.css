@@ -18,12 +18,13 @@ input:focus {
 
 /* 로그인 버튼 클릭 전 모달창 */
 .modal-page {
-  background-color: red;
+  background: #ffffff;
   width: 40%;
   height: 800px;
   position: absolute;
   top: 80px;
   opacity: 0;
+  border-radius: 1rem;
 }
 
 /* 로그인 버튼 클릭 후 모달창 */
@@ -68,21 +69,22 @@ table {
 
 /* 선 추가 */
 table tr {
-  border: 2px solid #dadada;
+  border: 2px solid black;
 }
 
 /* 가운데 정렬, 거리조절? */
 table th,
 table td {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
 /* 입력창(input) */
 table input {
   border: 0;
-  background-color: gray;
-  height: 20px;
+  width: 100%;
+  height: 30px;
+  /* border: 1px solid black; */
 }
 
 /* 아이디 찾기 부분 */
@@ -111,10 +113,15 @@ table input {
 
 /* 로그인 확인 취소 버튼 */
 .modal-check input {
-  width: 80px;
-  height: 20px;
   border: 0;
-  background-color: aqua;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+.modal-check input:hover {
+  cursor: pointer;
+  background-color: red;
 }
 
 /* 이용약관 맨 아래 */
