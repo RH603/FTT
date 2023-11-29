@@ -25,7 +25,7 @@ input:focus {
 /* 로그인 버튼 클릭 전 모달창 */
 .modal-page {
   background: #ffffff;
-  width: 40%;
+  width: 600px;
   height: 800px;
   position: absolute;
   top: 50%;
@@ -42,13 +42,13 @@ input:focus {
 }
 
 /* X버튼 클릭 */
-.close-box{
-  margin: 1rem auto;
+.close-box {
+  margin: 0rem auto;
   width: 100%;
-  max-width: 400px;
+  /* max-width: 400px; */
   display: flex;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 1.5rem;
   /* border: 1px solid black; */
 }
 .modal-close {
@@ -95,7 +95,7 @@ table {
 }
 
 /* 선 추가 */
-table th{
+table th {
   border-right: 2px solid black;
 }
 table tr {
@@ -163,7 +163,7 @@ table input {
   cursor: pointer;
   background-color: red;
 }
-.logingo{
+.logingo {
   width: 100%;
 }
 

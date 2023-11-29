@@ -42,11 +42,11 @@ async function getData(collection, docId) {
 }
 
 // doc(db, 컬렉션(배열), "문서 ID"), {들어갈 객체}
-async function addDatas(collectionName, dataobj) {
+async function addDatas(/*collectionName,*/ dataobj) {
   // 문서ID 부여
-  // await setDoc(doc(db, "member", "member1"), dataobj);
+  await setDoc(doc(db, "FTT", "FTT1"), dataobj);
   //   문서ID 자동
-  await addDoc(collection(db, collectionName), dataobj);
+  // await addDoc(collection(db, collectionName), dataobj);
 }
 
 async function deleteDatas(collection, docId) {

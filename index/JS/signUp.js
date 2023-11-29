@@ -1,7 +1,10 @@
 // const btnClick = document.querySelectorAll("button[name = gender]");
 const genderBtn = document.querySelectorAll("input[name=gender]");
 const languageBtn = document.querySelectorAll("input[name=language]");
-
+// const pClick = document.querySelector("#click");
+// const modalPage = document.querySelector(".modal-page");
+// const modalClose = document.querySelector(".modal-close");
+// const modalBack = document.querySelector(".modal-back");
 // btnClick.forEach((el) => {
 //   el.addEventListener("click", function () {
 //     console.log(el.classList.contains("selected"));
@@ -13,10 +16,10 @@ const languageBtn = document.querySelectorAll("input[name=language]");
 //   });
 // });
 
-genderButton.forEach((el) => {
+genderBtn.forEach((el) => {
   el.addEventListener("click", function () {
     if (!el.classList.contains("selected")) {
-      btnClick.forEach((button) => {
+      genderBtn.forEach((button) => {
         button.classList.remove("selected");
       });
       el.classList.add("selected");
@@ -24,13 +27,23 @@ genderButton.forEach((el) => {
   });
 });
 
-languageButton.forEach((el) => {
+languageBtn.forEach((el) => {
   el.addEventListener("click", function () {
     if (!el.classList.contains("selected")) {
-      btnClick.forEach((button) => {
+      languageBtn.forEach((button) => {
         button.classList.remove("selected");
       });
       el.classList.add("selected");
     }
   });
 });
+
+// pClick.addEventListener("click", function () {
+//   modalPage.classList.add("selected");
+//   modalBack.classList.add("selected");
+// });
+
+// modalClose.addEventListener("click", function () {
+//   modalPage.classList.remove("selected");
+//   modalBack.classList.remove("selected");
+// });
