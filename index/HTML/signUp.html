@@ -187,12 +187,14 @@
       getData,
     } = firebase;
 
-    // const gender = document.querySelector("input[name  = gender]");
-    // const passwordCheck = document.querySelector("input[name = passwordCheck]").value
     const modalClose = document.querySelector(".modal-close");
     const modalBack = document.querySelector(".modal-back");
     const btn = document.querySelector(".signBtn");
     const cloneCheckBtn = document.querySelector("#cloneCheck");
+    const signId = document.querySelector("#signId");
+    const checkBtn = document.querySelector(".login-go");
+
+    signId.focus();
 
     cloneCheckBtn.addEventListener("click", async function () {
       const snapshot = await getData("FTT", "FTT1");
@@ -216,24 +218,18 @@
         memberLanguage: document.querySelector("input[name = language]").value,
       };
 
-      // console.log(password);
       if (
         document.querySelector("#signPassword").value ==
         document.querySelector("#pwCheck").value
       ) {
         addDatas(memberInfo).then(function () {
           alert("회원가입이 성공했습니다 로그인 해주세요");
-          // location.href = "http://127.0.0.1:5501/index/HTML/login.html";
           modalBack.style.display = "block";
         });
       } else {
         alert("비밀번호가 다릅니다.");
       }
     });
-
-    const checkBtn = document.querySelector(".login-go");
-    // const loginId = document.querySelector("#loginId").value;
-    // const loginPw = document.querySelector("#loginPw").value;
 
     checkBtn.addEventListener("click", async function () {
       const snapshot = await getData("FTT", "FTT1");
@@ -253,10 +249,6 @@
       }
     });
 
-    // modalClose.addEventListener("click", function () {
-    //   modalPage.classList.remove("selected");
-    //   modalBack.classList.remove("selected");
-    // });
     modalClose.addEventListener("click", function () {
       modalBack.style.display = "none";
     });

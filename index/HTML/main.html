@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/total.css" />
   </head>
   <body>
+    <!-- nav바 -->
     <header>
       <div class="container">
         <h1>
@@ -51,7 +52,9 @@
         </div>
       </div>
     </header>
-    <!-- 영화 -->
+    <!-- nav바 끝 -->
+
+    <!-- 메인 영화 -->
     <div class="main-container">
       <div class="main-box"></div>
       <!-- <div class="main-search">
@@ -65,8 +68,29 @@
       <div class="main-movie-wrapper">
         <h2>신작 영화</h2>
         <ul class="img-all-wrap">
-          <li class="img-wrap">
+          <li class="img-wrap" onclick="{onClick()}">
             <img src="../../resources/image/코미디/medy3.jpg" />
+            <div class="text" id="text">
+              <ul>
+                <li>2014년</li>
+                <li>코미디/판타지</li>
+                <li>2시간 4분</li>
+                <li>3.8/5</li>
+              </ul>
+              <p>
+                스무살 꽃처녀가 된 칠순 할매의 빛나는 전성기가 시작된다! 국립대
+                교수인 아들 자랑이 유일한 낙인 욕쟁이 칠순 할매 오말순은 어느
+                날, 가족들이 자신을 요양원으로 독립(?)시키려 한다는 청천벽력
+                같은 사실을 알게 된다. 뒤숭숭한 마음을 안고 밤길을 방황하던 할매
+                말순은 오묘한 불빛에 이끌려 ‘청춘 사진관’으로 들어간다. 난생
+                처음 곱게 꽃단장을 하고 영정사진을 찍고 나오는 길, 그녀는 버스
+                차창 밖에 비친 자신의 얼굴을 보고 경악을 금치 못한다. 오드리
+                헵번처럼 뽀얀 피부, 날렵한 몸매... 주름진 할매에서 탱탱한
+                꽃처녀의 몸으로 돌아간 것! 아무도 알아보지 못하는 자신의 젊은
+                모습에 그녀는 스무 살 ‘오두리’가 되어 빛나는 전성기를 즐겨
+                보기로 마음 먹는데...
+              </p>
+            </div>
           </li>
           <li class="img-wrap">
             <img src="../../resources/image/공포/horror10.jpg" />
@@ -80,6 +104,7 @@
           <li class="img-wrap">
             <img src="../../resources/image/코미디/medy10.jpg" />
           </li>
+          <div class="overlay" onclick="{onClick()}"></div>
         </ul>
       </div>
 
@@ -145,7 +170,41 @@
           </li>
         </ul>
       </div>
+
+      <div class="modal-movie">
+        <!-- 모달 왼쪽 이미지 -->
+        <div class="modal-img-wrap">
+          <img src="../../resources/image/코미디/medy3.jpg" />
+        </div>
+        <!-- 모달 오른쪽 연도 장르 시간 평점 등 -->
+        <div class="modal-grade">
+          <ul>
+            <li>2014년</li>
+            <li>코미디/판타지</li>
+            <li>2시간 4분</li>
+            <li>3.8/5</li>
+          </ul>
+        </div>
+        <!-- 모달 아래쪽 영화 설명 -->
+        <div class="modal-intro">
+          스무살 꽃처녀가 된 칠순 할매의 빛나는 전성기가 시작된다! 국립대 교수인
+          아들 자랑이 유일한 낙인 욕쟁이 칠순 할매 오말순은 어느 날, 가족들이
+          자신을 요양원으로 독립(?)시키려 한다는 청천벽력 같은 사실을 알게 된다.
+          뒤숭숭한 마음을 안고 밤길을 방황하던 할매 말순은 오묘한 불빛에 이끌려
+          ‘청춘 사진관’으로 들어간다. 난생 처음 곱게 꽃단장을 하고 영정사진을
+          찍고 나오는 길, 그녀는 버스 차창 밖에 비친 자신의 얼굴을 보고 경악을
+          금치 못한다. 오드리 헵번처럼 뽀얀 피부, 날렵한 몸매... 주름진 할매에서
+          탱탱한 꽃처녀의 몸으로 돌아간 것! 아무도 알아보지 못하는 자신의 젊은
+          모습에 그녀는 스무 살 ‘오두리’가 되어 빛나는 전성기를 즐겨 보기로 마음
+          먹는데...
+        </div>
+      </div>
     </div>
+    <!-- 메인영화 끝 -->
+
+    <!-- 영화 설명 모달창 시작 -->
+
+    <!-- 영화 설명 모달창 끝 -->
   </body>
   <script src="../JS/main.js"></script>
   <script src="../JS/logout.js"></script>

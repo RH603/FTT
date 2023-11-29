@@ -1,4 +1,3 @@
-// const btnClick = document.querySelectorAll("button[name = gender]");
 const genderBtn = document.querySelectorAll("input[name=gender]");
 const languageBtn = document.querySelectorAll("input[name=language]");
 // const pClick = document.querySelector("#click");
@@ -37,13 +36,3 @@ languageBtn.forEach((el) => {
     }
   });
 });
-
-// pClick.addEventListener("click", function () {
-//   modalPage.classList.add("selected");
-//   modalBack.classList.add("selected");
-// });
-
-// modalClose.addEventListener("click", function () {
-//   modalPage.classList.remove("selected");
-//   modalBack.classList.remove("selected");
-// });

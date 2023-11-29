@@ -36,12 +36,76 @@ body {
 }
 
 .img-wrap {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
   width: 200px;
   height: 350px;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .img-wrap img {
   width: 100%;
   height: 100%;
   border-radius: 1rem;
+}
+
+.img-wrap.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 550px;
+  padding: 5px;
+  z-index: 10;
+  background-color: khaki;
+}
+
+.text {
+  margin: 10px 0;
+  padding: 0 10px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.text.visible {
+  opacity: 1;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* ~ sibling 형제중에 */
+.box.modal ~ .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-movie {
+  background-color: aqua;
+  width: 100%;
+  max-width: 700px;
+  height: 800px;
+
+  /* position: absolute; */
+}
+
+.modal-movie .modal-img-wrap {
+  width: 100%;
+}
+
+.modal-movie .modal-img-wrap img {
+  width: 100%;
+  height: 400px;
+  object-fit: fill;
 }
