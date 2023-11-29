@@ -5,8 +5,14 @@ input:focus {
 
 /* 전체화면 */
 .modal-back {
-  display: flex;
-  justify-content: center;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
 }
 
 /* 로그인 버튼 클릭 시 */
@@ -22,8 +28,10 @@ input:focus {
   width: 40%;
   height: 800px;
   position: absolute;
-  top: 80px;
-  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* opacity: 0; */
   border-radius: 1rem;
 }
 

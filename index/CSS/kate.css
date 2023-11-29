@@ -11,6 +11,7 @@ body {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
 }
 #modal-kate-open {
   width: 100px;
@@ -109,6 +110,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 .kate-header {
   font-size: 48px;

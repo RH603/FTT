@@ -4,11 +4,10 @@ const modalClose = document.querySelector(".modal-close");
 const modalBack = document.querySelector(".modal-back");
 
 pClick.addEventListener("click", function () {
-  modalPage.classList.add("selected");
-  modalBack.classList.add("selected");
+  modalBack.style.display = "block"
 });
 
 modalClose.addEventListener("click", function () {
-  modalPage.classList.remove("selected");
-  modalBack.classList.remove("selected");
+
+  modalBack.style.display = "none"
 });
