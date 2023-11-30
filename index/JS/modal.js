@@ -4,11 +4,11 @@ const images = document.querySelectorAll("img");
 
 for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
-        console.log(images[i].src);
-
+        
         // Create a new image element
         const clickedImage = document.createElement("img");
         clickedImage.src = images[i].src;
+        console.log(images[i].src);
 
         // Clear the modal content before appending a new image
         modalImg.innerHTML = "";
@@ -20,3 +20,7 @@ for (let i = 0; i < images.length; i++) {
         modalImgBack.style.display = "block";
     });
 }
+
+modalImgBack.addEventListener("click",()=>{
+    modalImgBack.style.display = "none";
+})

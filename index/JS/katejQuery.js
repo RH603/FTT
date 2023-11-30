@@ -33,35 +33,63 @@ const movieUrls = [
   "../../resources/image/액션·범죄/cri-and-act4.jpg",
   "../../resources/image/액션·범죄/cri-and-act5.jpg",
   "../../resources/image/액션·범죄/cri-and-act6.jpg",
-  // "../../resources/image/액션·범죄/cri-and-act7.jpg"
 ];
-let horMovies = [
-    "../../resources/image/공포/horror1.jpg",
-    "../../resources/image/공포/horror2.jpg",
-    "../../resources/image/공포/horror3.jpg",
-    "../../resources/image/공포/horror4.jpg",
-    "../../resources/image/공포/horror5.jpg",
-    "../../resources/image/공포/horror6.jpg",
-    "../../resources/image/공포/horror7.jpg",
-    "../../resources/image/공포/horror8.jpg",
-    "../../resources/image/공포/horror9.jpg",
-    "../../resources/image/공포/horror10.jpg",
-]
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-    // console.log(array[4])
+const videoUrls = [
+  "../../resources/video/공포/horror1.mp4",
+  "../../resources/video/공포/horror2.mp4",
+  "../../resources/video/공포/horror3.mp4",
+  "../../resources/video/공포/horror4.mp4",
+  "../../resources/video/공포/horror5.mp4",
+  "../../resources/video/공포/horror6.mp4",
+  "../../resources/video/공포/horror7.mp4",
+  "../../resources/video/공포/horror8.mp4",
+  "../../resources/video/공포/horror9.mp4",
+  "../../resources/video/공포/horror10.mp4",
+  "../../resources/video/스포츠/spo1.mp4",
+  "../../resources/video/스포츠/spo2.mp4",
+  "../../resources/video/스포츠/spo3.mp4",
+  "../../resources/video/스포츠/spo4.mp4",
+  "../../resources/video/스포츠/spo5.mp4",
+  "../../resources/video/스포츠/spo6.mp4",
+  "../../resources/video/스포츠/spo7.mp4",
+  "../../resources/video/스포츠/spo8.mp4",
+  "../../resources/video/스포츠/spo9.mp4",
+  "../../resources/video/스포츠/spo10.mp4",
+  "../../resources/video/액션·범죄/cri-and-act1.mp4",
+  "../../resources/video/액션·범죄/cri-and-act2.mp4",
+  "../../resources/video/액션·범죄/cri-and-act3.mp4",
+  "../../resources/video/액션·범죄/cri-and-act4.mp4",
+  "../../resources/video/액션·범죄/cri-and-act5.mp4",
+  "../../resources/video/액션·범죄/cri-and-act6.mp4",
+];
+
+function shuffleArrays(array1, array2) {
+  if (array1.length !== array2.length) {
+    throw new Error('두 배열의 길이가 동일해야 합니다.');
   }
-  return array;
+
+  // array1과 array2 모두 같은 방식으로 섞기
+  for (let i = array1.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array1[i], array1[j]] = [array1[j], array1[i]];
+    [array2[i], array2[j]] = [array2[j], array2[i]];
+  }
+
+  return [array1, array2];
 }
 
-const shuffledUrls = shuffleArray(movieUrls);
+const [shuffledMovieUrls, shuffledVideoUrls] = shuffleArrays(movieUrls, videoUrls);
 
 // Append all shuffled images to .movie-container
-shuffledUrls.forEach((url) => {
+shuffledMovieUrls.forEach((url) => {
   $(".movie-container").append(`<img src='${url}'>`);
 });
+
+shuffledVideoUrls.forEach((url) => {
+  $(".movie-container").append(`<video src='${url}' controls></video>`);
+});
+
+
 
 $(document).ready(function () {
   $("#hor").change(function () {
@@ -115,4 +143,3 @@ $(document).ready(function () {
     }
   });
 });
-
