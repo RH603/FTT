@@ -142,9 +142,9 @@
         <div class="container-text">결제내용</div>
         <hr />
         <div class="buyPopup-content">
-          <p>Basic</p>
+          <!-- <p>Basic</p>
           <p>최신 영화+인기영화</p>
-          <p>Mobile,PC 시청</p>
+          <p>Mobile,PC 시청</p> -->
           <table>
             <th>이용기간</th>
             <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
@@ -201,7 +201,29 @@
       </div>
     </div>
   </body>
-  <script>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+    } = firebase;
+
+    const content = document.querySelector(".buyPopup-content");
+    const price = document.querySelector(".price");
+
+    const snapshot = await getData("FTT", "FTT1");
+    const { memberId, memberPassword } = snapshot.data();
+
     window.onload = function () {
       var currentDate = new Date();
       var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
