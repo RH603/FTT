@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>page</title>
-    <link rel="stylesheet" href="/FTT/index/CSS/page.css" />
+    <link rel="stylesheet" href="../CSS/page.css" />
   </head>
 
   <body>
@@ -15,7 +15,11 @@
             <div class="logo">FTT</div>
             <div class="login">
               <p class="log1">로그인</p>
-              <p class="log2">회원가입</p>
+              <p class="log2">
+                <a href="http://127.0.0.1:5501/index/HTML/signUp.html"
+                  >회원가입</a
+                >
+              </p>
             </div>
           </div>
           <div class="image">
@@ -24,7 +28,7 @@
               loop
               muted
               class="video"
-              src="/FTT/index/IMG/golden_-_48569 (1080p).mp4"
+              src="../IMG/golden_-_48569 (1080p).mp4"
             ></video>
             <div class="image-content">
               <h3>FTT에서 시청할 수 있는 장르는?</h3>
@@ -51,12 +55,12 @@
                 <div class="wrap">
                   <div class="front">
                     <p>자유롭게 감상</p>
-                    <img src="/FTT/index/IMG/다양한.webp" alt="" />
+                    <img src="../IMG/다양한.webp" alt="" />
                   </div>
                   <div class="back">
                     <img
                       class="back-image"
-                      src="/FTT/index/IMG/디스플레이.jpg"
+                      src="../IMG/디스플레이.jpg"
                       alt=""
                     />
                     <div class="card">
@@ -107,14 +111,10 @@
                       이미지를 클릭해보세요
                     </div>
 
-                    <img src="/FTT/index/IMG/자유.webp" alt="" />
+                    <img src="../IMG/자유.webp" alt="" />
                   </div>
                   <div class="back">
-                    <img
-                      class="back-image"
-                      src="/FTT/index/IMG/모니터.webp"
-                      alt=""
-                    />
+                    <img class="back-image" src="../IMG/모니터.webp" alt="" />
                     <div class="card">
                       <div class="card-wrap">
                         <h2>
@@ -125,27 +125,27 @@
                             <div class="image1">
                               <img
                                 class="image-box img1"
-                                src="/FTT/resources/image/공포/horror10.jpg"
+                                src="../../resources/image/공포/horror1.jpg"
                                 alt=""
                               />
                               <img
                                 class="image-box img2"
-                                src="/FTT/resources/image/스포츠/spo9.jpg"
+                                src="../../resources/image/스포츠/spo9.jpg"
                                 alt=""
                               />
                               <img
                                 class="image-box img3"
-                                src="/FTT/resources/image/액션·범죄/cri-and-act1.jpg"
+                                src="../../resources/image/액션·범죄/cri-and-act1.jpg"
                                 alt=""
                               />
                               <img
                                 class="image-box img4"
-                                src="/FTT/resources/image/코미디/medy9.jpg"
+                                src="../../resources/image/코미디/medy1.jpg"
                                 alt=""
                               />
                               <img
                                 class="image-box img5"
-                                src="/FTT/resources/image/액션·범죄/cri-and-act5.jpg"
+                                src="../../resources/image/액션·범죄/cri-and-act5.jpg"
                                 alt=""
                               />
                             </div>
@@ -164,14 +164,10 @@
                 <div class="wrap">
                   <div class="front">
                     <p>어린이 전용</p>
-                    <img src="/FTT/index/IMG/어린이.jpg" alt="" />
+                    <img src="../IMG/어린이.jpg" alt="" />
                   </div>
                   <div class="back">
-                    <img
-                      class="back-image"
-                      src="/FTT/index/IMG/아이들.webp"
-                      alt=""
-                    />
+                    <img class="back-image" src="../IMG/아이들.webp" alt="" />
                     <div class="card">
                       <div class="card-wrap">
                         <h2>
@@ -181,7 +177,7 @@
 
                           <div class="h2-wrap">
                             <div class="children">
-                              <img src="/FTT/index/IMG/선물.webp" alt="" />
+                              <img src="../IMG/선물.webp" alt="" />
                             </div>
                           </div>
                           <p class="MV-content MV-content2">
@@ -350,10 +346,123 @@
         </div>
       </footer>
     </div>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="/FTT/index/jsvascript.js"></script>
 
-    <script>
+    <!-- 로그인 -->
+    <div class="modal-back">
+      <div class="modal-page">
+        <!-- legend 블럭요소 -->
+        <div class="close-box">
+          <div class="modal-close">
+            <!-- <iconify-icon
+          class="icon"
+          icon="icon-park-solid:big-x"
+        ></iconify-icon> -->X
+          </div>
+        </div>
+        <div class="modal-header">로그인</div>
+        <p id="come">FTT에 오신것을 환영합니다.</p>
+        <table>
+          <tr>
+            <th>아이디</th>
+            <td>
+              <input type="text" name="id" placeholder="아이디 10글자 이내" />
+            </td>
+            <!-- <td><input type="button" value="중복 확인" /></td> -->
+          </tr>
+          <tr>
+            <th>비밀번호</th>
+            <td>
+              <input
+                type="password"
+                name="password"
+                placeholder="영문,숫자,특수문자 포함 8자 이상"
+              />
+            </td>
+            <td></td>
+          </tr>
+        </table>
+        <div class="modal-check">
+          <input type="button" name="check" value="확인" class="login-go" />
+          <!-- <input type="button" name="cancel" value="취소" /> -->
+        </div>
+        <div class="modal-find">
+          <a href="#">아이디 찾기</a>
+          <a href="#">비밀번호 찾기</a>
+          <a href="signUp.html">회원가입</a>
+        </div>
+        <ul class="modal-footer">
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>고객센터</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 로그인 끝 -->
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="../jsvascript.js"></script>
+
+    <!-- 로그인 자바스크립트 -------------------------------------------------- -->
+    <script type="module">
+      import * as firebase from "../JS/firebase.js";
+      const {
+        db,
+        getDocs,
+        collection,
+        setDoc,
+        addDoc,
+        getDatas,
+        doc,
+        addDatas,
+        deleteDatas,
+        updateDatas,
+        deleteField,
+      } = firebase;
+
+      const checkBtn = document.querySelector("input[name = check]");
+      const id = document.querySelector("input[name = id]").value;
+      const password = document.querySelector("input[name = password]").value;
+      const log = document.querySelector(".log1");
+      const modalClose = document.querySelector(".modal-close");
+      const modalBack = document.querySelector(".modal-back");
+      const btn = document.querySelector(".image-content > button");
+
+      log.addEventListener("click", function () {
+        modalBack.style.display = "block";
+      });
+
+      btn.addEventListener("click", () => {
+        modalBack.style.display = "block";
+      });
+      checkBtn.addEventListener("click", async function () {
+        const snapshot = await getDatas("FTT");
+        snapshot.forEach((doc) => {
+          const { memberId, memberPassword } = doc.data();
+
+          if (document.querySelector("input[name = id]").value == memberId) {
+            console.log("1");
+            if (
+              document.querySelector("input[name = password]").value ==
+              memberPassword
+            ) {
+              console.log("2");
+              location.href = "http://127.0.0.1:5501/index/HTML/main.html";
+            } else {
+              alert("비밀번호를 다시 입력해주세요");
+              console.log("3");
+            }
+          } else {
+            console.log("먼저실행");
+          }
+        });
+      });
+
+      modalClose.addEventListener("click", function () {
+        modalBack.style.display = "none";
+      });
+
+      // <!-- 로그인 자바스크립트 끝 ---------------------------------------->
+
       (function () {
         const pEl = $(".image-content > p");
         const txtArr = [
