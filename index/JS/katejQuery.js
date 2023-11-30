@@ -62,8 +62,36 @@ const videoUrls = [
   "../../resources/video/액션·범죄/cri-and-act5.mp4",
   "../../resources/video/액션·범죄/cri-and-act6.mp4",
 ];
+const htmlUrls = [
+  "../../resources/html/공포/horror1.jpg",
+  "../../resources/html/공포/horror2.jpg",
+  "../../resources/html/공포/horror3.jpg",
+  "../../resources/html/공포/horror4.jpg",
+  "../../resources/html/공포/horror5.jpg",
+  "../../resources/html/공포/horror6.jpg",
+  "../../resources/html/공포/horror7.jpg",
+  "../../resources/html/공포/horror8.jpg",
+  "../../resources/html/공포/horror9.jpg",
+  "../../resources/html/공포/horror10.jpg",
+  "../../resources/html/스포츠/spo1.jpg",
+  "../../resources/html/스포츠/spo2.jpg",
+  "../../resources/html/스포츠/spo3.jpg",
+  "../../resources/html/스포츠/spo4.jpg",
+  "../../resources/html/스포츠/spo5.jpg",
+  "../../resources/html/스포츠/spo6.jpg",
+  "../../resources/html/스포츠/spo7.jpg",
+  "../../resources/html/스포츠/spo8.jpg",
+  "../../resources/html/스포츠/spo9.jpg",
+  "../../resources/html/스포츠/spo10.jpg",
+  "../../resources/html/액션·범죄/cri-and-act1.jpg",
+  "../../resources/html/액션·범죄/cri-and-act2.jpg",
+  "../../resources/html/액션·범죄/cri-and-act3.jpg",
+  "../../resources/html/액션·범죄/cri-and-act4.jpg",
+  "../../resources/html/액션·범죄/cri-and-act5.jpg",
+  "../../resources/html/액션·범죄/cri-and-act6.jpg",
+];
 
-function shuffleArrays(array1, array2) {
+function shuffleArrays(array1, array2, array3) {
   if (array1.length !== array2.length) {
     throw new Error('두 배열의 길이가 동일해야 합니다.');
   }
@@ -73,12 +101,13 @@ function shuffleArrays(array1, array2) {
     const j = Math.floor(Math.random() * (i + 1));
     [array1[i], array1[j]] = [array1[j], array1[i]];
     [array2[i], array2[j]] = [array2[j], array2[i]];
+    [array2[i], array2[j]] = [array2[j], array2[i]];
   }
 
-  return [array1, array2];
+  return [array1, array2, array3];
 }
 
-const [shuffledMovieUrls, shuffledVideoUrls] = shuffleArrays(movieUrls, videoUrls);
+const [shuffledMovieUrls, shuffledVideoUrls, shuffledhtmlUrls] = shuffleArrays(movieUrls, videoUrls, htmlUrls);
 
 // Append all shuffled images to .movie-container
 shuffledMovieUrls.forEach((url) => {
@@ -89,6 +118,9 @@ shuffledVideoUrls.forEach((url) => {
   $(".movie-container").append(`<video src='${url}' controls></video>`);
 });
 
+shuffledhtmlUrls.forEach((url) => {
+  $(".movie-container").append(`<img src='${url}'>`);
+});
 
 
 $(document).ready(function () {
