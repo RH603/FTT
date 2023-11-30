@@ -59,8 +59,8 @@ input:focus {
   height: 50px;
   /* padding: 1rem; */
   cursor: pointer;
-  border: 1px solid black;
-  font-size: 20px;
+  /* border: 1px solid black; */
+  font-size: 32px;
   font-weight: bold;
   border-radius: 20%;
 }

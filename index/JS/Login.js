@@ -4,10 +4,9 @@ const modalClose = document.querySelector(".modal-close");
 const modalBack = document.querySelector(".modal-back");
 
 pClick.addEventListener("click", function () {
-  modalBack.style.display = "block"
+  modalBack.style.display = "block";
 });
 
 modalClose.addEventListener("click", function () {
-
-  modalBack.style.display = "none"
+  modalBack.style.display = "none";
 });
