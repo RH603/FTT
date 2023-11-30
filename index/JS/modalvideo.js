@@ -2,6 +2,7 @@ const modalImgBack = document.querySelector(".modal-img-back");
 const modalImg = document.querySelector(".modal-img-win");
 const images = document.querySelectorAll("img");
 const video = document.querySelectorAll("video");
+const modalVid = document.querySelector(".movie-container")
 
 // for (let i = 0; i < images.length; i++) {
 //     images[i].addEventListener("click", () => {
@@ -36,15 +37,15 @@ for (let i = 0; i < images.length; i++) {
         clickedVideo.classList.add("modal-video");
         clickedImage.autoplay = true
         // Clear the modal content before appending a new image
-        images.innerHTML = "";
+        modalVid.innerHTML = "";
 
         // Append the clicked image to the modal
-        images.appendChild(clickedImage);
+        modalVid.appendChild(clickedImage);
 
         // Display the modal
 
-        modalImgBack.style.display = "block";
-        modalImg.style.display = "block"
+        // modalImgBack.style.display = "block";
+        // modalImg.style.display = "block"
         document.querySelector("video").style.display= "block"
     });
 }
