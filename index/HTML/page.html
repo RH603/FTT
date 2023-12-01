@@ -426,6 +426,11 @@
       const modalClose = document.querySelector(".modal-close");
       const modalBack = document.querySelector(".modal-back");
       const btn = document.querySelector(".image-content > button");
+      const overlayBtn = document.querySelector(".overlay");
+
+      overlayBtn.addEventListener("click", () => {
+        location.href = "http://127.0.0.1:5501/index/HTML/loginBeforeMbs.html";
+      });
 
       log.addEventListener("click", function () {
         modalBack.style.display = "block";

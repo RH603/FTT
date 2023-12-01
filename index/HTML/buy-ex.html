@@ -37,8 +37,9 @@
     }
     .container-text {
       font-size: 24px;
-      cursor: pointer;
+      padding: 0 16px;
     }
+
     .buyPopup-container .buyPopup-content {
       display: flex;
       flex-direction: column;
@@ -50,6 +51,7 @@
       width: 150px;
       text-align: left;
     }
+
     .price {
       font-size: 32px;
       font-weight: bold;
@@ -141,6 +143,7 @@
       <div class="buyPopup-container">
         <div class="container-text">결제내용</div>
         <hr />
+
         <div class="buyPopup-content">
           <!-- <p>Basic</p>
           <p>최신 영화+인기영화</p>
@@ -149,9 +152,9 @@
             <th>이용기간</th>
             <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
           </table>
-          <table>
-            <th>금액 (매월)</th>
-            <td class="price">400 원</td>
+          <table class="two-table">
+            <!-- <th>금액 (매월)</th>
+            <td class="price">400 원</td> -->
           </table>
         </div>
       </div>
@@ -219,11 +222,10 @@
     } = firebase;
 
     const content = document.querySelector(".buyPopup-content");
+
+    getPay();
+
     const price = document.querySelector(".price");
-
-    const snapshot = await getData("FTT", "FTT1");
-    const { memberId, memberPassword } = snapshot.data();
-
     window.onload = function () {
       var currentDate = new Date();
       var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
