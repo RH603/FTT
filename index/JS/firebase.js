@@ -49,6 +49,14 @@ async function addDatas(/*collectionName,*/ dataobj) {
   // await addDoc(collection(db, collectionName), dataobj);
 }
 
+// doc(db, 컬렉션(배열), "문서 ID"), {들어갈 객체}
+async function addData(/*collectionName,*/ dataobj) {
+  // 문서ID 부여
+  await setDoc(doc(db, "FTT", "PhoneNumber"), dataobj);
+  //   문서ID 자동
+  // await addDoc(collection(db, collectionName), dataobj);
+}
+
 async function deleteDatas(collection, docId) {
   await deleteDoc(doc(db, collection, docId));
 }
@@ -82,4 +90,5 @@ export {
   updateDoc,
   deleteField,
   getData,
+  addData,
 };

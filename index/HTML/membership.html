@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/main-header.css" />
     <link rel="stylesheet" href="../CSS/total.css" />
     <link rel="stylesheet" href="../CSS/membership.css" />
+    <link rel="stylesheet" href="../CSS/buy.css" />
   </head>
   <body>
     <header>
@@ -65,7 +66,7 @@
               <span>&#92; 1,200</span>
             </a>
 
-            <a href="#" class="ms-card-ac">
+            <a href="#" class="ms-card-ac" onclick="buyPopup2()">
               <p>12개월</p>
               <span>&#92; 12,000</span>
             </a>
@@ -96,12 +97,12 @@
           <div class="ms-card second">
             <h3>Standard</h3>
             <div class="line"></div>
-            <a href="#" class="ms-card-ac">
+            <a href="#" class="ms-card-ac" onclick="buyPopup3()">
               <p>1개월</p>
               <span>&#92; 800</span>
             </a>
 
-            <a href="#" class="ms-card-ac">
+            <a href="#" class="ms-card-ac" onclick="buyPopup4()">
               <p>12개월</p>
               <span>&#92; 8,000</span>
             </a>
@@ -132,12 +133,12 @@
           <div class="ms-card thrid">
             <h3>Basic</h3>
             <div class="line"></div>
-            <a href="#" class="ms-card-ac">
+            <a href="#" class="ms-card-ac" onclick="buyPopup5()">
               <p>1개월</p>
               <span>&#92; 400</span>
             </a>
 
-            <a href="#" class="ms-card-ac">
+            <a href="#" class="ms-card-ac" onclick="buyPopup6()">
               <p>12개월</p>
               <span>&#92; 4,000</span>
             </a>
@@ -232,4 +233,56 @@
   </body>
   <script src="../JS/logout.js"></script>
   <script src="../JS/buy.js"></script>
+
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+    } = firebase;
+
+    const content = document.querySelector(".buyPopup-content");
+    const table = document.querySelector(".two-table");
+    const msCard = document.querySelectorAll(".ms-card-ac");
+    const pTags = document.querySelectorAll(".ms-card-ac > p");
+    const pay = document.querySelector(".buyPopup-body");
+
+    async function getPay(name, name1) {
+      const snapshot = await getData(name, name1);
+      const { payname, payquality, payuse, paywatch, paymoney, paymoneyname } =
+        snapshot.data();
+
+      content.insertAdjacentHTML(
+        "beforebegin",
+        `
+
+      <div style="padding:10px 16px">
+    <p><h1 style="margin-bottom:1rem;">${payname}</h1></p>
+    <p style="margin-bottom:1rem;">${payquality}</p>
+    <p>${payuse}</p>
+    <p>${paywatch}</p>
+    </div>
+
+    `
+      );
+
+      table.insertAdjacentHTML(
+        "beforebegin",
+        `
+          <th>${paymoneyname}</th>
+          <td>${paymoney}</td>
+        `
+      );
+    }
+  </script>
 </html>

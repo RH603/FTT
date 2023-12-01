@@ -188,6 +188,7 @@
       updateDatas,
       deleteField,
       getData,
+      addData,
     } = firebase;
 
     const modalClose = document.querySelector(".modal-close");
@@ -196,9 +197,12 @@
     const cloneCheckBtn = document.querySelector("#cloneCheck");
     const signId = document.querySelector("#signId");
     const checkBtn = document.querySelector(".login-go");
+    const getNumber = document.querySelector(".auth-num");
+    const getTel = document.querySelector(".get-tel");
 
     signId.focus();
 
+    // 중복확인 버튼
     cloneCheckBtn.addEventListener("click", async function () {
       const snapshot = await getData("FTT", "FTT1");
       const { memberId, memberPassword } = snapshot.data();
@@ -210,6 +214,7 @@
       }
     });
 
+    // 회원가입
     btn.addEventListener("click", function () {
       const memberInfo = {
         memberId: document.querySelector("#signId").value,
@@ -234,6 +239,22 @@
       }
     });
 
+    let randBox = [];
+    // 인증번호 받기를 누르면 인증번호를 입력하는 칸
+
+    getNumber.addEventListener("click", function () {
+      for (let i = 0; i < 4; i++) {
+        const rand = Math.floor(Math.random() * 10);
+        randBox.push(rand).toString().split(",").map(Number);
+      }
+      const randNum = { number: randBox };
+      addData(randNum).then(function () {
+        alert("인증번호를 전송했습니다.");
+        getTel.style.display = "block";
+      });
+    });
+
+    // 로그인
     checkBtn.addEventListener("click", async function () {
       const snapshot = await getData("FTT", "FTT1");
       const { memberId, memberPassword } = snapshot.data();
@@ -252,6 +273,7 @@
       }
     });
 
+    // 로그인창 닫기
     modalClose.addEventListener("click", function () {
       modalBack.style.display = "none";
     });

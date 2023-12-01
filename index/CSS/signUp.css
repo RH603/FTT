@@ -239,6 +239,7 @@ table input {
   border: 1px solid dodgerblue;
   background-color: dodgerblue;
   border-radius: 8px;
+  cursor: pointer;
 }
 .signup-header {
   display: flex;
@@ -353,6 +354,7 @@ section > button:hover {
   font-size: 14px;
   width: 150px;
   height: 40px;
+  cursor: pointer;
   /* padding: 8px; */
 }
 .sign.phone {

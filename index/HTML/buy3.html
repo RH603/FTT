@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUY</title>
+    <link rel="stylesheet" href="../CSS/buy.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
+  </head>
+  <script
+    src="https://kit.fontawesome.com/1edf72a888.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <body>
+    <!-- 헤더 -->
+
+    <div class="buyPopup-body">
+      <div class="buyPopup-header">FTT 상품 구매</div>
+      <div class="buyPopup-container">
+        <div class="container-text">결제내용</div>
+        <hr />
+
+        <div class="buyPopup-content">
+          <!-- <p>Basic</p>
+          <p>최신 영화+인기영화</p>
+          <p>Mobile,PC 시청</p> -->
+          <table>
+            <th>이용기간</th>
+            <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
+          </table>
+          <table class="two-table">
+            <!-- <th>금액 (매월)</th>
+            <td class="price">400 원</td> -->
+          </table>
+        </div>
+      </div>
+      <!-- 결제 내용 -->
+      <div class="tab">
+        <div class="buyPopup-pri">
+          <label for="past">
+            <div class="container-text selected">결제수단 선택</div>
+            <div class="fast-pri">
+              <input type="radio" id="past" name="price" checked />빠른결제
+            </div>
+          </label>
+        </div>
+        <div class="show1">
+          <div class="tab-item1">
+            <i class="fa-solid fa-circle-plus plus"></i>
+            <div class="card">카드 등록</div>
+          </div>
+        </div>
+        <div class="buyPopup-pri">
+          <label for="notPast">
+            <div class="container-text">결제수단 선택</div>
+            <div class="fast-pri">
+              <input type="radio" id="notPast" name="price" />일반결제
+            </div>
+          </label>
+        </div>
+        <div class="show2">
+          <div class="tab-item2">
+            <div class="card">
+              <i class="fa-regular fa-credit-card"></i>신용카드
+            </div>
+            <div class="card"><i class="fa-solid fa-mobile"></i>휴대폰</div>
+            <div class="card">
+              <iconify-icon icon="simple-icons:naver"></iconify-icon>네이버페이
+            </div>
+            <div class="card">
+              <iconify-icon icon="mynaui:message"></iconify-icon>카카오페이
+            </div>
+            <div class="card">토스</div>
+          </div>
+        </div>
+      </div>
+      <!-- 결제 수단 -->
+      <div class="pri-agree">
+        <input type="checkbox" /><span>약관에 모두 동의합니다</span>
+      </div>
+    </div>
+  </body>
+  <script src="../JS/buy.js"></script>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+    } = firebase;
+
+    const content = document.querySelector(".buyPopup-content");
+    const table = document.querySelector(".two-table");
+
+    async function getPay() {
+      const snapshot = await getData("FTT", "FTT-S1");
+      const { payname, payquality, payuse, paywatch, paymoney, paymoneyname } =
+        snapshot.data();
+
+      content.insertAdjacentHTML(
+        "beforebegin",
+        `
+        <p><h1>${payname}</h1></p>
+        <p>${payquality}</p>
+        <p>${payuse}</p>
+        <p>${paywatch}</p>
+    `
+      );
+
+      table.insertAdjacentHTML(
+        "beforeend",
+        `
+          <tr>
+            <th>${paymoneyname}</th>
+            <td>${paymoney}</td>
+          </tr>
+        `
+      );
+    }
+
+    getPay();
+
+    const price = document.querySelector(".price");
+    window.onload = function () {
+      var currentDate = new Date();
+      var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
+      var month = ("0" + (currentDate.getMonth() + 1)).slice(-2); // 월을 두 자리로 만들기
+      var day = ("0" + currentDate.getDate()).slice(-2); // 일을 두 자리로 만들기
+
+      var formattedDate = year + "." + month + "." + day;
+
+      document.getElementById("date").innerHTML = formattedDate;
+
+      var futureDateAdd = new Date(
+        currentDate.getTime() + 30 * 24 * 60 * 60 * 1000
+      ); // 현재 날짜에 30일을 더함
+
+      var yearAdd = futureDateAdd.getFullYear();
+      var monthAdd = ("0" + (futureDateAdd.getMonth() + 1)).slice(-2);
+      var dayAdd = ("0" + futureDateAdd.getDate()).slice(-2);
+
+      var formattedDateAdd = yearAdd + "." + monthAdd + "." + dayAdd;
+
+      document.getElementById("dateAdd").innerHTML = formattedDateAdd;
+    };
+    var pastRadio = document.getElementById("past");
+    var notPastRadio = document.getElementById("notPast");
+
+    pastRadio.addEventListener("change", function () {
+      document.querySelector(".show1").style.display = "block";
+      document.querySelector(".show2").style.display = "none";
+    });
+
+    notPastRadio.addEventListener("change", function () {
+      document.querySelector(".show1").style.display = "none";
+      document.querySelector(".show2").style.display = "block";
+    });
+  </script>
+</html>

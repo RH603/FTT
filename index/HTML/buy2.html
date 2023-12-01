@@ -4,154 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BUY</title>
+    <link rel="stylesheet" href="../CSS/buy.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
   </head>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap");
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Poppins;
-    }
-    .buyPopup-header {
-      background-color: #ace;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100px;
-      color: #333;
-      font-size: 44px;
-      font-weight: 700;
-    }
-    /* 결제내용 */
-    .buyPopup-body {
-      background-color: #333;
-    }
-    .buyPopup-container {
-      display: flex;
-      flex-direction: column;
-      padding: 24px;
-      color: white;
-      gap: 8px;
-    }
-    .container-text {
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .buyPopup-container .buyPopup-content {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 16px;
-      font-size: 16px;
-    }
-    .buyPopup-content table th {
-      width: 150px;
-      text-align: left;
-    }
-    .price {
-      font-size: 32px;
-      font-weight: bold;
-    }
-    /* 결제수단 */
-    .tab {
-      padding: 24px;
-    }
-    .buyPopup-pri {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .fast-pri {
-      background-color: #777;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 24px;
-      gap: 24px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .tab-item1 {
-      border: 2px solid #777;
-      width: 100%;
-      height: 200px;
-      background-color: white;
-      margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .plus {
-      font-size: 40px;
-    }
-    .tab-item1 .card {
-      border: 2px dashed #333;
-      width: 40%;
-      height: 40%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .tab-item2 {
-      border: 2px solid #777;
-      width: 100%;
-      height: 200px;
-      background-color: white;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-    }
-    .card {
-      border: 1px solid black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
-    .show2 {
-      display: none;
-    }
-    input[type="checkbox"] {
-      /* 원래 크기에서 2배로 키우기 */
-      transform: scale(2);
-      /* 또는 직접 너비와 높이 지정 */
-      /* width: 40px;
-    height: 40px; */
-    }
-    .pri-agree {
-      padding: 0 24px;
-    }
-  </style>
   <script
     src="https://kit.fontawesome.com/1edf72a888.js"
     crossorigin="anonymous"
   ></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <body>
-    <div class="buyPopup-header">FTT 상품 구매</div>
     <!-- 헤더 -->
+
     <div class="buyPopup-body">
+      <div class="buyPopup-header">FTT 상품 구매</div>
       <div class="buyPopup-container">
         <div class="container-text">결제내용</div>
         <hr />
+
         <div class="buyPopup-content">
-          <p>Basic</p>
+          <!-- <p>Basic</p>
           <p>최신 영화+인기영화</p>
-          <p>Mobile,PC 시청</p>
+          <p>Mobile,PC 시청</p> -->
           <table>
             <th>이용기간</th>
             <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
           </table>
-          <table>
-            <th>금액 (매월)</th>
-            <td class="price">400 원</td>
+          <table class="two-table">
+            <!-- <th>금액 (매월)</th>
+            <td class="price">400 원</td> -->
           </table>
         </div>
       </div>
@@ -201,7 +81,62 @@
       </div>
     </div>
   </body>
-  <script>
+  <script src="../JS/buy.js"></script>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+    } = firebase;
+
+    const content = document.querySelector(".buyPopup-content");
+    const table = document.querySelector(".two-table");
+
+    async function getPay() {
+      const snapshot = await getData("FTT", "FTT-P1");
+      const {
+        payname,
+        payquality,
+        payuse,
+        paywatch,
+        paymoney12,
+        paymoneyname,
+      } = snapshot.data();
+
+      content.insertAdjacentHTML(
+        "beforebegin",
+        `
+        <p><h1>${payname}</h1></p>
+        <p>${payquality}</p>
+        <p>${payuse}</p>
+        <p>${paywatch}</p>
+    `
+      );
+
+      table.insertAdjacentHTML(
+        "beforeend",
+        `
+          <tr>
+            <th>${paymoneyname}</th>
+            <td>${paymoney12}</td>
+          </tr>
+        `
+      );
+    }
+
+    getPay();
+
+    const price = document.querySelector(".price");
     window.onload = function () {
       var currentDate = new Date();
       var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
