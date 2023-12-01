@@ -1,47 +1,74 @@
 const modalImgBack = document.querySelector(".modal-img-back");
 const modalImg = document.querySelector(".modal-img-win");
 const images = document.querySelectorAll("img");
-const videos = document.querySelectorAll("video");
+const video = document.querySelectorAll("video");
+const modalVid = document.querySelector(".movie-container")
+const htmlImgs = document.querySelectorAll(".htmlImg")
+const mama = document.querySelector(".modal-back")
+
 
 for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
-        displayVideo(i);
+        
+        // Create a new image element
+        const clickedImage = document.createElement("video");
+        const clickedVideo = document.createElement("video")
+        // 추가
+        const clickedImg = document.createElement("img");
+        clickedImg.src = images[i].src;
+        
+        clickedImage.src = video[i].src;
+        // console.log(video[i])
+        clickedVideo.classList.add("modal-video");
+        clickedImage.autoplay = true
+        // Clear the modal content before appending a new image
+        modalImg.innerHTML = "";
+
+        // Append the clicked image to the modal
+        modalImg.appendChild(clickedImage);
+  
+        // Display the modal
+        modalImgBack.style.display = "block";
+        modalImg.style.display = "block"
+        document.querySelector("video").style.display= "block"
+    })
+    
+    modalImgBack.addEventListener("click",(event)=>{
+        if (event.target === modalImgBack) {
+            modalImgBack.style.display = "none";
+            // modalImg.remove("img")
+        }else{
+            document.querySelector("video").style.display= "none"
+            console.log(event.target.src)
+           modalImg.appendChild(clickedImg).classList.add("modal-img");
+        }
     });
 }
 
-for (let i = 0; i < videos.length; i++) {
-    videos[i].addEventListener("click", () => {
-        displayImage(i);
-    });
-}
+// for (let i = 0; i < images.length; i++) {
+//     images[i].addEventListener("click", () => {
+        
+//         // Create a new image element
+//         const clickedImage = document.createElement("video");
+//         const clickedVideo = document.createElement("video")
+//         clickedImage.src = video[i].src;
+//         console.log(video[i])
+//         clickedVideo.classList.add("modal-video");
+//         clickedImage.autoplay = true
+//         // Clear the modal content before appending a new image
+//         modalVid.innerHTML = "";
 
-function displayVideo(videoIndex) {
-    const clickedVideo = document.createElement("video");
-    clickedVideo.src = videos[videoIndex].src;
-    clickedVideo.classList.add("modal-video");
-    clickedVideo.autoplay = true;
+//         // Append the clicked image to the modal
+//         modalVid.appendChild(clickedImage);
 
-    modalImg.innerHTML = "";
-    modalImg.appendChild(clickedVideo);
+//         // Display the modal
 
-    modalImgBack.style.display = "flex";
-    modalImg.style.display = "block";
-}
+//         modalImgBack.style.display = "block";
+//         modalImg.style.display = "block"
+//         document.querySelector("video").style.display= "block"
+//     });
+// }
 
-function displayImage(imageIndex) {
-    const clickedImage = document.createElement("img");
-    clickedImage.src = images[imageIndex].src;
-    clickedImage.classList.add("modal-img");
-
-    modalImg.innerHTML = "";
-    modalImg.appendChild(clickedImage);
-
-    modalImgBack.style.display = "flex";
-    modalImg.style.display = "block";
-}
-
-modalImgBack.addEventListener("click", (event) => {
-    if (event.target === modalImgBack) {
-        modalImgBack.style.display = "none";
-    }
-});
+// modalImgBack.addEventListener("click",()=>{
+//     modalImgBack.style.display = "none";
+// })

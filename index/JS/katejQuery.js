@@ -101,7 +101,7 @@ function shuffleArrays(array1, array2, array3) {
     const j = Math.floor(Math.random() * (i + 1));
     [array1[i], array1[j]] = [array1[j], array1[i]];
     [array2[i], array2[j]] = [array2[j], array2[i]];
-    [array2[i], array2[j]] = [array2[j], array2[i]];
+    [array3[i], array3[j]] = [array3[j], array3[i]];
   }
 
   return [array1, array2, array3];
@@ -119,7 +119,10 @@ shuffledVideoUrls.forEach((url) => {
 });
 
 shuffledhtmlUrls.forEach((url) => {
-  $(".movie-container").append(`<img src='${url}'>`);
+  const img = document.createElement("img");
+  img.src = url;
+  img.classList.add("htmlImg"); // 이미지 클래스 추가
+  $(".movie-container").append(img);
 });
 
 
