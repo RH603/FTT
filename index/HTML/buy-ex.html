@@ -204,6 +204,7 @@
       </div>
     </div>
   </body>
+  <script src="../JS/buy.js"></script>
   <script type="module">
     import * as firebase from "../JS/firebase.js";
     const {
@@ -222,6 +223,35 @@
     } = firebase;
 
     const content = document.querySelector(".buyPopup-content");
+    const table = document.querySelector(".two-table");
+
+    async function getPay() {
+      const snapshot = await getData("FTT", "FTT-Pay");
+      const { payname, payquality, payuse, paywatch, paymoney, paymoneyname } =
+        snapshot.data();
+
+      content.insertAdjacentHTML(
+        "beforebegin",
+        `
+
+    <div style="padding:10px 16px">
+  <p><h1 style="margin-bottom:1rem;">${payname}</h1></p>
+  <p style="margin-bottom:1rem;">${payquality}</p>
+  <p>${payuse}</p>
+  <p>${paywatch}</p>
+  </div>
+
+  `
+      );
+
+      table.insertAdjacentHTML(
+        "beforebegin",
+        `
+        <th>${paymoneyname}</th>
+        <td>${paymoney}</td>
+      `
+      );
+    }
 
     getPay();
 
