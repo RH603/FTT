@@ -5,7 +5,7 @@ const video = document.querySelectorAll("video");
 const modalVid = document.querySelector(".movie-container")
 const htmlImgs = document.querySelectorAll(".htmlImg")
 
-console.log(shuffledhtmlUrls)
+// console.log(shuffledhtmlUrls)
 
 for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
