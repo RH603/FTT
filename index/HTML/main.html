@@ -7,58 +7,14 @@
     <link rel="stylesheet" href="../CSS/main-header.css" />
     <link rel="stylesheet" href="../CSS/main.css" />
     <link rel="stylesheet" href="../CSS/total.css" />
-    <link rel="stylesheet" href="../CSS/modal.css" />
+    <!-- <link rel="stylesheet" href="../CSS/modal.css" /> -->
     <!-- 케러셀 CSS -->
-     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+     <link rel="stylesheet" href="../CSS/slide.css">
   </head>
   <style>
-    html,
-    body {
-      position: relative;
+    body{
       height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      top:112px;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .swiper-container{
-      /* margin-top: 112px; */
-      width: 100%;
-      max-width: 1200px;
-    }
-    .swiper-slide{
-      width: 200px;
-      height: 200px;
-    }
-    .main-content{
-      position: relative;
+      background-color: #333;
     }
   </style>
   <body>
@@ -117,26 +73,32 @@
         <div class="main-content">
           <h2 class="new">신작영화</h2>
           <!-- 케러셀 시작-->
-          <div class="swiper-container">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-              </div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          </div>
+          <div class="slide-container">
+            <ul class="gallery">
+                <li><img src="/resources/image/공포/horror1.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror2.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror3.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror4.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror5.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror6.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror7.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror8.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror9.jpg" alt=""></li>
+                <li><img src="/resources/image/공포/horror10.jpg" alt=""></li>
+                <li><img src="img/medy1.jpg" alt=""></li>
+                <li><img src="img/medy2.jpg" alt=""></li>
+                <li><img src="img/medy3.jpg" alt=""></li>
+                <li><img src="img/medy4.jpg" alt=""></li>
+                <li><img src="img/medy5.jpg" alt=""></li>
+                <li><img src="img/medy6.jpg" alt=""></li>
+                <li><img src="img/medy7.jpg" alt=""></li>
+                <li><img src="img/medy8.jpg" alt=""></li>
+                <li><img src="img/medy9.jpg" alt=""></li>
+                <li><img src="img/medy10.jpg" alt=""></li>
+            </ul>
+            <div class="swiper-button-next"><iconify-icon icon="maki:arrow" class="next-arrow"></iconify-icon></div>
+            <div class="swiper-button-prev"><iconify-icon icon="maki:arrow" class="prev-arrow"></iconify-icon></div>
+        </div>
           <!-- <ul class="gallery">
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
@@ -157,7 +119,7 @@
         </div>
         <div class="main-content">
           <h2 class="new">추천영화</h2>
-          <ul class="gallery">
+          <!-- <ul class="gallery">
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
@@ -173,11 +135,11 @@
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
-          </ul>
+          </ul> -->
         </div>
         <div class="main-content">
           <h2 class="new">인기영화</h2>
-          <ul class="gallery">
+          <!-- <ul class="gallery">
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
@@ -194,7 +156,7 @@
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
             <li><img src="/resources/image/공포/horror1.jpg" alt="" /></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </main>
     <!-- <div class="modal-img-back">
@@ -341,49 +303,10 @@
   </body>
   <script src="../JS/main.js"></script>
   <script src="../JS/logout.js"></script>
-  <script src="../JS/modal.js"></script>
+  <!-- <script src="../JS/modal.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-
-
-  <!-- <script>
-    const slider = document.querySelector(".gallery");
-    let startX = 0;
-    let scrollLeft = 0;
-    const SCROLL_SPEED = 5;
-    function doScroll(e) {
-      e.preventDefault();
-      const x = e.pageX;
-      const move = (x - startX) * SCROLL_SPEED;
-      slider.scrollLeft = scrollLeft - move;
-    }
-
-    slider.addEventListener("mousedown", (e) => {
-      slider.addEventListener("mousemove", doScroll);
-      slider.classList.add("onDrag");
-      startX = e.pageX;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener("mouseup", () => {
-      slider.removeEventListener("mousemove", doScroll);
-      slider.classList.remove("onDrag");
-    });
-
-    slider.addEventListener("mouseleave", () => {
-      slider.removeEventListener("mousemove", doScroll);
-      slider.classList.remove("onDrag");
-    });
-  </script> -->
+<!-- 케러셀 자바스크립트 -->
+  <script src="../JS/slide.js"></script>
+  <!-- 아이콘 자바스크립트 -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </html>

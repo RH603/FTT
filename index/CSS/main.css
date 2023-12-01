@@ -29,10 +29,10 @@ main {
   overflow: hidden;
 }
 
-.gallery > li > img {
+/* .gallery > li > img {
   width: 400px;
   height: 100%;
-}
+} */
 
 /* .main-box {
   width: 100%;
