@@ -1,9 +1,9 @@
-// const modalImgBack = document.querySelector(".modal-img-back");
+const modalImgBack = document.querySelector(".modal-img-back");
 const modalImg = document.querySelector(".modal-img-win");
 const images = document.querySelectorAll("img");
 
 for (let i = 0; i < images.length; i++) {
-    video[i].addEventListener("click", () => {
+    images[i].addEventListener("click", () => {
         alert("click")
         // Create a new image element
         const clickedImg = document.createElement("img");
