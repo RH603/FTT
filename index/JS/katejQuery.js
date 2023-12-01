@@ -33,6 +33,16 @@ const movieUrls = [
   "../../resources/image/액션·범죄/cri-and-act4.jpg",
   "../../resources/image/액션·범죄/cri-and-act5.jpg",
   "../../resources/image/액션·범죄/cri-and-act6.jpg",
+  "../../resources/image/코미디/medy1.jpg",
+  "../../resources/image/코미디/medy2.jpg",
+  "../../resources/image/코미디/medy3.jpg",
+  "../../resources/image/코미디/medy4.jpg",
+  "../../resources/image/코미디/medy5.jpg",
+  "../../resources/image/코미디/medy6.jpg",
+  "../../resources/image/코미디/medy7.jpg",
+  "../../resources/image/코미디/medy8.jpg",
+  "../../resources/image/코미디/medy9.jpg",
+  "../../resources/image/코미디/medy10.jpg",
 ];
 const videoUrls = [
   "../../resources/video/공포/horror1.mp4",
@@ -61,6 +71,16 @@ const videoUrls = [
   "../../resources/video/액션·범죄/cri-and-act4.mp4",
   "../../resources/video/액션·범죄/cri-and-act5.mp4",
   "../../resources/video/액션·범죄/cri-and-act6.mp4",
+  "../../resources/image/코미디/medy1.jpg",
+  "../../resources/image/코미디/medy2.jpg",
+  "../../resources/image/코미디/medy3.jpg",
+  "../../resources/image/코미디/medy4.jpg",
+  "../../resources/image/코미디/medy5.jpg",
+  "../../resources/image/코미디/medy6.jpg",
+  "../../resources/image/코미디/medy7.jpg",
+  "../../resources/image/코미디/medy8.jpg",
+  "../../resources/image/코미디/medy9.jpg",
+  "../../resources/image/코미디/medy10.jpg",
 ];
 const htmlUrls = [
   "../../resources/html/공포/horror1.jpg",
@@ -89,6 +109,16 @@ const htmlUrls = [
   "../../resources/html/액션·범죄/cri-and-act4.jpg",
   "../../resources/html/액션·범죄/cri-and-act5.jpg",
   "../../resources/html/액션·범죄/cri-and-act6.jpg",
+  "../../resources/image/코미디/medy1.jpg",
+  "../../resources/image/코미디/medy2.jpg",
+  "../../resources/image/코미디/medy3.jpg",
+  "../../resources/image/코미디/medy4.jpg",
+  "../../resources/image/코미디/medy5.jpg",
+  "../../resources/image/코미디/medy6.jpg",
+  "../../resources/image/코미디/medy7.jpg",
+  "../../resources/image/코미디/medy8.jpg",
+  "../../resources/image/코미디/medy9.jpg",
+  "../../resources/image/코미디/medy10.jpg",
 ];
 
 function shuffleArrays(array1, array2, array3) {

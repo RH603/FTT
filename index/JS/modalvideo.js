@@ -5,6 +5,7 @@ const video = document.querySelectorAll("video");
 const modalVid = document.querySelector(".movie-container")
 const htmlImgs = document.querySelectorAll(".htmlImg")
 
+console.log(shuffledhtmlUrls)
 
 for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
@@ -20,8 +21,7 @@ for (let i = 0; i < images.length; i++) {
         clickedImage.src = video[i].src;
         // 추가
         clickedImg.src = images[i].src;
-        // clickedHtml.src = html[i].src
-        console.log(clickedHtml)
+        clickedHtml.src = shuffledhtmlUrls[i]   
         // 
 
         clickedVideo.classList.add("modal-video");
@@ -32,7 +32,7 @@ for (let i = 0; i < images.length; i++) {
         // Append the clicked image to the modal
         modalImg.appendChild(clickedImage);
 
-        modalImg.appendChild(clickedImg)
+        // modalImg.appendChild(clickedImg)
 
         modalImg.appendChild(clickedHtml)
         
@@ -40,19 +40,20 @@ for (let i = 0; i < images.length; i++) {
         modalImgBack.style.display = "flex";
         modalImg.style.display = "block"
         document.querySelector("video").style.display= "block"
+        document.querySelector(".htmlImg").style.display= "block"
 
 
         modalImgBack.addEventListener("click",(event)=>{
             if (event.target === modalImgBack) {
                 modalImgBack.style.display = "none";
-                images.forEach((image) => {
-                    image.classList.remove("modal-img");
-                });         
+                    // img.classList.remove("htmlImg");
+                // modalImgBack.forEach((img) => {
+                // });         
             }else{
                 document.querySelector("video").style.display= "none"
-                document.querySelector(".htmlImg").style.display = "block"
-                modalImg.appendChild(clickedHtml).classList.add(".htmlImg");
-                console.log(clickedImg)
+                // document.querySelector(".htmlImg").style.display = "block"
+                modalImg.appendChild(clickedHtml);
+                // console.log(clickedImg)
             }
         });
     });
