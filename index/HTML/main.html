@@ -261,21 +261,33 @@
   <script src="../JS/main.js"></script>
   <script src="../JS/logout.js"></script>
   <script src="../JS/modal.js"></script>
-  <script type="module">
-    import * as firebase from "../JS/firebase.js";
-    const {
-      db,
-      getDocs,
-      collection,
-      setDoc,
-      addDoc,
-      getDatas,
-      doc,
-      addDatas,
-      deleteDatas,
-      updateDatas,
-      deleteField,
-      getData,
-    } = firebase;
+  <script>
+    const slider = document.querySelector(".gallery");
+    let startX = 0;
+    let scrollLeft = 0;
+    const SCROLL_SPEED = 5;
+    function doScroll(e) {
+      e.preventDefault();
+      const x = e.pageX;
+      const move = (x - startX) * SCROLL_SPEED;
+      slider.scrollLeft = scrollLeft - move;
+    }
+
+    slider.addEventListener("mousedown", (e) => {
+      slider.addEventListener("mousemove", doScroll);
+      slider.classList.add("onDrag");
+      startX = e.pageX;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener("mouseup", () => {
+      slider.removeEventListener("mousemove", doScroll);
+      slider.classList.remove("onDrag");
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      slider.removeEventListener("mousemove", doScroll);
+      slider.classList.remove("onDrag");
+    });
   </script>
 </html>
