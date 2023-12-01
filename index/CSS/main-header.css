@@ -28,6 +28,7 @@ header {
   right: 0;
   top: 0;
   background-color: red;
+  z-index: 9999;
 }
 
 #header-menu {
