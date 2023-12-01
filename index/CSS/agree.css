@@ -7,16 +7,23 @@ strong {
 }
 
 .agree-main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .agree-check {
+  /* background-color: #333; */
   display: flex;
-  width: 25%;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   gap: 1em;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .agree-check > input {
@@ -24,7 +31,13 @@ strong {
 }
 
 .agree-wrap {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
+  width: 100%;
+
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .agree-text {
@@ -42,10 +55,8 @@ strong {
   justify-content: center;
   align-items: center;
   background-color: black;
-  position: fixed;
-  left: 45%;
-  bottom: 5%;
   cursor: pointer;
+  margin-top: 5rem;
 }
 
 .agree-next-btn button {
