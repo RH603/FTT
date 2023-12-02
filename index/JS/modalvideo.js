@@ -4,8 +4,8 @@ const images = document.querySelectorAll("img");
 const video = document.querySelectorAll("video");
 const modalVid = document.querySelector(".movie-container")
 const htmlImgs = document.querySelectorAll(".htmlImg")
+const kateBox = document.querySelector(".kate-box")
 
-// console.log(shuffledhtmlUrls)
 
 for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
@@ -37,22 +37,27 @@ for (let i = 0; i < images.length; i++) {
         modalImg.appendChild(clickedHtml)
         
         // Display the modal
-        modalImgBack.style.display = "flex";
+        modalImgBack.style.display = "block";
         modalImg.style.display = "block"
-        document.querySelector("video").style.display= "block"
         document.querySelector(".htmlImg").style.display= "block"
+        document.querySelector("video").style.display= "block"
 
 
+
+        
+        
         modalImgBack.addEventListener("click",(event)=>{
             if (event.target === modalImgBack) {
                 modalImgBack.style.display = "none";
-                    // img.classList.remove("htmlImg");
+                document.querySelector(".htmlImg").style.display = "none"
+                // htmlImgs[i].parentNode.removeChild(htmlImgs[i]);
                 // modalImgBack.forEach((img) => {
-                // });         
-            }else{
-                document.querySelector("video").style.display= "none"
-                // document.querySelector(".htmlImg").style.display = "block"
-                modalImg.appendChild(clickedHtml);
+                    // });         
+                }else{
+                    document.querySelector("video").style.display= "none"
+                    // clickedHtml.parentNode.removeChild(clickedHtml);
+                    // document.querySelector(".htmlImg").style.display = "none"
+                    // modalImg.appendChild(clickedHtml);
                 // console.log(clickedImg)
             }
         });
