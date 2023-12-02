@@ -4,7 +4,15 @@ main {
 }
 .main-container {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+}
+.slide-container{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .main-content {
   padding: 1rem 0;
@@ -17,9 +25,8 @@ main {
   overflow: hidden;
 }
 .new {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
+  font-size: 32px;
+  color:white;
 }
 .gallery {
   width: 100%;

@@ -6,7 +6,7 @@ $(".modal-kate-close").click(function () {
   $(".modal-kate-back").fadeOut();
 });
 // console.log($(".movie-container"));
-const movieUrls = [
+const movieUrls2 = [
   "../../resources/image/공포/horror1.jpg",
   "../../resources/image/공포/horror2.jpg",
   "../../resources/image/공포/horror3.jpg",
@@ -44,7 +44,7 @@ const movieUrls = [
   "../../resources/image/코미디/medy9.jpg",
   "../../resources/image/코미디/medy10.jpg",
 ];
-const videoUrls = [
+const videoUrls2 = [
   "../../resources/video/공포/horror1.mp4",
   "../../resources/video/공포/horror2.mp4",
   "../../resources/video/공포/horror3.mp4",
@@ -82,7 +82,7 @@ const videoUrls = [
   "../../resources/video/코미디/medy9.mp4",
   "../../resources/video/코미디/medy10.mp4",
 ];
-const htmlUrls = [
+const htmlUrls2 = [
   "../../resources/html/공포/horror1.jpg",
   "../../resources/html/공포/horror2.jpg",
   "../../resources/html/공포/horror3.jpg",
@@ -137,43 +137,48 @@ function shuffleArrays(array1, array2, array3) {
   return [array1, array2, array3];
 }
 
-const [shuffledMovieUrls, shuffledVideoUrls, shuffledhtmlUrls] = shuffleArrays(movieUrls, videoUrls, htmlUrls);
+const [shuffledMovieUrls2, shuffledVideoUrls2, shuffledhtmlUrls2] = shuffleArrays(movieUrls2, videoUrls2, htmlUrls2);
 
 // Append all shuffled images to .movie-container
-shuffledMovieUrls.forEach((url) => {
-  $(".movie-container").append(`<img src='${url}'>`);
+shuffledMovieUrls2.forEach((url) => {
+  $(".gallery2").append(`<img src='${url}'>`);
 });
 
-shuffledVideoUrls.forEach((url) => {
-  $(".movie-container").append(`<video src='${url}' controls></video>`);
+shuffledVideoUrls2.forEach((url) => {
+  $(".gallery2").append(`<video src='${url}' controls></video>`);
 });
 
-shuffledhtmlUrls.forEach((url) => {
+shuffledhtmlUrls2.forEach((url) => {
   const img = document.createElement("img");
   img.src = url;
   img.classList.add("htmlImg"); // 이미지 클래스 추가
-  $(".movie-container").append(img);
+  $(".gallery2").append(img);
 });
 
 
-
-
-
+$(document).ready(function () {
+  $("#hor").change(function () {
+    if ($(this).prop("checked")) {
       for (let i = 1; i < 11; i++) {
-        $(".movie-container").append(
+        $(".gallery2").append(
           `<img src='../../resources/image/공포/horror${i}.jpg'>`
         );
       }
+    } else {
+      $(".gallery2 img[src*='공포'").remove(); // 체크 해제 시 이미지 삭제
+    }
+  });
+});
 $(document).ready(function () {
   $("#spo").change(function () {
     if ($(this).prop("checked")) {
       for (let i = 1; i < 11; i++) {
-        $(".movie-container").append(
+        $(".gallery2").append(
           `<img src='../../resources/image/스포츠/spo${i}.jpg'>`
         );
       }
     } else {
-      $(".movie-container img[src*='스포츠'").remove(); // 체크 해제 시 이미지 삭제
+      $(".gallery2 img[src*='스포츠'").remove(); // 체크 해제 시 이미지 삭제
     }
   });
 });
@@ -181,12 +186,12 @@ $(document).ready(function () {
   $("#cri-and-act").change(function () {
     if ($(this).prop("checked")) {
       for (let i = 1; i < 7; i++) {
-        $(".movie-container").append(
+        $(".gallery2").append(
           `<img src='../../resources/image/액션·범죄/cri-and-act${i}.jpg'>`
         );
       }
     } else {
-      $(".movie-container img[src*='액션·범죄'").remove(); // 체크 해제 시 이미지 삭제
+      $(".gallery2 img[src*='액션·범죄'").remove(); // 체크 해제 시 이미지 삭제
     }
   });
 });
@@ -194,12 +199,12 @@ $(document).ready(function () {
   $("#medy").change(function () {
     if ($(this).prop("checked")) {
       for (let i = 1; i < 11; i++) {
-        $(".movie-container").append(
+        $(".gallery2").append(
           `<img src='../../resources/image/코미디/medy${i}.jpg'>`
         );
       }
     } else {
-      $(".movie-container img[src*='코미디'").remove(); // 체크 해제 시 이미지 삭제
+      $(".gallery2 img[src*='코미디'").remove(); // 체크 해제 시 이미지 삭제
     }
   });
 });
