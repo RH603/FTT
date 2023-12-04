@@ -155,15 +155,19 @@ shuffledhtmlUrls.forEach((url) => {
   $(".movie-container").append(img);
 });
 
-
-
-
-
+$(document).ready(function () {
+  $("#hor").change(function () {
+    if ($(this).prop("checked")) {
       for (let i = 1; i < 11; i++) {
         $(".movie-container").append(
           `<img src='../../resources/image/공포/horror${i}.jpg'>`
         );
       }
+    } else {
+      $(".movie-container img[src*='공포'").remove(); // 체크 해제 시 이미지 삭제
+    }
+  });
+});
 $(document).ready(function () {
   $("#spo").change(function () {
     if ($(this).prop("checked")) {
