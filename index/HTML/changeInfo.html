@@ -32,99 +32,110 @@
 
       <div id="updateResult" class="result"></div>
     </div>
-    <script type="module">
-      import * as firebase from "../JS/firebase.js";
-      const {
-        db,
-        getDocs,
-        collection,
-        setDoc,
-        addDoc,
-        getDatas,
-        doc,
-        addDatas,
-        deleteDatas,
-        updateDatas,
-        deleteField,
-        getData,
-        addData,
-      } = firebase;
+  </body>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+      addData,
+    } = firebase;
 
-      const userName = document.querySelector("#username");
-      const userId = document.querySelector("#userid");
-      const userPw = document.querySelector("#password");
-      const userNewPw = document.querySelector("#newpassword");
-      const updateBtn = document.querySelector("#updatebtn");
-      const text = document.querySelector(".result");
+    const userName = document.querySelector("#username");
+    const userId = document.querySelector("#userid");
+    const userPw = document.querySelector("#password");
+    const userNewPw = document.querySelector("#newpassword");
+    const updateBtn = document.querySelector("#updatebtn");
+    const text = document.querySelector(".result");
 
-      const idRegex = /^[a-zA-Z0-9]{4,12}$/;
+    const idRegex = /^[a-zA-Z0-9]{4,12}$/;
 
-      const pwRegex =
-        /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+    const pwRegex =
+      /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
 
-      const nameRegex = /[가-힣a-zA-Z\s]{2,5}/;
+    const nameRegex = /[가-힣a-zA-Z\s]{2,5}/;
 
-      updateBtn.addEventListener("click", async function () {
-        const snapshot = await getData("FTT", "FTT1");
-        const { memberId, memberPassword, memberName } = snapshot.data();
+    updateBtn.addEventListener("click", async function () {
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberId, memberPassword, memberName } = snapshot.data();
 
-        if (
-          nameRegex.test(document.querySelector("#username").value) &&
-          document.querySelector("#username").value == memberName
-        ) {
+      if (nameRegex.test(document.querySelector("#username").value)) {
+        if (document.querySelector("#username").value != memberName) {
           if (idRegex.test(document.querySelector("#userid").value)) {
-            if (pwRegex.test(document.querySelector("#password").value)) {
-              if (
-                document.querySelector("#password").value !=
-                document.querySelector("#newpassword").value
-              ) {
-                text.innerText = "회원정보가 수정되었습니다.";
-                text.style.color = "#4caf50"; // 성공 메시지에 색상 추가
-                // 회원정보 디비에 저장
+            if (document.querySelector("#userid").value != memberId) {
+              if (pwRegex.test(document.querySelector("#password").value)) {
+                if (
+                  document.querySelector("#password").value != memberPassword
+                ) {
+                  if (
+                    pwRegex.test(document.querySelector("#newpassword").value)
+                  ) {
+                    if (
+                      document.querySelector("#password").value !=
+                      document.querySelector("#newpassword").value
+                    ) {
+                      text.innerText = "회원정보가 수정되었습니다.";
+                      text.style.color = "#4caf50";
 
-                const updateObj = {
-                  memberId: document.querySelector("#userid").value,
-                  memberPassword: document.querySelector("#password").value,
-                  memberName: document.querySelector("#username").value,
-                  // 문서에서 잘못입력한 것을 지워주는 함수
-                  // memberTell: deleteField();
-                };
+                      // 회원정보 디비에 저장
+                      const updateObj = {
+                        memberId: document.querySelector("#userid").value,
+                        memberPassword:
+                          document.querySelector("#password").value,
+                        memberName: document.querySelector("#username").value,
+                        // 문서에서 잘못입력한 것을 지워주는 함수
+                        // memberTell: deleteField();
+                      };
 
-                updateDatas("FTT", "FTT1", updateObj).then(() =>
-                  setTimeout(() => {
-                    location.href =
-                      "http://127.0.0.1:5501/index/HTML/main.html";
-                  }, 3000)
-                );
+                      updateDatas("FTT", "FTT1", updateObj).then(() =>
+                        setTimeout(() => {
+                          location.href =
+                            "http://127.0.0.1:5501/index/HTML/main.html";
+                        }, 3000)
+                      );
+                    } else {
+                      text.innerText =
+                        "현재 비밀번호와 같습니다 다시 입력해주세요.";
+                      text.style.color = "red";
+                    }
+                  } else {
+                    text.innerText = "새로운 비밀번호를 알맞게 입력해주세요.";
+                    text.style.color = "red";
+                  }
+                } else {
+                  text.innerText = "이미 있는 비밀번호입니다.";
+                  text.style.color = "red";
+                }
               } else {
-                text.innerText = "새 비밀번호를 다시 입력해주세요.";
-                text.style.color = "red"; // 성공 메시지에 색상 추가
+                text.innerText = "비밀번호를 알맞게 입력해주세요.";
+                text.style.color = "red";
               }
             } else {
-              text.innerText = "비밀번호를 알맞게 입력해주세요.";
-              text.style.color = "red"; // 성공 메시지에 색상 추가
+              text.innerText = "이미 있는 아이디입니다.";
+              text.style.color = "red";
             }
           } else {
             text.innerText = "아이디를 알맞게 입력해주세요.";
-            text.style.color = "red"; // 성공 메시지에 색상 추가
+            text.style.color = "red";
           }
         } else {
-          text.innerText = "사용자 이름을 알맞게 입력해주세요.";
-          text.style.color = "red"; // 성공 메시지에 색상 추가
+          text.innerText = "이미 있는 이름입니다.";
+          text.style.color = "red";
         }
-      });
-
-      updateDatas("member", "member1", updateObj).then(() =>
-        window.location.reload()
-      );
-
-      // function updateUserInfo() {
-      //   // 이 부분에 회원정보 수정에 필요한 비동기적인 서버 통신 로직을 추가할 수 있습니다.
-      //   // 여기서는 간단한 알림 메시지만 보여주도록 하겠습니다.
-      //   const updateResultDiv = document.getElementById("updateResult");
-      //   updateResultDiv.innerText = "회원정보가 성공적으로 수정되었습니다.";
-      //   updateResultDiv.style.color = "#4caf50"; // 성공 메시지에 색상 추가
-      // }
-    </script>
-  </body>
+      } else {
+        text.innerText = "사용자 이름을 알맞게 입력해주세요.";
+        text.style.color = "red";
+      }
+    });
+  </script>
 </html>
