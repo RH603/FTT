@@ -141,71 +141,20 @@ $("#modal-kate-open").click(function () {
   
   // Append all shuffled images to .movie-container
   shuffledMovieUrls3.forEach((url) => {
-    $(".gallery3").append(`<img src='${url}'>`);
+    $(".gallery3").append(`<img src='${url}' class="gallery-img">`);
   });
   
   shuffledVideoUrls3.forEach((url) => {
-    $(".gallery3").append(`<video src='${url}' controls></video>`);
+    $(".gallery3").append(`<video src='${url}'></video>`);
   });
   
-  shuffledhtmlUrls3.forEach((url) => {
-    const img = document.createElement("img");
-    img.src = url;
-    img.classList.add("htmlImg"); // 이미지 클래스 추가
-    $(".gallery3").append(img);
-  });
+  // shuffledhtmlUrls3.forEach((url) => {
+  //   const img = document.createElement("img");
+  //   img.src = url;
+  //   img.classList.add("htmlImg"); // 이미지 클래스 추가
+  //   $(".gallery3").append(img);
+  // });
   
   
-  $(document).ready(function () {
-    $("#hor").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 11; i++) {
-          $(".gallery3").append(
-            `<img src='../../resources/image/공포/horror${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery3 img[src*='공포'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
-  $(document).ready(function () {
-    $("#spo").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 11; i++) {
-          $(".gallery3").append(
-            `<img src='../../resources/image/스포츠/spo${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery3 img[src*='스포츠'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
-  $(document).ready(function () {
-    $("#cri-and-act").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 7; i++) {
-          $(".gallery3").append(
-            `<img src='../../resources/image/액션·범죄/cri-and-act${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery3 img[src*='액션·범죄'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
-  $(document).ready(function () {
-    $("#medy").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 11; i++) {
-          $(".gallery3").append(
-            `<img src='../../resources/image/코미디/medy${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery3 img[src*='코미디'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
+
   

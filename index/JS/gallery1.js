@@ -138,74 +138,27 @@ $("#modal-kate-open").click(function () {
   }
   
   const [shuffledMovieUrls1, shuffledVideoUrls1, shuffledhtmlUrls1] = shuffleArrays(movieUrls1, videoUrls1, htmlUrls1);
-  
+  const galleryImg = document.querySelectorAll(".gallery-img")
+
   // Append all shuffled images to .movie-container
   shuffledMovieUrls1.forEach((url) => {
-    $(".gallery1").append(`<img src='${url}'>`);
-  });
-  
-  shuffledVideoUrls1.forEach((url) => {
-    $(".gallery1").append(`<video src='${url}' controls></video>`);
-  });
-  
-  shuffledhtmlUrls1.forEach((url) => {
-    const img = document.createElement("img");
-    img.src = url;
-    img.classList.add("htmlImg"); // 이미지 클래스 추가
-    $(".gallery1").append(img);
-  });
-  
-  
-  $(document).ready(function () {
-    $("#hor").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 11; i++) {
-          $(".gallery1").append(
-            `<img src='../../resources/image/공포/horror${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery1 img[src*='공포'").remove(); // 체크 해제 시 이미지 삭제
-      }
+      $(".gallery1").append(`<img src='${url}'class="gallery-img">`);
+      // console.log(url)
+      
     });
-  });
-  $(document).ready(function () {
-    $("#spo").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 11; i++) {
-          $(".gallery1").append(
-            `<img src='../../resources/image/스포츠/spo${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery1 img[src*='스포츠'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
-  $(document).ready(function () {
-    $("#cri-and-act").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 7; i++) {
-          $(".gallery1").append(
-            `<img src='../../resources/image/액션·범죄/cri-and-act${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery1 img[src*='액션·범죄'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
-  $(document).ready(function () {
-    $("#medy").change(function () {
-      if ($(this).prop("checked")) {
-        for (let i = 1; i < 11; i++) {
-          $(".gallery1").append(
-            `<img src='../../resources/image/코미디/medy${i}.jpg'>`
-          );
-        }
-      } else {
-        $(".gallery1 img[src*='코미디'").remove(); // 체크 해제 시 이미지 삭제
-      }
-    });
-  });
+
+
+    // for(let i=0; i<$(".gallery-img").length;i++){
+    //   $(".gallery-img")[i].append(`<video src='${shuffledVideoUrls1[i]}'></video>`)
+    // }
+
+    // $(".gallery-img").append(`<video src='${url}' controls></video>`);
   
+  // shuffledhtmlUrls1.forEach((url) => {
+  //   const img = document.createElement("img");
+  //   img.src = url;
+  //   img.classList.add("htmlImg"); // 이미지 클래스 추가
+  //   $(".gallery1").append(img);
+  // });
+  
+

@@ -1,9 +1,11 @@
-const slider = document.querySelector(".gallery");
-const nextBtn = document.querySelector(".swiper-button-next")
-const prevBtn = document.querySelector(".swiper-button-prev")
+const slider = document.querySelectorAll(".gallery");
+const nextBtn = document.querySelectorAll(".swiper-button-next")
+const prevBtn = document.querySelectorAll(".swiper-button-prev")
 let startX = 0;
 let scrollLeft = 0;
 const SCROLL_SPEED = 3;
+
+
 
 function doScroll(e){
     e.preventDefault();
@@ -12,32 +14,39 @@ function doScroll(e){
     slider.scrollLeft = scrollLeft - move
 }
 
-slider.addEventListener("mousedown",(e)=>{
-    slider.addEventListener("mousemove",doScroll)
-    slider.classList.add("onDrag");
-    startX = e.pageX;
-    scrollLeft = slider.scrollLeft
-})
 
-slider.addEventListener("mouseup",()=>{
-    slider.removeEventListener("mousemove",doScroll)
-    slider.classList.remove("onDrag")
-})
+for(let i=0; i<3;i++){
 
-slider.addEventListener("mouseleave",()=>{
-    slider.removeEventListener("mousemove",doScroll)
-    slider.classList.remove("onDrag")
-})
-nextBtn.addEventListener("click",()=>{
-    console.log(slider.scrollLeft)
-    slider.scrollLeft = slider.scrollLeft + 697
-    // alert("click")
-})
-prevBtn.addEventListener("click",()=>{
-    console.log(slider.scrollLeft)
-    slider.scrollLeft = slider.scrollLeft - 697
-    // alert("click")
-})
+    slider[i].addEventListener("mousedown",(e)=>{
+        slider[i].addEventListener("mousemove",doScroll)
+        slider[i].classList.add("onDrag");
+        startX = e.pageX;
+        scrollLeft = slider[i].scrollLeft
+    })
+    
+    slider[i].addEventListener("mouseup",()=>{
+        slider[i].removeEventListener("mousemove",doScroll)
+        slider[i].classList.remove("onDrag")
+    })
+    
+    slider[i].addEventListener("mouseleave",()=>{
+        slider[i].removeEventListener("mousemove",doScroll)
+        slider[i].classList.remove("onDrag")
+    })
+    nextBtn[i].addEventListener("click",()=>{
+        console.log(slider[i].scrollLeft)
+        slider[i].scrollLeft = slider[i].scrollLeft + 697
+        // alert("click")
+    })
+    prevBtn[i].addEventListener("click",()=>{
+        console.log(slider[i].scrollLeft)
+        slider[i].scrollLeft = slider[i].scrollLeft - 697
+        // alert("click")
+    })
+}
+
+
+
 // slider.addEventListener("mousemove",()=>{
 //     console.log("mousemove")
 // })

@@ -81,7 +81,13 @@
     font-size: 48px;
     transform: rotateY(180deg);
 }
+
 img{
-    width: 100%;
+    width: 200px;
     height: 300px;
+
+}
+.gallery:hover{
+    background-color: black;
+    display: none;
 }
