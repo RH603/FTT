@@ -28,6 +28,8 @@ body {
 }
 
 .left-top {
+  width: 300px;
+
   position: sticky;
   top: 10px;
 }

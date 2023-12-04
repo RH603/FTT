@@ -3,7 +3,6 @@ const modalImg = document.querySelector(".modal-img-win");
 const images = document.querySelectorAll("img");
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("click", () => {
-    alert("click");
     // Create a new image element
     const clickedImg = document.createElement("img");
     clickedImg.src = images[i].src;

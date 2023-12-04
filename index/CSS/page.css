@@ -175,7 +175,7 @@ a {
 .bg::after {
   position: absolute;
   /* background-color: white; */
-  content: "감사합니다.";
+  content: "";
   width: 100%;
   max-width: 1600px;
   text-align: center;
