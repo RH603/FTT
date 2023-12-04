@@ -121,7 +121,7 @@ $("#modal-kate-open").click(function () {
     "../../resources/html/코미디/medy10.jpg",
   ];
   
-  function shuffleArrays(array1, array2, array3) {
+  function shuffleArrays3(array1, array2, array3) {
     if (array1.length !== array2.length) {
       throw new Error('두 배열의 길이가 동일해야 합니다.');
     }
@@ -137,11 +137,11 @@ $("#modal-kate-open").click(function () {
     return [array1, array2, array3];
   }
   
-  const [shuffledMovieUrls3, shuffledVideoUrls3, shuffledhtmlUrls3] = shuffleArrays(movieUrls3, videoUrls3, htmlUrls3);
+  const [shuffledMovieUrls3, shuffledVideoUrls3, shuffledhtmlUrls3] = shuffleArrays3(movieUrls3, videoUrls3, htmlUrls3);
   
   // Append all shuffled images to .movie-container
   shuffledMovieUrls3.forEach((url) => {
-    $(".gallery3").append(`<img src='${url}' class="gallery-img">`);
+    $(".gallery3").append(`<img src='${url}' class="gallery-img3">`);
   });
   
   shuffledVideoUrls3.forEach((url) => {

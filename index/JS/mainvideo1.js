@@ -1,19 +1,19 @@
-// const modalImgBack = document.querySelector(".modal-img-back");
-// const modalImg = document.querySelector(".modal-img-win");
-// const images = document.querySelectorAll("img");
-// const video = document.querySelectorAll("video");
-// const modalVid = document.querySelector(".movie-container")
-// const htmlImgs = document.querySelectorAll(".htmlImg")
-// const kateBox = document.querySelector(".kate-box")
-const gallery2 = document.querySelectorAll(".gallery-img2")
-console.log(videoUrls1)
+const modalImgBack = document.querySelector(".modal-img-back");
+const modalImg = document.querySelector(".modal-img-win");
+const images = document.querySelectorAll("img");
+const video = document.querySelectorAll("video");
+const modalVid = document.querySelector(".movie-container")
+const htmlImgs = document.querySelectorAll(".htmlImg")
+const kateBox = document.querySelector(".kate-box")
+const gallery1 = document.querySelectorAll(".gallery-img")
+// console.log(videoUrls1)
 
 
-// const pTag = document.createElement("p")
-// const textNode = document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur rerum suscipit corrupti doloremque aperiam, tenetur sapiente sunt ratione officia quidem necessitatibus, numquam voluptatem blanditiis delectus distinctio nulla sed nisi porro.");
+const pTag = document.createElement("p")
+const textNode = document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur rerum suscipit corrupti doloremque aperiam, tenetur sapiente sunt ratione officia quidem necessitatibus, numquam voluptatem blanditiis delectus distinctio nulla sed nisi porro.");
 
-for (let i = 0; i < gallery2.length; i++) {
-    gallery2[i].addEventListener("click", () => {
+for (let i = 0; i < gallery1.length; i++) {
+    gallery1[i].addEventListener("click", () => {
         // console.log(images.length)
         // Create a new image element
         const clickedImage = document.createElement("video");
@@ -24,7 +24,7 @@ for (let i = 0; i < gallery2.length; i++) {
         const clickedImg = document.createElement("img");
         // 
         
-        clickedImage.src = videoUrls2[i];
+        clickedImage.src = videoUrls1[i];
         // 추가
         clickedImg.src = images[i].src;
         // clickedHtml.src = shuffledhtmlUrls1[i]

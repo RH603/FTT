@@ -115,7 +115,7 @@ const htmlUrls2 = [
   "../../resources/html/코미디/medy10.jpg",
 ];
 
-function shuffleArrays(array1, array2, array3) {
+function shuffleArrays2(array1, array2, array3) {
   if (array1.length !== array2.length) {
     throw new Error('두 배열의 길이가 동일해야 합니다.');
   }
@@ -131,11 +131,11 @@ function shuffleArrays(array1, array2, array3) {
   return [array1, array2, array3];
 }
 
-const [shuffledMovieUrls2, shuffledVideoUrls2, shuffledhtmlUrls2] = shuffleArrays(movieUrls2, videoUrls2, htmlUrls2);
+const [shuffledMovieUrls2, shuffledVideoUrls2, shuffledhtmlUrls2] = shuffleArrays2(movieUrls2, videoUrls2, htmlUrls2);
 
 // Append all shuffled images to .movie-container
 shuffledMovieUrls2.forEach((url) => {
-  $(".gallery2").append(`<img src='${url}' class="gallery-img">`);
+  $(".gallery2").append(`<img src='${url}' class="gallery-img2">`);
 });
 
 shuffledVideoUrls2.forEach((url) => {

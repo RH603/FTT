@@ -133,7 +133,6 @@ $("#modal-kate-open").click(function () {
       [array2[i], array2[j]] = [array2[j], array2[i]];
       [array3[i], array3[j]] = [array3[j], array3[i]];
     }
-  
     return [array1, array2, array3];
   }
   

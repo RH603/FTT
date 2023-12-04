@@ -181,16 +181,13 @@
   <script>
         document.addEventListener("DOMContentLoaded", function () {
       const header = document.querySelector("header");
-      const header2 = document.querySelector(".modal-kate-header-container");
       const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
 
       window.addEventListener("scroll", function () {
         if (window.scrollY > scrollOffset) {
           header.classList.add("scrolled");
-          header2.classList.add("scrolled");
         } else {
           header.classList.remove("scrolled");
-          header2.classList.remove("scrolled");
         }
       });
     });
