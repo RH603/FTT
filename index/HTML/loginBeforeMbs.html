@@ -19,12 +19,7 @@
           <nav id="gnb">
             <ul>
               <li class="g-main">
-                <a href="#">Language</a>
-                <ul class="g-sub">
-                  <li><a class="g-sub-item" href="#">한국어</a></li>
-                  <li><a class="g-sub-item" href="#">영어</a></li>
-                  <li><a class="g-sub-item" href="#">일본어</a></li>
-                </ul>
+                <a href="#" id="findMovie">검색</a>
               </li>
               <li class="g-main">
                 <a href="#" class="login">멤버십</a>
@@ -278,9 +273,11 @@
           <!-- <input type="button" name="cancel" value="취소" /> -->
         </div>
         <div class="modal-find">
-          <a href="#">아이디 찾기</a>
-          <a href="#">비밀번호 찾기</a>
-          <a href="signUp.html">회원가입</a>
+          <a href="http://127.0.0.1:5501/index/HTML/findId.html">아이디 찾기</a>
+          <a href="http://127.0.0.1:5501/index/HTML/findId.html"
+            >비밀번호 찾기</a
+          >
+          <a href="http://127.0.0.1:5501/index/HTML/agree.html">회원가입</a>
         </div>
         <ul class="modal-footer">
           <li>이용약관</li>
@@ -293,7 +290,8 @@
   </body>
   <!-- <script src="../JS/logout.js"></script> -->
   <!-- <script src="../JS/buy.js"></script> -->
-  <script src="/index/JS/Login.js"></script>
+  <script src="../JS/Login.js"></script>
+  <script src="../JS/loginBeforeMbs.js"></script>
   <script type="module">
     import * as firebase from "../JS/firebase.js";
     const {
@@ -313,24 +311,8 @@
     const checkBtn = document.querySelector(".login-go");
     const id = document.querySelector("input[name = id]").value;
     const password = document.querySelector("input[name = password]").value;
-    const login = document.querySelectorAll(".login");
-    const modalClose = document.querySelector(".modal-close");
-    const modalBack = document.querySelector(".modal-back");
+
     const kategori = document.querySelector(".kategori");
-    const msCard = document.querySelectorAll(".ms-card-ac");
-
-    msCard.forEach((el) => {
-      el.addEventListener("click", () => {
-        alert("로그인 해주세요");
-        modalBack.style.display = "block";
-      });
-    });
-
-    login.forEach((el) => {
-      el.addEventListener("click", () => {
-        modalBack.style.display = "block";
-      });
-    });
 
     kategori.addEventListener("click", () => {
       alert("로그인 해주세요");
