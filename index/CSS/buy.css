@@ -20,6 +20,7 @@
 /* 결제내용 */
 .buyPopup-body {
   background-color: #333;
+  height: 100vh;
 }
 .buyPopup-container {
   display: flex;
@@ -119,6 +120,15 @@
   justify-content: center;
   gap: 4px;
 }
+
+.card.general:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+.card.general.selected {
+  background-color: #ace;
+}
 .show2 {
   display: none;
 }
@@ -130,5 +140,9 @@ input[type="checkbox"] {
 height: 40px; */
 }
 .pri-agree {
-  padding: 0 24px;
+  padding: 0 32px;
+}
+
+.pri-agree span {
+  padding: 0 32px;
 }
