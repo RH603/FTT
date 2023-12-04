@@ -78,12 +78,18 @@
         </div>
       </div>
       <!-- 결제 수단 -->
-      <div class="pri-agree">
-        <input type="checkbox" /><input type="checkbox" name="check-all" />
+      <div class="agree-check">
+        <input type="checkbox" name="check-all" />
+        <span>전체동의하기</span>
+      </div>
+<div class="agree-check">
         <input type="checkbox" name="check" />
-        <input type="checkbox" name="check" /><span
-          >약관에 모두 동의합니다</span
-        >
+        <span><strong>[필수]</strong>FTT 이용약관</span>
+      </div>
+<div class="agree-check">
+        <input type="checkbox" name="check" />
+        <span><strong>[필수]</strong> 개인정보 수집 및 이용</span>
+      </div>
       </div>
       <div class="payBtnContainer">
         <button type="button" name="결제" value="button" class="payBtn">결제하기</button>
@@ -91,6 +97,7 @@
     </div>
   </body>
   <script src="../JS/buy.js"></script>
+  <script src="../JS/agree.js"></script>
   <script type="module">
     import * as firebase from "../JS/firebase.js";
     const {

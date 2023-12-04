@@ -147,11 +147,25 @@ height: 40px; */
   padding: 0 32px;
 }
 
-.payBtnContainer{
+.payBtnContainer {
   display: flex;
   justify-content: center;
 }
-.payBtn{
+.payBtn {
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.agree-check {
+  /* background-color: #333; */
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  gap: 1em;
+  padding: 1rem 0;
+  margin-left: 5%;
+}
+
+.agree-check > input {
+  width: 15px;
 }
