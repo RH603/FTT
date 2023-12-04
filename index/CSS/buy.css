@@ -146,3 +146,12 @@ height: 40px; */
 .pri-agree span {
   padding: 0 32px;
 }
+
+.payBtnContainer{
+  display: flex;
+  justify-content: center;
+}
+.payBtn{
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
