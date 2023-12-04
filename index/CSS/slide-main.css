@@ -27,7 +27,7 @@
     grid-template-columns: repeat(37,18%); */
     /* column-gap: 1rem; */
     overflow: scroll;
-    /* height: 90vh; */
+    height: 300px;
     scroll-snap-type: both mandatory;
 }
 .onDrag{
@@ -89,6 +89,6 @@ img{
     height: 300px;
 }
 
-.gallery > img:hover{
+/* .gallery > img:hover{
     opacity: 0;
-}
+} */

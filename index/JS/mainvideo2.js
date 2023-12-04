@@ -7,6 +7,10 @@ const htmlImgs = document.querySelectorAll(".htmlImg")
 const kateBox = document.querySelector(".kate-box")
 
 
+const pTag = document.createElement("p")
+const textNode = document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur rerum suscipit corrupti doloremque aperiam, tenetur sapiente sunt ratione officia quidem necessitatibus, numquam voluptatem blanditiis delectus distinctio nulla sed nisi porro.");
+
+console.log(pTag)
 for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
         // console.log(images.length)
@@ -32,6 +36,8 @@ for (let i = 0; i < images.length; i++) {
         
         // Append the clicked image to the modal
         modalImg.appendChild(clickedImage);
+        modalImg.appendChild(pTag)
+        pTag.appendChild(textNode)
 
         // modalImg.appendChild(clickedImg)
 

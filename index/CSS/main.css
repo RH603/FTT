@@ -28,13 +28,13 @@ main {
   font-size: 32px;
   color:white;
 }
-.gallery {
+/* .gallery {
   width: 100%;
   max-width: 1600px;
   display: flex;
   margin: 0 auto;
   overflow: hidden;
-}
+} */
 
 /* .gallery > li > img {
   width: 400px;
