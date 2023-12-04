@@ -424,6 +424,7 @@
         deleteDatas,
         updateDatas,
         deleteField,
+        getData,
       } = firebase;
 
       const checkBtn = document.querySelector("input[name = check]");
@@ -447,26 +448,25 @@
         modalBack.style.display = "block";
       });
       checkBtn.addEventListener("click", async function () {
-        const snapshot = await getDatas("FTT");
-        snapshot.forEach((doc) => {
-          const { memberId, memberPassword } = doc.data();
+        const snapshot = await getData("FTT", "FTT1");
+        const { memberId, memberPassword } = snapshot.data();
 
-          if (document.querySelector("input[name = id]").value == memberId) {
-            console.log("1");
-            if (
-              document.querySelector("input[name = password]").value ==
-              memberPassword
-            ) {
-              console.log("2");
-              location.href = "http://127.0.0.1:5501/index/HTML/main.html";
-            } else {
-              alert("비밀번호를 다시 입력해주세요");
-              console.log("3");
-            }
+        if (document.querySelector("input[name = id]").value == memberId) {
+          console.log("1");
+          if (
+            document.querySelector("input[name = password]").value ==
+            memberPassword
+          ) {
+            console.log("2");
+            location.href = "http://127.0.0.1:5501/index/HTML/main.html";
           } else {
-            console.log("먼저실행");
+            alert("비밀번호를 다시 입력해주세요");
+            console.log("3");
           }
-        });
+        } else {
+          // console.log("먼저실행");
+          alert("아이디를 다시 입력해주세요.");
+        }
       });
 
       modalClose.addEventListener("click", function () {
