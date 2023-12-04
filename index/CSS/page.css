@@ -165,7 +165,7 @@ a {
 }
 /* 배경이미지 부분 - bg  */
 .bg {
-  background: url("../IMG/메인.webp") center center;
+  background: url("../IMG/메인.jpg") center center;
   background-size: cover;
   background-attachment: fixed;
   height: 350px;
@@ -175,7 +175,7 @@ a {
 .bg::after {
   position: absolute;
   /* background-color: white; */
-  content: "즐거운 시간 되시길 바랍니다.";
+  content: "감사합니다.";
   width: 100%;
   max-width: 1600px;
   text-align: center;

@@ -52,7 +52,10 @@ body {
   font-size: 20px;
   background-color: white;
   margin-top: 1rem;
+  position: sticky;
+  top: 110px;
 }
+
 /* 오른쪽 */
 .right {
   flex-grow: 1;
