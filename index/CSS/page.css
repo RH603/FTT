@@ -829,9 +829,9 @@ input:focus {
   height: 50px;
   /* padding: 1rem; */
   cursor: pointer;
-  border: 1px solid black;
-  font-size: 20px;
-  font-weight: bold;
+  /* border: 1px solid black; */
+  font-size: 40px;
+  /* font-weight: bold; */
   border-radius: 20%;
 }
 
@@ -840,7 +840,7 @@ input:focus {
   width: 100%;
   text-align: center;
   padding: 2rem;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
 }
 
@@ -865,22 +865,37 @@ table {
 }
 
 /* 선 추가 */
-table th {
-  /* border-right: 2px solid black; */
+.sign.id > .wrap > input::placeholder {
+  font-size: 12px;
 }
+.sign.pw > input::placeholder {
+  font-size: 12px;
+}
+::placeholder {
+  font-size: 16px;
+}
+/* table th {
+  border-right: 2px solid black;
+  border-radius: 1rem;
+} */
 table tr {
-  border: 2px solid black;
+  /* border: 1px solid black; */
+  border-bottom: 1px solid black;
+  /* border-radius: 1rem; */
 }
 
-table td input {
-  border-left: 1px solid black;
-  padding-left: 1rem;
-}
 /* 가운데 정렬, 거리조절? */
 table th,
 table td {
   padding: 1rem 8px;
   text-align: center;
+}
+
+.table th.click,
+table td.click {
+  /* box-shadow: 0 0 10px dodgerblue; */
+  border: 1px solid dodgerblue;
+  /* border-radius: 16px; */
 }
 
 /* 입력창(input) */
@@ -937,8 +952,12 @@ table input {
   cursor: pointer;
   background-color: red;
 }
-.logingo {
+.login-go {
   width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* 이용약관 맨 아래 */

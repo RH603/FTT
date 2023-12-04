@@ -34,7 +34,7 @@ body {
 }
 
 .ms-card {
-  background: linear-gradient(45deg, rgb(216, 22, 22), blue);
+  background: linear-gradient(45deg, #3498db, rgb(216, 22, 22));
   /* background: linear-gradient(45deg, #e74c3c, #2ecc71); */
 
   width: 80%;

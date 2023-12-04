@@ -109,7 +109,7 @@ const movieData = [
   { url: "../../resources/html/스포츠/spo4.jpg", name: "말아톤" },
   { url: "../../resources/html/스포츠/spo5.jpg", name: "퍼펙트 게임" },
   { url: "../../resources/html/스포츠/spo6.jpg", name: "스퀴즈" },
-  { url: "../../resources/html/스포츠/spo7.jpg", name: "코지카터" },
+  { url: "../../resources/html/스포츠/spo7.jpg", name: "코치카터" },
   { url: "../../resources/html/스포츠/spo8.jpg", name: "파울볼" },
   { url: "../../resources/html/스포츠/spo9.jpg", name: "투혼" },
   { url: "../../resources/html/스포츠/spo10.jpg", name: "글러브" },
@@ -142,38 +142,38 @@ function shuffleArray(array) {
 
 shuffleArray(movieData);
 
-$(document).ready(function () {
-  const imageContainer = $("#imageContainer");
+// $(document).ready(function () {
+const imageContainer = $("#imageContainer");
 
-  for (let i = 0; i < movieData.length; i++) {
-    const imgContent = $("<div>").addClass("img-content");
-    const img = $("<img>")
-      .addClass("img")
-      .attr("src", movieData[i].url)
-      .attr("alt", "");
-    const h2 = $("<h2>").addClass("name").text(movieData[i].name);
+for (let i = 0; i < movieData.length; i++) {
+  const imgContent = $("<div>").addClass("img-content");
+  const img = $("<img>")
+    .addClass("img")
+    .attr("src", movieData[i].url)
+    .attr("alt", "");
+  const h2 = $("<h2>").addClass("name").text(movieData[i].name);
 
-    imgContent.append(img, h2);
-    imageContainer.append(imgContent);
-  }
+  imgContent.append(img, h2);
+  imageContainer.append(imgContent);
+}
 
-  function filter() {
-    const iconInput = $("#search").val();
-    const Imgcontent = $(".img-content");
+function filter() {
+  const iconInput = $("#search").val();
+  const Imgcontent = $(".img-content");
 
-    Imgcontent.each(function () {
-      const name = $(this).find("h2");
+  Imgcontent.each(function () {
+    const name = $(this).find("h2");
 
-      if (name.text().indexOf(iconInput) !== -1) {
-        $(this).css("display", "block");
-      } else {
-        $(this).css("display", "none");
-      }
-    });
-  }
+    if (name.text().indexOf(iconInput) !== -1) {
+      $(this).css("display", "block");
+    } else {
+      $(this).css("display", "none");
+    }
+  });
+}
 
-  $("#search").on("input", filter);
-});
+$("#search").on("input", filter);
+// });
 // --------------------------------------------------------------
 // $(document).ready(function () {
 //   const imageContainer = $("#imageContainer");
