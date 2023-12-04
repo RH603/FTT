@@ -1,142 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>changeInfo</title>
+    <title>회원정보 수정</title>
+    <link rel="stylesheet" href="/index/CSS/changeInfo.css" />
   </head>
-  <style>
-    input {
-      width: 30%;
-      height: 30px;
-    }
-
-    .sign.gender input {
-      width: 5%;
-    }
-  </style>
   <body>
-    <div class="container">회원정보변경</div>
-
-    <fieldset>
-      <legend>회원정보변경</legend>
-      <div class="signup-main">
-        <section class="signup">
-          <div class="signup-wrap">
-            <div class="sign id">
-              <h2>아이디</h2>
-              <div class="wrap">
-                <input type="text" name="id" placeholder="8자 이상 입력" />
-                <button type="button" name="중복확인">중복확인</button>
-              </div>
-            </div>
-
-            <div class="sign pw">
-              <h2>비밀번호</h2>
-              <input
-                type="password"
-                name="password"
-                placeholder="8자 이상 입력"
-              />
-            </div>
-
-            <div class="sign rec">
-              <h2>비밀번호 재입력</h2>
-              <input type="password" name="passwordCheck" />
-            </div>
-
-            <div class="sign name">
-              <h2>이름</h2>
-              <input type="text" name="name" />
-            </div>
-
-            <div class="sign birth">
-              <h2>생년월일</h2>
-              <input
-                type="text"
-                name="birth"
-                placeholder="  '-' 입력해주세요 "
-              />
-            </div>
-
-            <div class="sign gender">
-              <div class="gender">
-                <input type="button" name="gender" value="남자" />
-                <input type="button" name="gender" value="여자" />
-              </div>
-              <div class="gender">
-                <input type="button" name="language" value="내국인" />
-                <input type="button" name="language" value="외국인" />
-              </div>
-            </div>
-
-            <div class="sign phone">
-              <h2>휴대전화</h2>
-              <select>
-                <option>대한민국 +82</option>
-                <option>중국 +86</option>
-                <option>일본 +81</option>
-                <option>미국 +1</option>
-              </select>
-              <br />
-              <input type="text" name="phone" placeholder="전화번호 입력" />
-              <button type="button" name="btn" value="인증번호 받기">
-                인증번호 받기
-              </button>
-            </div>
-          </div>
-          <button type="button" class="signBtn" name="btn" value="button">
-            회원정보수정
-          </button>
-        </section>
+    <div class="container">
+      <div class="header">
+        <h1>회원정보 수정</h1>
       </div>
-    </fieldset>
-  </body>
-  <script type="module">
-    import * as firebase from "../JS/firebase.js";
-    const {
-      db,
-      getDocs,
-      collection,
-      setDoc,
-      addDoc,
-      getDatas,
-      doc,
-      addDatas,
-      deleteDatas,
-      updateDatas,
-      deleteField,
-      getData,
-    } = firebase;
 
-    // const memberPasswordCheck = document.querySelector("input[name = passwordCheck]").value;
+      <div class="form-container">
+        <form id="updateForm">
+          <label for="username">사용자명:</label>
+          <input type="text" id="username" name="username" required />
 
-    // 데이터 변경
-    const updateBtn = document.querySelector(".signBtn");
-    updateBtn.addEventListener("click", function () {
-      const updateObj = {
-        memberId: document.querySelector("input[name = id]").value,
-        memberPassword: document.querySelector("input[name = password]").value,
-        // memberPasswordCheck: document.querySelector("input[name = passwordCheck]").value,
-        memberName: document.querySelector("input[name = name]").value,
-        memberBirth: document.querySelector("input[name = birth]").value,
-        memberPhoneNumber: document.querySelector("input[name = phone]").value,
-        // membergender: document.querySelector("input[name = gender]").value,
-        // memberLanguage: document.querySelector("input[name = language]").value,
-      };
+          <label for="id">아이디:</label>
+          <input type="id" id="email" name="email" required />
 
-      if (
-        updateObj.memberPassword ==
-        document.querySelector("input[name = passwordCheck]").value
-      ) {
-        updateDatas("FTT", "FTT1", updateObj).then(function () {
-          alert("입력하신 정보가 수정되었습니다.");
-          location.href =
-            "http://127.0.0.1:5501/index/HTML/signUpAfterMain.html";
-        });
-      } else {
-        alert("비밀번호가 다릅니다.");
+          <label for="password">현재 비밀번호:</label>
+          <input type="password" id="password" name="password" />
+
+          <label for="newpassword">새 비밀번호:</label>
+          <input type="password" id="newpassword" name="newpassword" />
+
+          <button type="button" onclick="updateUserInfo()">
+            회원정보 수정
+          </button>
+        </form>
+      </div>
+
+      <div id="updateResult" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function updateUserInfo() {
+        // 이 부분에 회원정보 수정에 필요한 비동기적인 서버 통신 로직을 추가할 수 있습니다.
+        // 여기서는 간단한 알림 메시지만 보여주도록 하겠습니다.
+        const updateResultDiv = document.getElementById("updateResult");
+        updateResultDiv.innerText = "회원정보가 성공적으로 수정되었습니다.";
+        updateResultDiv.style.color = "#4caf50"; // 성공 메시지에 색상 추가
       }
-    });
-  </script>
+    </script>
+  </body>
 </html>

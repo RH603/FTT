@@ -27,10 +27,15 @@ header {
   left: 0;
   right: 0;
   top: 0;
-  background-color: red;
-  z-index: 9999;
+  /* background-color: red; */
+
+  border-bottom: 1px solid white;
 }
 
+header.scrolled {
+  background-color: black;
+  border-bottom: none;
+}
 #header-menu {
   text-align: center;
   width: 100%;
@@ -92,7 +97,7 @@ header {
   height: 159px;
   top: 40px;
   /* right: 130px; */
-  background-color: #333333;
+  background-color: #333;
   transform: translateY(0);
   /* opacity: 0; */
   z-index: -10;
@@ -125,6 +130,7 @@ header {
 .g-sub > li > a {
   width: 100%;
   height: 100%;
+  /* column-rule-color: white; */
   color: white;
   pointer-events: auto;
 }

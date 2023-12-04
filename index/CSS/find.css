@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #333;
+}
+.find-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+}
+/* 왼쪽 */
+.left {
+  width: 100%;
+  max-width: 300px;
+  flex-grow: 1;
+}
+
+.left-top {
+  position: sticky;
+  top: 10px;
+}
+.icon {
+  position: sticky;
+  top: 50px;
+}
+
+/* 오른쪽 */
+.right {
+  /* flex-grow: 1; */
+}
+.img-content img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.right-img {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 16px;
+}
