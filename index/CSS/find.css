@@ -55,7 +55,7 @@ body {
 }
 /* 오른쪽 */
 .right {
-  /* flex-grow: 1; */
+  flex-grow: 1;
 }
 .img-content img {
   width: 300px;
