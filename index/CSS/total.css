@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   border-collapse: collapse;
+  word-break: keep-all;
   /* font-family: Pretendard; */
 }
 
