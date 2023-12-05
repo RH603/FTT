@@ -165,7 +165,7 @@ a {
 }
 /* 배경이미지 부분 - bg  */
 .bg {
-  background: url("../IMG/메인.jpg") center center;
+  background: url("../IMG/메인1.webp") center center;
   background-size: cover;
   background-attachment: fixed;
   height: 350px;
@@ -691,6 +691,7 @@ footer {
   padding: 1rem;
   border: 1px solid white;
   display: flex;
+  font-size: 1.2vw;
   justify-content: center;
   align-items: self-start;
   line-height: 50px;
