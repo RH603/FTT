@@ -16,6 +16,8 @@
       height: 100%;
       background-color: #333;
     }
+
+    
   </style>
   <body>
     <header>
@@ -204,6 +206,34 @@
       header.classList.remove("scrolled");
     }
   });
+  
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainContainer = document.querySelector(".main-container");
+
+    // Function to create and append images
+    function createImage(className) {
+      const img = document.createElement("img");
+      img.src = "path/to/your/image.png"; // Replace with the path to your image
+      img.classList.add("scroll-image", className);
+      document.body.appendChild(img);
+      return img;
+    }
+
+    const leftImage = createImage("left-image");
+    const rightImage = createImage("right-image");
+
+    // Event listener for scrolling
+    window.addEventListener("scroll", function () {
+      // Calculate the opacity based on scroll position
+      const opacity = Math.min(1, window.scrollY / 100); // Adjust the value as needed
+
+      // Set the opacity for the images
+      leftImage.style.opacity = opacity;
+      rightImage.style.opacity = opacity;
+    });
+  });
 </script>
 </html>
