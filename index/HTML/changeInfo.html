@@ -27,6 +27,7 @@
           <input type="password" id="newpassword" name="newpassword" />
 
           <button type="button" id="updatebtn">회원정보 수정</button>
+          <button type="button" id="backBtn">나가기</button>
         </form>
       </div>
 
@@ -57,6 +58,7 @@
     const userNewPw = document.querySelector("#newpassword");
     const updateBtn = document.querySelector("#updatebtn");
     const text = document.querySelector(".result");
+    const backBtn = document.querySelector("#backBtn");
 
     const idRegex = /^[a-zA-Z0-9]{4,12}$/;
 
@@ -64,6 +66,8 @@
       /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
 
     const nameRegex = /[가-힣a-zA-Z\s]{2,5}/;
+
+    const textStyle = (text.style.color = "red");
 
     updateBtn.addEventListener("click", async function () {
       const snapshot = await getData("FTT", "FTT1");
@@ -134,8 +138,13 @@
         }
       } else {
         text.innerText = "사용자 이름을 알맞게 입력해주세요.";
-        text.style.color = "red";
+        // text.style.color = "red";
+        // textStyle;
       }
+    });
+
+    backBtn.addEventListener("click", () => {
+      location.href = "http://127.0.0.1:5501/my_page/my_page.html";
     });
   </script>
 </html>

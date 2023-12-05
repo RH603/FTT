@@ -1,11 +1,11 @@
-/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;400;700&family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   border-collapse: collapse;
   word-break: keep-all;
-  /* font-family: Pretendard; */
+  font-family: "Poppins", sans-serif;
 }
 
 li {
@@ -14,5 +14,4 @@ li {
 
 a {
   text-decoration: none;
-  color: black;
 }
