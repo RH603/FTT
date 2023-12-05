@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FTT 메인</title>
     <link rel="stylesheet" href="../CSS/main-header.css" />
     <link rel="stylesheet" href="../CSS/main.css" />
     <link rel="stylesheet" href="../CSS/total.css" />
@@ -181,7 +181,7 @@
 ></script>
 <!-- jQuery -->
   <script src="../JS/main.js"></script>
-  <!-- <script src="../JS/logout.js"></script> -->
+  <script src="../JS/logout.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- 케러셀 자바스크립트 -->
   <script src="../JS/slide.js"></script>
@@ -236,38 +236,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const logout = document.querySelector(".g-main .logOut");
+//   const logout = document.querySelector(".g-main .logOut");
 
-  const memberInfo = {
-        memberId: "",
-        memberPassword: "",
-        memberName: "",
-        memberBirth: "",
-        memberPhoneNumber: "",
-        membergender: "",
-        memberLanguage: "",
-      };
+//   const memberInfo = {
+//         memberId: "",
+//         memberPassword: "",
+//         memberName: "",
+//         memberBirth: "",
+//         memberPhoneNumber: "",
+//         membergender: "",
+//         memberLanguage: "",
+//       };
 
-       const pay = {
-        payName: "",
-        payQuality: "",
-        payUse: "",
-        payWaych: "",
-        pay: "",
-        payMoney: "",
-      };
-logout.addEventListener("click", function () {
-  const out = confirm("로그아웃 하시겠습니까?");
-  if (out == true) {
-    addDatas(memberInfo).then(function () {
-                      alert("회원가입이 성공했습니다 로그인 해주세요");
-                      modalBack.style.display = "block";
-                    });
-    location.href = "http://127.0.0.1:5501/index/HTML/page.html";
-  } else {
-    alert("감사합니다.");
-  }
-});
+//        const pay = {
+//         payName: "",
+//         payQuality: "",
+//         payUse: "",
+//         payWaych: "",
+//         pay: "",
+//         payMoney: "",
+//       };
+// logout.addEventListener("click", function () {
+//   const out = confirm("로그아웃 하시겠습니까?");
+//   if (out == true) {
+//     addDatas(memberInfo).then(function () {
+//                       alert("탈퇴되었습니다. 안녕히 가세요.");
+//                       location.href = "http://127.0.0.1:5501/index/HTML/page.html";
+//                     });
+//   } else {
+//     alert("감사합니다.");
+//   }
+// });
 
 
 </script>

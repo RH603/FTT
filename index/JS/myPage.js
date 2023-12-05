@@ -21,11 +21,10 @@ popupCloseIr.addEventListener("click", () => {
 });
 
 option.addEventListener("click", () => {
-  alert("click")
+  alert("click");
   setting[0].style.display = "block";
   setting[1].style.display = "block";
 });
-
 
 settiongInfo.addEventListener("click", () => {
   alert("click");
