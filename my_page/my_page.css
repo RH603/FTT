@@ -6,10 +6,19 @@
 
 body {
   margin: 0;
-  padding: 30px 60px;
+  /* padding: 30px 60px; */
   background-color: #1b1b1b;
-}
 
+}
+.mymain-container{
+  margin: 130px auto 0;
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px;
+}
 p {
   color: white;
   font-size: 1rem;
@@ -68,7 +77,11 @@ p {
   border-radius: 50%;
   overflow: hidden;
 }
-
+.profileBox{
+  display: flex;
+  align-items: flex-end;
+  gap:24px;
+}
 .profile {
   width: 100%;
   height: 100%;
@@ -76,28 +89,20 @@ p {
   color: white;
 }
 
-.profile-text {
-  color: white;
-  position: relative;
-}
-
-.profile-name {
-  position: absolute;
-  bottom: 24px;
-  left: 90px;
-  text-align: center;
-  color: white;
+.profile-name{
+  color:white;
+  font-size: 32px;
 }
 
 .profile-information {
-  padding: 20px;
+  /* padding: 20px; */
   color: white;
 }
 
 .film,
 .person {
-  padding: 10px;
-  position: relative;
+  /* padding: 10px; */
+  /* position: relative; */
   color: white;
 }
 
@@ -105,13 +110,13 @@ p {
   width: 80%;
   max-width: 1440px;
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  /* justify-content: center;
+  margin: 0 auto; */
   gap: 20px;
 }
 
 .move-name {
-  padding: 10px;
+  /* padding: 10px; */
   color: white;
   position: relative;
 }
@@ -120,21 +125,21 @@ p {
   width: 80%;
   max-width: 1440px;
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  /* justify-content: center;
+  margin: 0 auto; */
   gap: 20px;
 }
 
 .fa-heart {
   color: white;
-  padding: 10px;
-  position: relative;
+  /* padding: 10px; */
+  /* position: relative; */
 }
 
 .moving {
-  padding: 10px;
+  /* padding: 10px; */
   color: white;
-  position: relative;
+  /* position: relative; */
 }
 
 .moving-item,
@@ -142,8 +147,8 @@ p {
   width: 80%;
   max-width: 1440px;
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  /* justify-content: center;
+  margin: 0 auto; */
   gap: 20px;
 }
 
@@ -156,7 +161,7 @@ p {
 .svg {
   /* position: relative; */
   width: 100%;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;

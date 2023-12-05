@@ -6,7 +6,7 @@
     <title>my_page</title>
     <link rel="stylesheet" href="my_page.css" />
     <link rel="stylesheet" href="my_page2.css" />
-    <!-- <link rel="stylesheet" href="../index/CSS/main-header.css" /> -->
+    <link rel="stylesheet" href="../index/CSS/main-header.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -144,7 +144,7 @@
       </div>
     </div>
     <!-- 모달창 종료 -->
-    <div class="container">
+    <div class="mymain-container">
       <div class="svg">
         <i class="fa-regular fa-bell alarm" id="alarmId">알림</i>
         <div class="ticket">
@@ -156,19 +156,21 @@
           <span class="setting-del set">회원 탈퇴</span>
         </div>
       </div>
-      <div class="profile-img">
-        <img src="image/1.jpg" alt="" class="profile" />
-      </div>
-      <div class="profile-text">
-        <span class="profile-name">FFT님</span>
+      <div class="profileBox">
+        <div class="profile-img">
+          <img src="image/1.jpg" alt="" class="profile" />
+        </div>
+        <div class="profile-text">
+          <span class="profile-name">FFT님</span>
+        </div>
       </div>
       <div class="profile-information">
         <span class="profile-ticket">나의 이용권</span>
         <span class="profile-ticket2"> OTT 팩(모바일 + pc HD 시청 1회선) </span>
       </div>
       <div class="film">
-        <div class="fiim-box1"></div>
-        <i class="fa-solid fa-film">전체 신청내역</i>
+        <i class="fa-solid fa-film filmIcon"></i>
+        전체 신청내역
       </div>
       <div class="bigBox1">
         <div class="smallBox1">
@@ -188,8 +190,8 @@
         </div>
       </div>
       <div class="move-name">
-        <div class="heart"></div>
-        <i class="fa-regular fa-heart">관심 영화</i>
+        <i class="fa-regular fa-heart"></i>
+        관심 영화
       </div>
       <div class="move-name1">
         <div class="image-item">
@@ -203,11 +205,12 @@
         <div class="image-item3">
           <div><img src="image/열정같은소리하고있네.jpg" class="img" /></div>
           <p>열정같은소리하고있네</p>
+          
         </div>
       </div>
       <div class="moving">
-        <div class="heart2"></div>
-        <i class="fa-solid fa-heart">찜한 영화</i>
+        <i class="fa-solid fa-heart"></i>
+        찜한 영화
       </div>
       <div class="moving-item">
         <div class="moving-img">
@@ -224,8 +227,8 @@
         </div>
       </div>
       <div class="person">
-        <div class="life"></div>
-        <i class="fa-solid fa-person">인생영화</i>
+        <i class="fa-solid fa-person"></i>
+        인생영화
       </div>
       <div class="life-item">
         <div class="life-move">
@@ -246,5 +249,47 @@
   <script src="my_page.js"></script>
   <script>
     // console.log("hello");
+  </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
+    const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+  
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > scrollOffset) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+    
+  });
+  
+  
+  document.addEventListener("DOMContentLoaded", function () {
+      const mainContainer = document.querySelector(".main-container");
+  
+      // Function to create and append images
+      // function createImage(className) {
+      //   const img = document.createElement("img");
+      //   img.src = "path/to/your/image.png"; // Replace with the path to your image
+      //   img.classList.add("scroll-image", className);
+      //   document.body.appendChild(img);
+      //   return img;
+      // }
+  
+      const leftImage = createImage("left-image");
+      const rightImage = createImage("right-image");
+  
+      // Event listener for scrolling
+      window.addEventListener("scroll", function () {
+        // Calculate the opacity based on scroll position
+        const opacity = Math.min(1, window.scrollY / 100); // Adjust the value as needed
+  
+        // Set the opacity for the images
+        leftImage.style.opacity = opacity;
+        rightImage.style.opacity = opacity;
+      });
+    });
   </script>
 </html>
