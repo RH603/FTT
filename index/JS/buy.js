@@ -18,13 +18,12 @@ function buyPopup6() {
 }
 
 const price = document.querySelector(".price");
-const card = document.querySelectorAll(".card");
+const card = document.querySelectorAll(".card.general");
 
 // Agree에서 가지고 옴
 const btn = document.querySelector(".payBtn");
 const checkAll = document.querySelector("input[name=check-all]");
 const check = document.querySelectorAll("input[name=check]");
-console.log(btn);
 
 // card.forEach((el) => {
 //   el.addEventListener("click", () => {
@@ -57,12 +56,12 @@ card.forEach((el) => {
       if (document.querySelector(".card.selected")) {
         btn.style.cursor = "pointer";
         btn.removeAttribute("disabled");
-        btn.style.backgroundColor = "red"; // 적절한 배경색으로 변경
+        btn.style.backgroundColor = "red";
       }
     } else {
       el.classList.remove("selected");
       // 선택이 해제되면 버튼 비활성화 및 스타일 초기화
-      btn.setAttribute("disabled", true);
+      // btn.setAttribute("disabled", true);
       btn.style.cursor = "auto";
       btn.style.backgroundColor = "";
       alert("결제 수단을 선택하세요");
@@ -84,9 +83,11 @@ btn.addEventListener("click", () => {
     }
   } else {
     // 카드가 선택되지 않았을 때의 동작
+
     alert("결제 수단을 선택하세요");
   }
 });
+
 window.onload = function () {
   var currentDate = new Date();
   var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
