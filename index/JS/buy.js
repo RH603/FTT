@@ -25,6 +25,9 @@ const btn = document.querySelector(".payBtn");
 const checkAll = document.querySelector("input[name=check-all]");
 const check = document.querySelectorAll("input[name=check]");
 
+const content = document.querySelector(".buyPopup-content");
+const table = document.querySelector(".two-table");
+
 // card.forEach((el) => {
 //   el.addEventListener("click", () => {
 //     if (document.querySelector(".card.selected")) {

@@ -50,8 +50,7 @@
 
     <div class="ms-container">
       <div class="ms-header">
-        <h2>이용권</h2>
-        <span>쌉니다</span>
+        <h2>멤버십 가입하기</h2>
       </div>
       <div class="ms-body">
         <div class="ms-card-center">
@@ -367,6 +366,19 @@
 
     modalClose.addEventListener("click", function () {
       modalBack.style.display = "none";
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("header");
+      const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > scrollOffset) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
     });
   </script>
 </html>

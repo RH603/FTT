@@ -22,16 +22,19 @@
         <hr />
 
         <div class="buyPopup-content">
-          <!-- <p>Basic</p>
-          <p>최신 영화+인기영화</p>
-          <p>Mobile,PC 시청</p> -->
+          <p><h1 id="payName">Premium</h1></p>
+          <p id="payQuality">화질 : 최고화질</p>
+          <p id="payUse">모바일/태블릿/PC/TV</p>
+          <p id="payWatch">4회선</p>
           <table>
             <th>이용기간</th>
             <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
           </table>
           <table class="two-table">
-            <!-- <th>금액 (매월)</th>
-            <td class="price">400 원</td> -->
+            <tr>
+              <th id="pay">금액</th>
+              <td id="payMoney">12,000</td>
+            </tr>
           </table>
         </div>
       </div>
@@ -116,43 +119,43 @@
       updateDatas,
       deleteField,
       getData,
+      addData,
     } = firebase;
 
-    const content = document.querySelector(".buyPopup-content");
-    const table = document.querySelector(".two-table");
 
-    async function getPay() {
-      const snapshot = await getData("FTT", "FTT-P1");
-      const {
-        payname,
-        payquality,
-        payuse,
-        paywatch,
-        paymoney12,
-        paymoneyname,
-      } = snapshot.data();
 
-      content.insertAdjacentHTML(
-        "beforebegin",
-        `
-        <p><h1>${payname}</h1></p>
-        <p>${payquality}</p>
-        <p>${payuse}</p>
-        <p>${paywatch}</p>
-    `
-      );
+    // async function pushPay() {
 
-      table.insertAdjacentHTML(
-        "beforeend",
-        `
-          <tr>
-            <th>${paymoneyname}</th>
-            <td>${paymoney12}</td>
-          </tr>
-        `
-      );
+// 버튼 클릭 시 동작
+btn.addEventListener("click", async function (){
+
+  const pay = {
+        payName: document.querySelector("#payName").innerText,
+        payQuality: document.querySelector("#payQuality").innerText,
+        payUse: document.querySelector("#payUse").innerText,
+        payWaych: document.querySelector("#payWatch").innerText,
+        pay: document.querySelector("#pay").innerText,
+        payMoney: document.querySelector("#payMoney").innerText,
+      };
+
+  if (document.querySelector(".card.selected")) {
+    // 선택된 카드가 있을 때의 동작
+    if (checkAll.checked) {
+      addData(pay).then(function () {
+        alert("감사합니다.");
+      window.opener.location.href =
+        "http://127.0.0.1:5501/index/HTML/main.html";
+      window.close();
+      });
+     
+    } else {
+      alert("필수 항목을 체크해주세요");
     }
+  } else {
+    // 카드가 선택되지 않았을 때의 동작
 
-    getPay();
+    alert("결제 수단을 선택하세요");
+  }
+});
   </script>
 </html>

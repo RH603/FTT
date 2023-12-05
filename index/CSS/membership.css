@@ -17,9 +17,10 @@ body {
   justify-content: start;
   padding: 1.3rem 16px;
   color: rgb(216, 22, 22);
-  font-size: 1.2rem;
 }
-
+.ms-header > h2 {
+  font-size: 32px;
+}
 .ms-body {
   width: 100%;
   height: 100%;
