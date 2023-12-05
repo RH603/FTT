@@ -75,8 +75,9 @@
 
 .my-pay-table {
   width: 100%;
+  max-width: 1600px;
   border-top: 2px solid #2f2f2f;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 table {
@@ -130,6 +131,7 @@ a {
 .pading-type02 a.on {
   border: 1px solid #fff;
   color: #fff;
+  margin-top: 1rem;
 }
 
 .pading-type02 a {
@@ -140,7 +142,11 @@ a {
   font-size: 14px;
   line-height: 32px;
 }
-
+.pratner-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .pratner-info span {
   font-size: 14px;
   line-height: 19px;
