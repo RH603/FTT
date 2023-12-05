@@ -3,7 +3,7 @@ const alarmId = document.querySelector("#alarmId");
 const modalMask = document.querySelector(".modal-mask");
 const popupCloseIr = document.querySelector(".popup-close");
 const setting = document.querySelectorAll(".set");
-const option = document.querySelector(".option");
+const option = document.querySelector(".setting");
 const settiongInfo = document.querySelector(".setting-info");
 const settiongDel = document.querySelector(".setting-del");
 const allWin = document.querySelector("body");
@@ -21,7 +21,6 @@ popupCloseIr.addEventListener("click", () => {
 });
 
 option.addEventListener("click", () => {
-  alert("click");
   setting[0].style.display = "block";
   setting[1].style.display = "block";
 });
@@ -33,12 +32,12 @@ settiongDel.addEventListener("click", () => {
   alert("click");
 });
 
-allWin.addEventListener("click", (event) => {
-  if (event.target === option) {
-    setting[0].style.display = "block";
-    setting[1].style.display = "block";
-  } else {
-    setting[0].style.display = "none";
-    setting[1].style.display = "none";
-  }
-});
+// allWin.addEventListener("click", (event) => {
+//   if (event.target === option) {
+//     setting[0].style.display = "block";
+//     setting[1].style.display = "block";
+//   } else {
+//     setting[0].style.display = "none";
+//     setting[1].style.display = "none";
+//   }
+// });

@@ -52,7 +52,6 @@ p {
   width: 150px;
   align-items: center;
   justify-content: center;
-  z-index: -10;
 }
 .setting-del {
   color: white;
