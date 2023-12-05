@@ -8,9 +8,8 @@ body {
   margin: 0;
   /* padding: 30px 60px; */
   background-color: #1b1b1b;
-
 }
-.mymain-container{
+.mymain-container {
   margin: 130px auto 0;
   width: 100%;
   max-width: 1600px;
@@ -49,7 +48,7 @@ p {
 .setting {
   position: relative;
   display: flex;
-  color:white;
+  color: white;
   width: 150px;
   align-items: center;
   justify-content: center;
@@ -81,10 +80,10 @@ p {
   border-radius: 50%;
   overflow: hidden;
 }
-.profileBox{
+.profileBox {
   display: flex;
   align-items: flex-end;
-  gap:24px;
+  gap: 24px;
 }
 .profile {
   width: 100%;
@@ -93,8 +92,8 @@ p {
   color: white;
 }
 
-.profile-name{
-  color:white;
+.profile-name {
+  color: white;
   font-size: 32px;
 }
 
@@ -178,16 +177,16 @@ p {
   align-items: center;
   /* gap: 80px; */
 }
-.alarmcontainer{
+.alarmcontainer {
   display: flex;
-  color:white;
+  color: white;
   width: 150px;
   align-items: center;
   justify-content: center;
 }
-.ticketcontainer{
+.ticketcontainer {
   display: flex;
-  color:white;
+  color: white;
   width: 150px;
   align-items: center;
   justify-content: center;
@@ -204,3 +203,85 @@ a {
   color: #fff;
   text-decoration: none;
 }
+
+/* footer */
+footer {
+  height: 100%;
+}
+.footer-fot {
+  height: 100%;
+}
+.fot-content {
+  width: 100%;
+  /* max-width: 100%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 auto; */
+  color: white;
+  background-color: black;
+  height: 370px;
+  padding: 1rem;
+}
+.fot-content > p {
+  padding-left: 2rem;
+}
+.fot-content-main {
+  /* background-color: black; */
+  color: white;
+  height: 90%;
+  margin-top: 1rem;
+}
+
+.fot-content-main > .qes > li > ul {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.fot-content-main > .qes > li > ul > li {
+  width: 200px;
+  flex-grow: 1;
+}
+/* sticky 부분 영역 */
+.st-content {
+  width: 100px;
+  height: 200px;
+  /* position: sticky; */
+  position: fixed;
+  bottom: 100px;
+  /* left: 93.5%; */
+  right: 25px;
+  /* background-color: red;
+  color: white;
+  border-radius: 50%; */
+}
+
+.content-top {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.content-bottom {
+  margin-top: 8px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+/* footer */
