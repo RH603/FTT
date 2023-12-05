@@ -69,25 +69,6 @@ card.forEach((el) => {
   });
 });
 
-// 버튼 클릭 시 동작
-btn.addEventListener("click", () => {
-  if (document.querySelector(".card.selected")) {
-    // 선택된 카드가 있을 때의 동작
-    if (checkAll.checked) {
-      alert("감사합니다.");
-      window.opener.location.href =
-        "http://127.0.0.1:5501/index/HTML/main.html";
-      window.close();
-    } else {
-      alert("필수 항목을 체크해주세요");
-    }
-  } else {
-    // 카드가 선택되지 않았을 때의 동작
-
-    alert("결제 수단을 선택하세요");
-  }
-});
-
 window.onload = function () {
   var currentDate = new Date();
   var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리

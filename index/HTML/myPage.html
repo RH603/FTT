@@ -169,12 +169,12 @@
           <img src="../../resources/mypageImg/1.jpg" alt="" class="profile" />
         </div>
         <div class="profile-text">
-          <span class="profile-name">FFT님</span>
+          <span class="profile-name"></span>
         </div>
       </div>
       <div class="profile-information">
-        <span class="profile-ticket">나의 이용권</span>
-        <span class="profile-ticket2"> OTT 팩(모바일 + pc HD 시청 1회선) </span>
+        <span class="profile-ticket">나의 이용권 : </span>
+        <span class="profile-ticket2"></span>
       </div>
       <div class="film">
         <i class="fa-solid fa-film filmIcon"></i>
@@ -399,11 +399,62 @@
   </body>
   <script src="../JS/myPage.js"></script>
   <script src="../JS/logout.js"></script>
+  <script src="../JS/buy.js"></script>
   <!-- <script src="../"></script> -->
-  <script>
-    // console.log("hello");
-  </script>
-  <script>
+
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+    } = firebase;
+
+    const userName = document.querySelector(".profile-name");
+    const mbsName = document.querySelector(".profile-ticket2");
+    const asd = "";
+    async function pushName() {
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberName } = snapshot.data();
+
+      userName.insertAdjacentHTML(
+        "beforebegin",
+        `
+        <h1 style="color:white;">${memberName} 님</h1>
+    `
+      );
+    }
+
+    async function payName() {
+      const snapshot = await getData("FTT", "payInfo");
+      const { payName } = snapshot.data();
+      if (payName) {
+        mbsName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${payName}</span>
+        `
+        );
+      } else {
+        mbsName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${asd}</span>
+        `
+        );
+      }
+    }
+    pushName();
+    payName();
     document.addEventListener("DOMContentLoaded", function () {
       const header = document.querySelector("header");
       const scrollOffset = 10; // Adjust this value based on when you want the color change to occur

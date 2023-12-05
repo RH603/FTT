@@ -66,8 +66,8 @@
         <a href="http://127.0.0.1:5501/index/HTML/page.html"
           ><button type="button" class="backBtn">나가기</button></a
         >
+        <div class="hidden-text pw"></div>
       </div>
-      <div class="hidden-text pw"></div>
     </div>
     <script type="module">
       import * as firebase from "../JS/firebase.js";
@@ -123,6 +123,7 @@
           if (
             document.querySelector("#pwPhoneNumber").value == memberPhoneNumber
           ) {
+            textPw.style.display = "block";
             textPw.innerHTML = `비밀번호는 ${memberPassword}입니다.`;
           } else {
             alert("일치하는 전화번호가 없습니다.");
