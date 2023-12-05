@@ -7,7 +7,7 @@ const option = document.querySelector(".option");
 const settiongInfo = document.querySelector(".setting-info");
 const settiongDel = document.querySelector(".setting-del");
 const allWin = document.querySelector("body");
-console.log(popupCloseIr);
+console.log(option);
 // console.log("hello");
 // console.log(alarmId);
 
@@ -20,10 +20,13 @@ popupCloseIr.addEventListener("click", () => {
   modalMask.style.display = "none";
 });
 
-// option.addEventListener("click", () => {
-//   setting[0].style.display = "block";
-//   setting[1].style.display = "block";
-// });
+option.addEventListener("click", () => {
+  alert("click")
+  setting[0].style.display = "block";
+  setting[1].style.display = "block";
+});
+
+
 settiongInfo.addEventListener("click", () => {
   alert("click");
 });
