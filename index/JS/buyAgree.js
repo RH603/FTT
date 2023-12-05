@@ -23,7 +23,11 @@ for (let i = 0; i < check.length; i++) {
 
 btn.addEventListener("click", () => {
   if (checkAll.checked) {
-    window.location.href = "http://127.0.0.1:5501/index/HTML/main.html";
+    alert("감사합니다.");
+    window.opener.location.href = "http://127.0.0.1:5501/index/HTML/main.html";
+    window.close();
+
+    // window.close();
   } else {
     alert("필수 항목을 체크해주세요");
   }
