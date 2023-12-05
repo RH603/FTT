@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my_page</title>
-    <link rel="stylesheet" href="my_page.css" />
-    <link rel="stylesheet" href="my_page2.css" />
-    <link rel="stylesheet" href="../index/CSS/main-header.css" />
+    <link rel="stylesheet" href="../CSS/myPage.css" />
+    <link rel="stylesheet" href="../CSS/myPageModal.css" />
+    <link rel="stylesheet" href="../CSS/main-header.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -20,7 +20,7 @@
     <header>
       <div class="container">
         <h1>
-          <a href="#"> FTT </a>
+          <a href="http://127.0.0.1:5501/index/HTML/main.html"> FTT </a>
         </h1>
         <div id="header-menu">
           <nav id="gnb">
@@ -46,7 +46,7 @@
           <nav id="lnb">
             <ul>
               <li class="l-main">
-                <a href="#">홈</a>
+                <a href="http://127.0.0.1:5501/index/HTML/main.html">홈</a>
               </li>
               <li class="l-main">
                 <a href="http://127.0.0.1:5501/index/HTML/Kate.html"
@@ -54,7 +54,7 @@
                 >
               </li>
               <li class="l-main">
-                <a href="http://127.0.0.1:5501/my_page/my_page.html">MY</a>
+                <a href="#">MY</a>
               </li>
             </ul>
           </nav>
@@ -148,7 +148,11 @@
       <div class="svg">
         <i class="fa-regular fa-bell alarm" id="alarmId">알림</i>
         <div class="ticket">
-          <i class="fa-solid fa-ticket"><a href="my_page3.html">이용권</a></i>
+          <i class="fa-solid fa-ticket"
+            ><a href="http://127.0.0.1:5501/index/HTML/myPageMbs.html"
+              >이용권</a
+            ></i
+          >
         </div>
         <div class="setting">
           <i class="fa-solid fa-gear option">설정</i>
@@ -205,7 +209,6 @@
         <div class="image-item3">
           <div><img src="image/열정같은소리하고있네.jpg" class="img" /></div>
           <p>열정같은소리하고있네</p>
-          
         </div>
       </div>
       <div class="moving">
@@ -246,29 +249,29 @@
       </div>
     </div>
   </body>
-  <script src="my_page.js"></script>
+  <script src="../JS/myPage.js"></script>
+  <script src="../JS/logout.js"></script>
+  <!-- <script src="../"></script> -->
   <script>
     // console.log("hello");
   </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
-  
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > scrollOffset) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("header");
+      const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > scrollOffset) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
     });
-    
-  });
-  
-  
-  document.addEventListener("DOMContentLoaded", function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
       const mainContainer = document.querySelector(".main-container");
-  
+
       // Function to create and append images
       // function createImage(className) {
       //   const img = document.createElement("img");
@@ -277,15 +280,15 @@
       //   document.body.appendChild(img);
       //   return img;
       // }
-  
+
       const leftImage = createImage("left-image");
       const rightImage = createImage("right-image");
-  
+
       // Event listener for scrolling
       window.addEventListener("scroll", function () {
         // Calculate the opacity based on scroll position
         const opacity = Math.min(1, window.scrollY / 100); // Adjust the value as needed
-  
+
         // Set the opacity for the images
         leftImage.style.opacity = opacity;
         rightImage.style.opacity = opacity;
