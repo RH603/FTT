@@ -195,6 +195,10 @@ p {
   display: none;
 }
 
+/* .set.selected {
+  display: block;
+} */
+
 .popup-close {
   color: #ffffff;
 }

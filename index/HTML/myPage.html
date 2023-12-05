@@ -180,34 +180,34 @@
         <i class="fa-solid fa-film filmIcon"></i>
         전체 신청내역
       </div>
-      <div class="bigBox1">
-        <div class="smallBox1">
+      <!-- <div class="bigBox1">
+        <div class="smallBox">
           <div>
             <img src="../../resources/mypageImg/가문의영광.jpg" class="img" />
           </div>
           <p>가문의 영광</p>
           <div class="time">60분 남음</div>
         </div>
-        <div class="smallBox2">
+        <div class="smallBox">
           <div>
             <img src="../../resources/mypageImg/옥수역 귀신.jpg" class="img" />
           </div>
           <p>옥수역 귀신</p>
           <div class="time">50분 남음</div>
         </div>
-        <div class="smallBox3">
+        <div class="smallBox">
           <div>
             <img src="../../resources/mypageImg/리바운드.jpg" class="img" />
           </div>
           <p>리바운드</p>
           <div class="time">40분 남음</div>
         </div>
-      </div>
+      </div> -->
       <div class="move-name">
         <i class="fa-regular fa-heart"></i>
         관심 영화
       </div>
-      <div class="move-name1">
+      <!-- <div class="move-name1">
         <div class="image-item">
           <div>
             <img src="../../resources/mypageImg/회사원.jpg" class="img" />
@@ -236,12 +236,12 @@
           />
           <p>잠깐만 회사 좀 관두고 올게</p>
         </div>
-      </div>
+      </div> -->
       <div class="moving">
         <i class="fa-solid fa-heart"></i>
         찜한 영화
       </div>
-      <div class="moving-item">
+      <!-- <div class="moving-item">
         <div class="moving-img">
           <div>
             <img src="../../resources/mypageImg/부라더.jpg" class="img" />
@@ -273,12 +273,12 @@
           />
           <p>악마는 프라다를 입는다</p>
         </div>
-      </div>
+      </div> -->
       <div class="person">
         <i class="fa-solid fa-person"></i>
         인생영화
       </div>
-      <div class="life-item">
+      <!-- <div class="life-item">
         <div class="life-move">
           <div>
             <img src="../../resources/mypageImg/어바웃 타임.jpg" class="img" />
@@ -327,7 +327,7 @@
           </div>
           <p>비긴 어게인</p>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- footer -->
     <footer>
@@ -417,21 +417,31 @@
       updateDatas,
       deleteField,
       getData,
+      addData,
     } = firebase;
 
     const userName = document.querySelector(".profile-name");
     const mbsName = document.querySelector(".profile-ticket2");
-    const asd = "";
+
     async function pushName() {
       const snapshot = await getData("FTT", "FTT1");
       const { memberName } = snapshot.data();
 
-      userName.insertAdjacentHTML(
-        "beforebegin",
+      if (memberName) {
+        userName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${memberName}님</span>
         `
-        <h1 style="color:white;">${memberName} 님</h1>
-    `
-      );
+        );
+      } else {
+        userName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${""}</span>
+        `
+        );
+      }
     }
 
     async function payName() {
@@ -448,7 +458,7 @@
         mbsName.insertAdjacentHTML(
           "beforebegin",
           `
-        <span style="color:white; font-size:24px;">${asd}</span>
+        <span style="color:white; font-size:24px;">${""}</span>
         `
         );
       }
@@ -467,6 +477,37 @@
           header.classList.remove("scrolled");
         }
       });
+    });
+
+    const memberInfo = {
+      memberId: "",
+      memberPassword: "",
+      memberName: "",
+      memberBirth: "",
+      memberPhoneNumber: "",
+      membergender: "",
+      memberLanguage: "",
+    };
+
+    const pay = {
+      payName: "",
+      payQuality: "",
+      payUse: "",
+      payWaych: "",
+      pay: "",
+      payMoney: "",
+    };
+    delBtn.addEventListener("click", function () {
+      const out = confirm("계정을 탈퇴하시겠습니까?");
+      if (out == true) {
+        addData(pay);
+        addDatas(memberInfo);
+
+        alert("탈퇴되었습니다. 안녕히 가세요.");
+        // location.href = "http://127.0.0.1:5501/index/HTML/page.html";
+      } else {
+        alert("감사합니다.");
+      }
     });
   </script>
 </html>
