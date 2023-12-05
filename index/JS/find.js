@@ -134,42 +134,42 @@ const movieData = [
   { url: "../../resources/image/코미디/medy10.jpg", name: "헬머니" },
 ];
 const videoData = [
-  { url: "../../resources/video/공포/horror1.mp4" },
-  { url: "../../resources/video/공포/horror2.mp4"},
-  { url: "../../resources/video/공포/horror3.mp4"},
-  { url: "../../resources/video/공포/horror4.mp4"},
-  { url: "../../resources/video/공포/horror5.mp4"},
-  { url: "../../resources/video/공포/horror6.mp4"},
-  { url: "../../resources/video/공포/horror7.mp4" },
-  { url: "../../resources/video/공포/horror8.mp4" },
-  { url: "../../resources/video/공포/horror9.mp4"},
-  { url: "../../resources/video/공포/horror10.mp4"},
-  { url: "../../resources/video/스포츠/spo1.mp4" },
-  { url: "../../resources/video/스포츠/spo2.mp4"},
-  { url: "../../resources/video/스포츠/spo3.mp4"},
-  { url: "../../resources/video/스포츠/spo4.mp4"},
-  { url: "../../resources/video/스포츠/spo5.mp4" },
-  { url: "../../resources/video/스포츠/spo6.mp4"},
-  { url: "../../resources/video/스포츠/spo7.mp4"},
-  { url: "../../resources/video/스포츠/spo8.mp4"},
-  { url: "../../resources/video/스포츠/spo9.mp4"},
-  { url: "../../resources/video/스포츠/spo10.mp4"},
-  { url: "../../resources/video/액션·범죄/cri-and-act1.mp4"},
-  { url: "../../resources/video/액션·범죄/cri-and-act2.mp4"},
-  { url: "../../resources/video/액션·범죄/cri-and-act3.mp4"},
-  { url: "../../resources/video/액션·범죄/cri-and-act4.mp4"},
-  { url: "../../resources/video/액션·범죄/cri-and-act5.mp4"},
-  { url: "../../resources/video/액션·범죄/cri-and-act6.mp4"},
-  { url: "../../resources/video/코미디/medy1.mp4"},
-  { url: "../../resources/video/코미디/medy2.mp4" },
-  { url: "../../resources/video/코미디/medy3.mp4"},
-  { url: "../../resources/video/코미디/medy4.mp4" },
-  { url: "../../resources/video/코미디/medy5.mp4" },
-  { url: "../../resources/video/코미디/medy6.mp4"},
-  { url: "../../resources/video/코미디/medy7.mp4"},
-  { url: "../../resources/video/코미디/medy8.mp4" },
-  { url: "../../resources/video/코미디/medy9.mp4" },
-  { url: "../../resources/video/코미디/medy10.mp4" },
+ "../../resources/video/공포/horror1.mp4" ,
+ "../../resources/video/공포/horror2.mp4",
+ "../../resources/video/공포/horror3.mp4",
+ "../../resources/video/공포/horror4.mp4",
+ "../../resources/video/공포/horror5.mp4",
+ "../../resources/video/공포/horror6.mp4",
+ "../../resources/video/공포/horror7.mp4" ,
+ "../../resources/video/공포/horror8.mp4" ,
+ "../../resources/video/공포/horror9.mp4",
+ "../../resources/video/공포/horror10.mp4",
+ "../../resources/video/스포츠/spo1.mp4" ,
+ "../../resources/video/스포츠/spo2.mp4",
+ "../../resources/video/스포츠/spo3.mp4",
+ "../../resources/video/스포츠/spo4.mp4",
+ "../../resources/video/스포츠/spo5.mp4" ,
+ "../../resources/video/스포츠/spo6.mp4",
+ "../../resources/video/스포츠/spo7.mp4",
+ "../../resources/video/스포츠/spo8.mp4",
+ "../../resources/video/스포츠/spo9.mp4",
+ "../../resources/video/스포츠/spo10.mp4",
+ "../../resources/video/액션·범죄/cri-and-act1.mp4",
+ "../../resources/video/액션·범죄/cri-and-act2.mp4",
+ "../../resources/video/액션·범죄/cri-and-act3.mp4",
+ "../../resources/video/액션·범죄/cri-and-act4.mp4",
+ "../../resources/video/액션·범죄/cri-and-act5.mp4",
+ "../../resources/video/액션·범죄/cri-and-act6.mp4",
+ "../../resources/video/코미디/medy1.mp4",
+ "../../resources/video/코미디/medy2.mp4" ,
+ "../../resources/video/코미디/medy3.mp4",
+ "../../resources/video/코미디/medy4.mp4" ,
+ "../../resources/video/코미디/medy5.mp4" ,
+ "../../resources/video/코미디/medy6.mp4",
+ "../../resources/video/코미디/medy7.mp4",
+ "../../resources/video/코미디/medy8.mp4" ,
+ "../../resources/video/코미디/medy9.mp4" ,
+ "../../resources/video/코미디/medy10.mp4" ,
 ];
 
 
@@ -189,7 +189,7 @@ function shuffleArrays(array1, array2) {
 
 const [shuffledMovieUrls1, shuffledVideoUrls1] = shuffleArrays(movieData, videoData);
 
-
+console.log(videoData)
 
 // function shuffleArray(array, array2) {
 //   for (let i = array.length - 1; i > 0; i--) {
@@ -217,12 +217,10 @@ for (let i = 0; i < movieData.length; i++) {
 }
 // console.log(videoData)
 
-// for (let i = 0; i < videoData.length; i++){
-//   const videoDT = $("<video>")
-//     .attr("src", videoData[i].url)
-//     .attr("alt", "");
-//     imageContainer.append(videoDT)
-// }
+for (let i = 0; i < videoData.length; i++){
+  const videoDT = $("<video>").attr("src", videoData[i]).attr("alt", "");
+    imageContainer.append(videoDT)
+}
 
 
 function filter() {

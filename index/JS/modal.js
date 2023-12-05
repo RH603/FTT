@@ -2,19 +2,17 @@ const modalImgBack = document.querySelector(".modal-img-back");
 const modalImg = document.querySelector(".modal-img-win");
 const images = document.querySelectorAll("img");
 
+const pTag = document.createElement("p")
+const textNode = document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur rerum suscipit corrupti doloremque aperiam, tenetur sapiente sunt ratione officia quidem necessitatibus, numquam voluptatem blanditiis delectus distinctio nulla sed nisi porro.");
 
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("click", () => {
     // Create a new image element
-    const clickedImg = document.createElement("img");
+    const clickedImg = document.createElement("video");
     const clickedImage = document.createElement("video");
     const clickedVideo = document.createElement("video")
-    const videoDT = $("<video>")
-    .attr("src", videoData[i].url)
-    .attr("alt", "");
-    imageContainer.append(videoDT)
     clickedImg.src = images[i].src;
-    console.log(videoDT);
+    // console.log(videoDT);
     clickedImage.src = videoData[i];
     // Clear the modal content before appending a new image
     modalImg.innerHTML = "";
@@ -25,8 +23,12 @@ for (let i = 0; i < images.length; i++) {
     clickedImage.autoplay = true
     clickedImage.controls = true
 
+    modalImg.appendChild(clickedImage);
+    // modalImg.appendChild(pTag)
+    // pTag.appendChild(textNode)
     // Display the modal
     modalImgBack.style.display = "block";
+    modalImg.style.display = "block"
     document.querySelector("video").style.display= "block"
   });
 }
