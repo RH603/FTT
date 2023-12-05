@@ -1,7 +1,10 @@
 const btn = document.querySelector(".payBtn");
 const checkAll = document.querySelector("input[name=check-all]");
 const check = document.querySelectorAll("input[name=check]");
-
+const cards = document.querySelectorAll(".card.general");
+cards.forEach((el) => {
+  console.log(el);
+});
 checkAll.addEventListener("change", (e) => {
   for (let i = 0; i < check.length; i++) {
     check[i].checked = e.target.checked;
