@@ -133,14 +133,73 @@ const movieData = [
   { url: "../../resources/image/코미디/medy9.jpg", name: "극한직업" },
   { url: "../../resources/image/코미디/medy10.jpg", name: "헬머니" },
 ];
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+const videoData = [
+  { url: "../../resources/video/공포/horror1.mp4" },
+  { url: "../../resources/video/공포/horror2.mp4"},
+  { url: "../../resources/video/공포/horror3.mp4"},
+  { url: "../../resources/video/공포/horror4.mp4"},
+  { url: "../../resources/video/공포/horror5.mp4"},
+  { url: "../../resources/video/공포/horror6.mp4"},
+  { url: "../../resources/video/공포/horror7.mp4" },
+  { url: "../../resources/video/공포/horror8.mp4" },
+  { url: "../../resources/video/공포/horror9.mp4"},
+  { url: "../../resources/video/공포/horror10.mp4"},
+  { url: "../../resources/video/스포츠/spo1.mp4" },
+  { url: "../../resources/video/스포츠/spo2.mp4"},
+  { url: "../../resources/video/스포츠/spo3.mp4"},
+  { url: "../../resources/video/스포츠/spo4.mp4"},
+  { url: "../../resources/video/스포츠/spo5.mp4" },
+  { url: "../../resources/video/스포츠/spo6.mp4"},
+  { url: "../../resources/video/스포츠/spo7.mp4"},
+  { url: "../../resources/video/스포츠/spo8.mp4"},
+  { url: "../../resources/video/스포츠/spo9.mp4"},
+  { url: "../../resources/video/스포츠/spo10.mp4"},
+  { url: "../../resources/video/액션·범죄/cri-and-act1.mp4"},
+  { url: "../../resources/video/액션·범죄/cri-and-act2.mp4"},
+  { url: "../../resources/video/액션·범죄/cri-and-act3.mp4"},
+  { url: "../../resources/video/액션·범죄/cri-and-act4.mp4"},
+  { url: "../../resources/video/액션·범죄/cri-and-act5.mp4"},
+  { url: "../../resources/video/액션·범죄/cri-and-act6.mp4"},
+  { url: "../../resources/video/코미디/medy1.mp4"},
+  { url: "../../resources/video/코미디/medy2.mp4" },
+  { url: "../../resources/video/코미디/medy3.mp4"},
+  { url: "../../resources/video/코미디/medy4.mp4" },
+  { url: "../../resources/video/코미디/medy5.mp4" },
+  { url: "../../resources/video/코미디/medy6.mp4"},
+  { url: "../../resources/video/코미디/medy7.mp4"},
+  { url: "../../resources/video/코미디/medy8.mp4" },
+  { url: "../../resources/video/코미디/medy9.mp4" },
+  { url: "../../resources/video/코미디/medy10.mp4" },
+];
+
+
+function shuffleArrays(array1, array2) {
+  if (array1.length !== array2.length) {
+    throw new Error('두 배열의 길이가 동일해야 합니다.');
   }
+
+  // array1과 array2 모두 같은 방식으로 섞기
+  for (let i = array1.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array1[i], array1[j]] = [array1[j], array1[i]];
+    [array2[i], array2[j]] = [array2[j], array2[i]];
+  }
+  return [array1, array2];
 }
 
-shuffleArray(movieData);
+const [shuffledMovieUrls1, shuffledVideoUrls1] = shuffleArrays(movieData, videoData);
+
+
+
+// function shuffleArray(array, array2) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[j]] = [array[j], array[i]];
+//     [array[i], array[j]] = [array[j], array[i]];
+//   }
+// }
+
+// shuffleArray(movieData);
 
 // $(document).ready(function () {
 const imageContainer = $("#imageContainer");
@@ -156,6 +215,15 @@ for (let i = 0; i < movieData.length; i++) {
   imgContent.append(img, h2);
   imageContainer.append(imgContent);
 }
+// console.log(videoData)
+
+// for (let i = 0; i < videoData.length; i++){
+//   const videoDT = $("<video>")
+//     .attr("src", videoData[i].url)
+//     .attr("alt", "");
+//     imageContainer.append(videoDT)
+// }
+
 
 function filter() {
   const iconInput = $("#search").val();
