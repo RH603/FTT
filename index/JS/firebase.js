@@ -52,7 +52,7 @@ async function addDatas(/*collectionName,*/ dataobj) {
 // doc(db, 컬렉션(배열), "문서 ID"), {들어갈 객체}
 async function addData(/*collectionName,*/ dataobj) {
   // 문서ID 부여
-  await setDoc(doc(db, "FTT", "PhoneNumber"), dataobj);
+  await setDoc(doc(db, "FTT", "FTT1"), dataobj);
   //   문서ID 자동
   // await addDoc(collection(db, collectionName), dataobj);
 }
