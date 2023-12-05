@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  padding: 30px;
+  padding: 30px 60px;
   background-color: #1b1b1b;
 }
 
@@ -20,37 +20,46 @@ p {
   color: white;
 }
 
-.bell {
-  position: relative;
-}
-
 .fa-bell {
-  position: relative;
+  /* position: relative;
   top: 60%;
-  left: 60%;
+  left: 60%; */
   color: white;
 }
 
 .ticket {
-  position: relative;
+  /* position: relative; */
 }
 
 .fa-ticket {
-  position: relative;
+  /* position: relative; */
   color: white;
-  top: 60%;
-  left: 70%;
+  /* top: 60%; */
+  /* left: 70%; */
 }
 
 .setting {
   position: relative;
 }
-
+.setting-del {
+  color: white;
+  width: 200px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.setting-info {
+  color: white;
+  width: 200px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
 .fa-gear {
   color: white;
-  position: relative;
-  top: 60%;
-  left: 80%;
+  /* position: relative; */
+  /* top: 60%;
+  left: 80%; */
 }
 
 .profile-img {
@@ -85,7 +94,8 @@ p {
   color: white;
 }
 
-.bigBox {
+.film,
+.person {
   padding: 10px;
   position: relative;
   color: white;
@@ -108,7 +118,10 @@ p {
 
 .move-name1 {
   width: 80%;
+  max-width: 1440px;
   display: flex;
+  justify-content: center;
+  margin: 0 auto;
   gap: 20px;
 }
 
@@ -118,8 +131,47 @@ p {
   position: relative;
 }
 
-.moving-img {
+.moving {
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+
+.moving-item,
+.life-item {
   width: 80%;
+  max-width: 1440px;
   display: flex;
+  justify-content: center;
+  margin: 0 auto;
   gap: 20px;
+}
+
+.img,
+.svg,
+.profile-information {
+  cursor: pointer;
+}
+
+.svg {
+  /* position: relative; */
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 80px;
+}
+.set {
+  display: none;
+}
+
+.popup-close {
+  color: #ffffff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }

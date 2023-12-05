@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my_page</title>
     <link rel="stylesheet" href="my_page.css" />
+    <link rel="stylesheet" href="my_page2.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -14,15 +15,98 @@
     />
   </head>
   <body>
+    <!-- 모달창 시작 -->
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <section class="modal-text"></section>
+        <!-- <h1 class="popup-title">알림함 팝업</h1> -->
+        <button class="popup-close ir">X</button>
+        <div class="alarm-modal-container">
+          <div slot="pop-body">
+            <div class="my-pop-alert">
+              <div class="my-pop-alert-top">
+                <span>알림함</span>
+                <button type="button" class="my-pop-alert-top-btn">
+                  <i class="fa-regular fa-bell"></i>
+                  <span>알림설정</span>
+                </button>
+              </div>
+              <ul class="my-pop-setting-list">
+                <li>
+                  <span class="alert-setting-tit">시청 예약 알림</span>
+                  <div class="radio-style">
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-re-on"
+                        value="y"
+                        name="ch-re"
+                        class="radio-purple"
+                      />
+                      <label for="ch-re-on"> ON </label>
+                    </span>
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-re-off"
+                        value="n"
+                        name="ch-re"
+                        class="radio-purple"
+                      />
+                      <label for="ch-re-off"> OFF </label>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <span class="alert-setting-tit"
+                    >관심 프로그램 업로드 알림</span
+                  >
+                  <div class="radio-style">
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-up-on"
+                        value="y"
+                        name="ch-up"
+                        class="radio-purple"
+                      />
+                      <label for="ch-up-on"> ON </label>
+                    </span>
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-up-off"
+                        value="n"
+                        name="ch-up"
+                        class="radio-purple"
+                      />
+                      <label for="ch-up-off"> OFF </label>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+              <div class="my-pop-alert-empty">
+                <i class="fa-solid fa-circle-exclamation">
+                  <p>알림 내역이 없어요</p>
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 모달창 종료 -->
     <div class="container">
-      <div class="bell">
-        <i class="fa-regular fa-bell">알림</i>
-        <span class="ticket">
-          <i class="fa-solid fa-ticket">이용권</i>
-        </span>
-        <span class="setting">
-          <i class="fa-solid fa-gear">설정</i>
-        </span>
+      <div class="svg">
+        <i class="fa-regular fa-bell alarm" id="alarmId">알림</i>
+        <div class="ticket">
+          <i class="fa-solid fa-ticket"><a href="my_page3.html">이용권</a></i>
+        </div>
+        <div class="setting">
+          <i class="fa-solid fa-gear option">설정</i>
+          <span class="setting-info set">회원정보 수정</span>
+          <span class="setting-del set">회원 탈퇴</span>
+        </div>
       </div>
       <div class="profile-img">
         <img src="image/1.jpg" alt="" class="profile" />
@@ -34,20 +118,23 @@
         <span class="profile-ticket">나의 이용권</span>
         <span class="profile-ticket2"> OTT 팩(모바일 + pc HD 시청 1회선) </span>
       </div>
-      <div class="bigBox">전체 시청내역</div>
+      <div class="film">
+        <div class="fiim-box1"></div>
+        <i class="fa-solid fa-film">전체 신청내역</i>
+      </div>
       <div class="bigBox1">
         <div class="smallBox1">
-          <div><img src="image/가문의영광.jpg" /></div>
+          <div><img src="image/가문의영광.jpg" class="img" /></div>
           <p>가문의 영광</p>
           <div class="time">60분 남음</div>
         </div>
         <div class="smallBox2">
-          <div><img src="image/괴물.jpg" /></div>
+          <div><img src="image/괴물.jpg" class="img" /></div>
           <p>괴물</p>
           <div class="time">50분 남음</div>
         </div>
         <div class="smallBox3">
-          <div><img src="image/리바운드.jpg" /></div>
+          <div><img src="image/리바운드.jpg" class="img" /></div>
           <p>리바운드</p>
           <div class="time">40분 남음</div>
         </div>
@@ -58,34 +145,58 @@
       </div>
       <div class="move-name1">
         <div class="image-item">
-          <div><img src="image/극한직업.jpg" /></div>
+          <div><img src="image/극한직업.jpg" class="img" /></div>
           <p>극한직업</p>
         </div>
         <div class="image-item2">
-          <div><img src="image/옥수역 귀신.jpg" /></div>
+          <div><img src="image/옥수역 귀신.jpg" class="img" /></div>
           <p>옥수역 귀신</p>
         </div>
         <div class="image-item3">
-          <div><img src="image/열정같은소리하고있네.jpg" /></div>
+          <div><img src="image/열정같은소리하고있네.jpg" class="img" /></div>
           <p>열정같은소리하고있네</p>
         </div>
       </div>
       <div class="moving">
         <div class="heart2"></div>
         <i class="fa-solid fa-heart">찜한 영화</i>
+      </div>
+      <div class="moving-item">
         <div class="moving-img">
-          <div><img src="image/부라더.jpg" /></div>
+          <div><img src="image/부라더.jpg" class="img" /></div>
           <p>부라더</p>
         </div>
         <div class="moving-img2">
-          <div><img src="image/영웅.jpg" /></div>
+          <div><img src="image/영웅.jpg" class="img" /></div>
           <p>영웅</p>
         </div>
         <div class="moving-img3">
-          <div><img src="image/카운트.jpg" alt="" /></div>
+          <div><img src="image/카운트.jpg" class="img" /></div>
           <p>카운트</p>
+        </div>
+      </div>
+      <div class="person">
+        <div class="life"></div>
+        <i class="fa-solid fa-person">인생영화</i>
+      </div>
+      <div class="life-item">
+        <div class="life-move">
+          <div><img src="image/어바웃타임.jpg" class="img" /></div>
+          <p>어바웃타임</p>
+        </div>
+        <div class="life-move2">
+          <div><img src="image/우리 생애 최고의 순간.jpg" class="img" /></div>
+          <p>우리 생에 최고의 순간</p>
+        </div>
+        <div class="life-move3-">
+          <div><img src="image/지금 만나러 갑니다.jpg" class="img" /></div>
+          <p>지금 만나러 갑니다</p>
         </div>
       </div>
     </div>
   </body>
+  <script src="my_page.js"></script>
+  <script>
+    // console.log("hello");
+  </script>
 </html>
