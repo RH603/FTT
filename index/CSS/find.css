@@ -26,6 +26,7 @@ body {
 }
 /* 왼쪽 */
 .left {
+  margin-top: 106px;
   width: 100%;
   max-width: 300px;
   flex-grow: 1;
@@ -34,7 +35,7 @@ body {
 .left-top {
   width: 300px;
   position: sticky;
-  top: 10px;
+  top: 120px;
 }
 
 .left-top > h2 {
@@ -49,7 +50,7 @@ body {
   align-items: center; */
   font-size: 40px;
   position: sticky;
-  top: 50px;
+  top: 150px;
 }
 
 .icon > input {
@@ -71,6 +72,7 @@ body {
 
 /* 오른쪽 */
 .right {
+  margin-top: 106px;
   flex-grow: 1;
 }
 .img-content img {

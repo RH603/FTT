@@ -20,6 +20,31 @@ function buyPopup6() {
 const price = document.querySelector(".price");
 const card = document.querySelectorAll(".card");
 
+// Agree에서 가지고 옴
+const btn = document.querySelector(".payBtn");
+const checkAll = document.querySelector("input[name=check-all]");
+const check = document.querySelectorAll("input[name=check]");
+console.log(btn);
+
+// card.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     if (document.querySelector(".card.selected")) {
+//       btn.removeAttribute("disabled");
+//       btn.style.backgroundColor = "red";
+//     }
+
+//     if (!el.classList.contains("selected")) {
+//       card.forEach((cd) => {
+//         cd.classList.remove("selected");
+//       });
+//       el.classList.add("selected");
+//     } else {
+//       el.classList.remove("selected");
+//       alert("결제 수단을 선택하세요");
+//       btn.style.backgroundColor = "";
+//     }
+//   });
+// });
 card.forEach((el) => {
   el.addEventListener("click", () => {
     if (!el.classList.contains("selected")) {
@@ -27,10 +52,41 @@ card.forEach((el) => {
         cd.classList.remove("selected");
       });
       el.classList.add("selected");
+
+      // 선택된 카드가 있으면 버튼 활성화 및 스타일 변경
+      if (document.querySelector(".card.selected")) {
+        btn.style.cursor = "pointer";
+        btn.removeAttribute("disabled");
+        btn.style.backgroundColor = "red"; // 적절한 배경색으로 변경
+      }
+    } else {
+      el.classList.remove("selected");
+      // 선택이 해제되면 버튼 비활성화 및 스타일 초기화
+      btn.setAttribute("disabled", true);
+      btn.style.cursor = "auto";
+      btn.style.backgroundColor = "";
+      alert("결제 수단을 선택하세요");
     }
   });
 });
 
+// 버튼 클릭 시 동작
+btn.addEventListener("click", () => {
+  if (document.querySelector(".card.selected")) {
+    // 선택된 카드가 있을 때의 동작
+    if (checkAll.checked) {
+      alert("감사합니다.");
+      window.opener.location.href =
+        "http://127.0.0.1:5501/index/HTML/main.html";
+      window.close();
+    } else {
+      alert("필수 항목을 체크해주세요");
+    }
+  } else {
+    // 카드가 선택되지 않았을 때의 동작
+    alert("결제 수단을 선택하세요");
+  }
+});
 window.onload = function () {
   var currentDate = new Date();
   var year = currentDate.getFullYear().toString().slice(-2); // 연도의 끝 두 자리
@@ -65,3 +121,34 @@ notPastRadio.addEventListener("change", function () {
   document.querySelector(".show1").style.display = "none";
   document.querySelector(".show2").style.display = "block";
 });
+
+// buyAgree 있었던 부분
+
+checkAll.addEventListener("change", (e) => {
+  for (let i = 0; i < check.length; i++) {
+    check[i].checked = e.target.checked;
+  }
+});
+
+for (let i = 0; i < check.length; i++) {
+  check[i].addEventListener("change", () => {
+    checkAll.checked = true;
+
+    for (let j = 0; j < check.length; j++) {
+      if (!check[j].checked) {
+        checkAll.checked = false;
+        break;
+      }
+    }
+  });
+}
+
+// btn.addEventListener("click", () => {
+//   if (checkAll.checked) {
+//     alert("감사합니다.");
+//     window.opener.location.href = "http://127.0.0.1:5501/index/HTML/main.html";
+//     window.close();
+//   } else {
+//     alert("필수 항목을 체크해주세요");
+//   }
+// });
