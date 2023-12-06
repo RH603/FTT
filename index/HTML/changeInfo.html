@@ -85,7 +85,7 @@
                     pwRegex.test(document.querySelector("#newpassword").value)
                   ) {
                     if (
-                      document.querySelector("#password").value !=
+                      document.querySelector("#password").value ==
                       document.querySelector("#newpassword").value
                     ) {
                       text.innerText = "회원정보가 수정되었습니다.";
@@ -144,7 +144,7 @@
     });
 
     backBtn.addEventListener("click", () => {
-      location.href = "http://127.0.0.1:5501/my_page/my_page.html";
+      location.href = "http://127.0.0.1:5501/index/HTML/myPage.html";
     });
   </script>
 </html>
