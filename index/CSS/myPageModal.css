@@ -23,13 +23,12 @@
   display: none;
 }
 
+
 .modal-wrapper {
+  margin: 130px auto 0;
+  position: relative;
   width: 560px;
   text-align: center;
-}
-.modal-wrapper {
-  margin: 100px auto 0;
-  position: relative;
 }
 
 .modal-mask .modal-wrapper .popup-tittle {
