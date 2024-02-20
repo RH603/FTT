@@ -1,3 +1,5 @@
+import { updateDatas } from "./firebase";
+
 const modalImgBack = document.querySelector(".modal-img-back");
 const modalImg = document.querySelector(".modal-img-win");
 const images = document.querySelectorAll("img");
@@ -7,9 +9,9 @@ const htmlImgs = document.querySelectorAll(".htmlImg");
 const kateBox = document.querySelector(".kate-box");
 
 const pTag = document.createElement("p");
-const textNode = document.createTextNode(
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur rerum suscipit corrupti doloremque aperiam, tenetur sapiente sunt ratione officia quidem necessitatibus, numquam voluptatem blanditiis delectus distinctio nulla sed nisi porro."
-);
+const textNode = document.createTextNode(`
+좋아요
+`);
 
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("click", () => {
@@ -42,6 +44,10 @@ for (let i = 0; i < images.length; i++) {
     modalImg.appendChild(clickedHtml);
     modalImg.appendChild(pTag);
     pTag.appendChild(textNode);
+    pTag.classList.add("goodMovie");
+    pTag.addEventListener("click", async () => {
+      await updateDatas();
+    });
 
     // Display the modal
     modalImgBack.style.display = "block";
